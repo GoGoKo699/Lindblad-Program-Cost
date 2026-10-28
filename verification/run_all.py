@@ -8,6 +8,7 @@ import numpy as np
 import scipy
 
 from verify_core import run_checks as core_checks
+from verify_docs import run_checks as docs_checks
 from verify_wml import run_checks as wml_checks
 
 
@@ -23,8 +24,9 @@ def main():
         },
         "core": core_checks(),
         "wml": wml_checks(),
+        "documents": docs_checks(),
         "status": "passed",
-        "scope": "Finite identity and convention checks; general claims rely on the proofs.",
+        "scope": "Finite identities, conventions, and document structure; general claims rely on the proofs and hosted rendering is inspected separately.",
     }
     rendered = json.dumps(report, indent=2, sort_keys=True) + "\n"
     if args.output is not None:

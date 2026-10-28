@@ -1,6 +1,6 @@
 # Verification
 
-The proofs establish the uniform copy-complexity statements. The finite checks here target tensor-order, complex-conjugation, channel-normalization, and projector-algebra errors that could invalidate those proofs or the explicit processors.
+The proofs establish the uniform copy-complexity statements. The finite checks here target tensor-order, complex-conjugation, channel-normalization, and projector-algebra errors that could invalidate those proofs or the explicit processors. The same entrypoint checks document navigation, mathematical delimiters, tables, and milestone structure.
 
 ## Run
 
@@ -11,7 +11,13 @@ python3 -m pip install -r verification/requirements.txt
 python3 verification/run_all.py
 ```
 
-The script prints one JSON report and raises an exception if a checked identity exceeds its tolerance. To save a fresh report:
+The script prints one JSON report and raises an exception if a checked identity exceeds its tolerance or a document check fails. The document checks can also run without NumPy or SciPy:
+
+```bash
+python3 verification/verify_docs.py
+```
+
+To save a fresh combined report:
 
 ```bash
 python3 verification/run_all.py --output verification/expected/results.json
@@ -29,10 +35,13 @@ The second command writes the named output file. The committed [reference report
 | Reference-phase sectors | Copy counts 0 through 4 | Retaining cross-sector coherence that should vanish under phase averaging |
 | Collective rank-one processor | 38 admissible parameter cases, including 17 with a negative surviving amplitude | Complete positivity, trace preservation, the entire reduced channel, and the attained trace-distance error |
 | WML invariant algebra and reductions | 18 identity checks at dimensions 2 and 3, with reference dimension 2 | The five-map composition algebra and the reduced maps used in the universal diamond-bound proof |
+| Document structure | Relative file links and heading fragments, mathematical delimiters, table widths, and all 30 milestone records | Broken reading routes, malformed Markdown, missing milestone fields, and dependencies on later milestones |
 
 The collective checks include $`\beta=1`$, which is the limiting complete-decay channel for this family. For every admissible case, the script compares the induced map on **all matrix units**, so the comparison covers the entire finite-dimensional linear channel. It also tests an input attaining the claimed normalized diamond error. The proof that this input is optimal, including reference extensions, is analytical.
 
 The phase-sector check uses $`n+1`$ evenly spaced phases. Their discrete average cancels all nonzero Fourier differences between the $`0,\ldots,n`$ sectors exactly in algebra; numerical residuals arise from floating-point representation.
+
+The document checker also guards two observed GitHub rendering failures: the rejected operator-name macro and raw angle brackets in mathematical expressions. The supported forms are upright names with `\mathrm{...}` and inequalities with `\lt` or `\gt`. These source checks support a separate inspection of the hosted pages; they do not certify visual layout or the mathematical content of a milestone. External source links are outside the local navigation check.
 
 ## Recorded outcome
 
@@ -46,6 +55,7 @@ These numbers describe finite matrix checks. They are not an estimate of theorem
 |---|---|
 | [verify_core.py](verify_core.py) | Hard damping family, symmetric tensors, phase averaging, and collective processor |
 | [verify_wml.py](verify_wml.py) | Invariant-map and data-reference identities for WML |
+| [verify_docs.py](verify_docs.py) | Relative links, heading fragments, mathematical delimiters, tables, and the milestone map |
 | [run_all.py](run_all.py) | One entrypoint and optional JSON report output |
 | [requirements.txt](requirements.txt) | Pinned numerical dependencies |
 | [expected/results.json](expected/results.json) | Actual recorded output, including seeds and environment versions |

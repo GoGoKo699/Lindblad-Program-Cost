@@ -27,12 +27,32 @@
     "status": "passed",
     "tolerance": 1e-10
   },
+  "documents": {
+    "documents": 13,
+    "fenced_blocks": 225,
+    "heading_fragments": 83,
+    "inline_math": 734,
+    "math_blocks": 221,
+    "milestones": {
+      "count": 30,
+      "fields_per_milestone": 5,
+      "sections": {
+        "M01-M14": 14,
+        "M15-M30": 16
+      }
+    },
+    "relative_links": 170,
+    "scope": "Source navigation and Markdown structure; hosted rendering requires visual inspection.",
+    "status": "passed",
+    "table_rows": 52,
+    "tables": 6
+  },
   "environment": {
     "numpy": "2.3.5",
     "python": "3.12.14",
     "scipy": "1.17.0"
   },
-  "scope": "Finite identity and convention checks; general claims rely on the proofs.",
+  "scope": "Finite identities, conventions, and document structure; general claims rely on the proofs and hosted rendering is inspected separately.",
   "status": "passed",
   "wml": {
     "check_count": 18,
