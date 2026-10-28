@@ -1,40 +1,471 @@
-# Lindblad Program Cost: 30 milestones
+# Milestones for the scientific argument
 
-**Educational anchor:** John Watrous, *The Theory of Quantum Information* (2018). See [the bridge](WATROUS_BRIDGE.md).
+These 30 milestones organize the dependencies of the Lindblad program-cost results. M01 through M14 establish the background and the complete access model. M15 through M30 follow the reduction, the two upper constructions, and the resulting resource laws.
 
-Twelve background milestones build the operational model from local quantum objects to the complete minimax question. Eighteen innovation milestones build the reference-bearing conjugation reduction, matching bounds and special-family processor from individual mechanisms to the full scientific contribution. The map is common to all readers and contains no personal coaching rules or assessment history.
+The 14 background milestones join channel distinguishability, dissipative dynamics, and symmetric-tensor tools; the 16 narrative milestones then develop the unrestricted converse and the two distinct upper constructions.
 
-| ID / phase | Central question | Understanding target and conceptual connection | Dependencies and story role | Sources |
-|---|---|---|---|---|
-| M01 / Background | What is a quantum state? | Distinguish positive unit-trace matrices from pure projectors. This connects the local object to the project's access model. | Entry; advance local-to-global understanding | Watrous Ch. 2; science/model.md |
-| M02 / Background | What is a composite register? | Explain tensor products and partial trace for data, program, reference. This connects the local object to the project's access model. | M01 and earlier foundations; advance local-to-global understanding | Watrous Chs. 1–2; science/model.md |
-| M03 / Background | What makes a channel physical? | Relate CPTP maps, Kraus operators and trace preservation. This connects the local object to the project's access model. | M02 and earlier foundations; advance local-to-global understanding | Watrous Ch. 2; science/model.md |
-| M04 / Background | What does a Choi operator encode? | Connect CP to Choi positivity and transposition. This connects the local object to the project's access model. | M03 and earlier foundations; advance local-to-global understanding | Watrous Ch. 2; science/conjugation.md |
-| M05 / Background | How can outputs be distinguished? | Interpret trace distance as measurement bias. This connects the local object to the project's access model. | M04 and earlier foundations; advance local-to-global understanding | Watrous Ch. 3; science/dimension_cost.md |
-| M06 / Background | Why use diamond distance? | Account for entangled reference inputs and the factor one half. This connects the local object to the project's access model. | M05 and earlier foundations; advance local-to-global understanding | Watrous Ch. 3; science/model.md |
-| M07 / Background | How is an operator vectorized? | Derive the norm using an unnormalized maximally entangled vector. This connects the local object to the project's access model. | M06 and earlier foundations; advance local-to-global understanding | Watrous Ch. 1; science/model.md |
-| M08 / Background | Where does conjugation enter? | Derive |s⟩⟨φ|→|s⟩|bar φ⟩. This connects the local object to the project's access model. | M07 and earlier foundations; advance local-to-global understanding | Watrous Ch. 1; science/dimension_cost.md |
-| M09 / Background | What is Lindblad dissipation? | Interpret the jump and anticommutator contributions. This connects the local object to the project's access model. | M08 and earlier foundations; advance local-to-global understanding | Bridge; science/model.md |
-| M10 / Background | How does rank-one decay work? | Explain population, coherence and exact Kraus decay. This connects the local object to the project's access model. | M09 and earlier foundations; advance local-to-global understanding | Bridge; science/dimension_cost.md |
-| M11 / Background | What resources are supplied? | Separate copies from descriptions, inverse oracles and preparation circuits. This connects the local object to the project's access model. | M10 and earlier foundations; advance local-to-global understanding | science/model.md |
-| M12 / Background | What is the minimax question? | Integrate worst-case jumps, arbitrary processors, deterministic caps and diamond error. This connects the local object to the project's access model. | M11 and earlier foundations; phase synthesis | science/model.md |
-| M13 / Innovation | Which hard family is used? | Construct a known sink, reference and unknown orthogonal direction. This connects the local object to the project's proof narrative. | M08, M10–M12; advance local-to-global understanding | science/dimension_cost.md |
-| M14 / Innovation | What does its program contain? | Explain the conjugate vector and physical relative phase. This connects the local object to the project's proof narrative. | M13 and earlier foundations; advance local-to-global understanding | science/conjugation.md |
-| M15 / Innovation | How does known input reveal unknown output? | Derive the projected β²/4 branch weight. This connects the local object to the project's proof narrative. | M14 and earlier foundations; advance local-to-global understanding | science/dimension_cost.md |
-| M16 / Innovation | Why is universal conjugation restricted? | Explain why complex conjugation is not a universal CP channel. This connects the local object to the project's proof narrative. | M15 and earlier foundations; advance local-to-global understanding | science/conjugation.md |
-| M17 / Innovation | How do symmetric moments enter? | Connect Haar moments to symmetric-projector dimensions. This connects the local object to the project's proof narrative. | M16 and earlier foundations; advance local-to-global understanding | science/conjugation.md |
-| M18 / Innovation | Why retain success weights? | Explain the CP-branch inequality without normalization. This connects the local object to the project's proof narrative. | M17 and earlier foundations; advance local-to-global understanding | science/conjugation.md |
-| M19 / Innovation | Does the coherent reference evade it? | Explain occupation sectors and phase averaging. This connects the local object to the project's proof narrative. | M18 and earlier foundations; advance local-to-global understanding | science/conjugation.md |
-| M20 / Innovation | What flagged-program bound follows? | Derive the (n+1)/(n+D) coefficient. This connects the local object to the project's proof narrative. | M19 and earlier foundations; advance local-to-global understanding | science/conjugation.md |
-| M21 / Innovation | How does a witness yield channel error? | Use a spectral-diameter-one observable and unconditional outputs. This connects the local object to the project's proof narrative. | M20 and earlier foundations; advance local-to-global understanding | science/dimension_cost.md |
-| M22 / Innovation | What is the finite-copy theorem? | Reconstruct δ≥β²(d−3)/[4(n+d−2)] and its quantifiers. This connects the local object to the project's proof narrative. | M21 and earlier foundations; advance local-to-global understanding | science/dimension_cost.md |
-| M23 / Innovation | When is the lower scaling quadratic? | Explain β≈t/2 and the required accuracy regime. This connects the local object to the project's proof narrative. | M22 and earlier foundations; advance local-to-global understanding | science/dimension_cost.md |
-| M24 / Innovation | How does WML consume copies? | Describe one fresh program and one fixed interaction per step. This connects the local object to the project's proof narrative. | M23 and earlier foundations; advance local-to-global understanding | science/upper_bound.md |
-| M25 / Innovation | Why does dimension appear in upper error? | Explain invariant-map closure and the O(dΔ²) remainder. This connects the local object to the project's proof narrative. | M24 and earlier foundations; advance local-to-global understanding | science/upper_bound.md |
-| M26 / Innovation | How are steps combined? | Use telescoping and n>2dt to match Θ(dt²/ε). This connects the local object to the project's proof narrative. | M25 and earlier foundations; advance local-to-global understanding | science/upper_bound.md |
-| M27 / Innovation | What is the collective family processor? | Explain the symmetric program space and joint projector. This connects the local object to the project's proof narrative. | M26 and earlier foundations; advance local-to-global understanding | science/rank_one_processor.md |
-| M28 / Innovation | What is its exact error? | Distinguish matched coherences and residual population leakage. This connects the local object to the project's proof narrative. | M27 and earlier foundations; advance local-to-global understanding | science/rank_one_processor.md |
-| M29 / Innovation | What changes at long times? | Distinguish rank-one saturation from the general short-time result. This connects the local object to the project's proof narrative. | M28 and earlier foundations; advance local-to-global understanding | science/interpretation.md |
-| M30 / Innovation | What is new and what remains limited? | Synthesize inherited ingredients, unrestricted converse and access-model boundaries. This connects the local object to the project's proof narrative. | M12–M29; phase synthesis | references/RELATED_WORK.md; science/model.md |
+The background text is John Watrous, *The Theory of Quantum Information* (2018). The [Watrous bridge](WATROUS_BRIDGE.md) records the verified section and equation pointers, fixes conventions, and supplies the additional dissipative and programming material. Each milestone states a scientific understanding target, its earlier dependencies, its place in the argument, and precise source pointers. The [science pages](../science/model.md) remain the full proofs.
 
-The Watrous bridge translates textbook notation; the science files supply the research-level derivations. These milestones are understanding targets, not a record of learner passes.
+## Background and preliminaries: M01 through M14
+
+### M01. States, rays, and density operators
+
+**Central question.** Which mathematical features of a quantum state have physical meaning?
+
+**Understanding target.** A unit vector describes a pure state through the projector $`P_\psi=|\psi\rangle\langle\psi|`$. Multiplication of the entire vector by one phase leaves that projector unchanged. General states are positive operators of trace one; convex mixtures describe statistical uncertainty without requiring a preferred ensemble decomposition. Complex conjugation refers to a chosen basis and changes the vector's coordinates.
+
+**Dependencies and story role.** There are no earlier milestone dependencies. This establishes the state language used for the programs, the data, and the selected output branch.
+
+**Conceptual connection.** Phase equivalence for an entire vector must be distinguished from a phase between two components of a superposition. That distinction becomes physical in the reference-bearing family at M16.
+
+**Source pointers.** Watrous §2.1.2, Definition 2.5 and Eqs. (2.12)–(2.13), through [notation and resource model](WATROUS_BRIDGE.md#notation-and-resource-model); [the hard family](../science/dimension_cost.md#the-hard-family).
+
+### M02. Tensor inputs and independent program copies
+
+**Central question.** What is supplied when a processor receives several copies of an unknown program?
+
+**Understanding target.** Conditional on a fixed unknown $`L`$, the supplied state is $`\pi_L^{\otimes n}`$. The data may already be entangled with an external reference, so a channel experiment can begin with $`\rho_{RS}\otimes\pi_L^{\otimes n}`$. Independent preparation of the programs places no restriction on their subsequent collective processing. Averaging over the common unknown parameter can correlate the copies in the averaged density operator.
+
+**Dependencies and story role.** M01 supplies the state description. This milestone separates the given tensor-product resource from the arbitrary joint operation allowed on it.
+
+**Conceptual connection.** Tensor powers of a pure state lie in a symmetric subspace even when the original registers remain distinguishable. That fact supplies both the converse's Haar moments and the collective upper construction.
+
+**Source pointers.** Watrous §2.1.2, Eq. (2.5), through [notation and resource model](WATROUS_BRIDGE.md#notation-and-resource-model); [supplied-copy access](../science/model.md#1-supplied-copy-access).
+
+### M03. Partial trace and branch weights
+
+**Central question.** How does discarding a subsystem differ from selecting a measurement outcome?
+
+**Understanding target.** A partial trace produces the state of the retained subsystem and preserves the trace of the joint state. A selected outcome instead produces a subnormalized positive operator, such as $`Q\rho Q`$ for an orthogonal projector $`Q`$. Its trace is the outcome probability. Dividing by that trace gives a conditional state and removes information about how frequently the outcome occurs.
+
+**Dependencies and story role.** M01 and M02 provide the joint-state language. This distinction is needed before using a selected output of a simulator as a physical conjugation device.
+
+**Conceptual connection.** The later converse controls the probability weight of a correct state. It must retain the small branch probability generated by short-time dissipation.
+
+**Source pointers.** Watrous §2.1.3, Eqs. (2.30)–(2.34), and [success-weighted conjugation](WATROUS_BRIDGE.md#success-weighted-conjugation); [why the unnormalized form matters](../science/conjugation.md#why-the-unnormalized-form-matters).
+
+### M04. Completely positive maps and Kraus descriptions
+
+**Central question.** What makes an operation admissible on a system that may be entangled with another system?
+
+**Understanding target.** Complete positivity preserves positivity after adjoining any untouched reference. A Kraus map has the form $`\mathcal T(X)=\sum_a A_aXA_a^\dagger`$. It is trace preserving when $`\sum_a A_a^\dagger A_a=I`$ and trace nonincreasing when that sum is at most $`I`$. Channels and individual measurement branches therefore share the same positivity structure. Ancillas, measurements, and feedforward can be incorporated into these maps.
+
+**Dependencies and story role.** M02 and M03 establish composite inputs and branch probabilities. This milestone identifies the class covered by the converse and the admissibility criterion for both constructions.
+
+**Conceptual connection.** Transposition is positive on an isolated state but is not generally completely positive. The distinction prevents an unknown conjugate program from being converted into the desired direction by simply transposing it.
+
+**Source pointers.** Watrous §§2.2.1–2.2.2 and Theorem 2.22, through [channels and the Choi transpose](WATROUS_BRIDGE.md#channels-and-the-choi-transpose); [supplied-copy access](../science/model.md#1-supplied-copy-access).
+
+### M05. The Choi operator and the input transpose
+
+**Central question.** Why does the Choi representation introduce a transpose on the supplied input?
+
+**Understanding target.** With output before input in the tensor order, the unnormalized Choi convention reconstructs a map as
+
+```math
+\mathcal T(X)
+=\operatorname{Tr}_{\mathrm{in}}
+\left[J_{\mathcal T}(I_{\mathrm{out}}\otimes X^{\mathsf T})\right].
+```
+
+Complete positivity is equivalent to $`J_{\mathcal T}\ge0`$. For a conjugate pure-state program, $`(\overline P_\psi)^{\mathsf T}=P_\psi`$. This transpose is part of the representation formula; it is not an extra operation supplied to the processor.
+
+**Dependencies and story role.** M03 and M04 provide partial trace and complete positivity. The formula converts the conjugation task into a positive-operator comparison at M18.
+
+**Conceptual connection.** A basis-dependent conjugation in the physical input becomes an ordinary pure-state tensor in the Haar integral.
+
+**Source pointers.** Watrous Eq. (2.66) and Theorem 2.22, through [channels and the Choi transpose](WATROUS_BRIDGE.md#channels-and-the-choi-transpose); [conjugation Lemma 1 and its proof](../science/conjugation.md#lemma-1-conjugation-with-arbitrary-success-probability).
+
+### M06. Trace distance and measurement effects
+
+**Central question.** How does a difference between density operators bound every measurement probability difference?
+
+**Understanding target.** For normalized states, $`\tfrac12\|\rho-\sigma\|_1`$ is the maximum distinguishing advantage expressed as an effect expectation difference. An effect satisfies $`0\le E\le I`$. More generally, a Hermitian observable whose largest and smallest eigenvalues differ by one obeys
+
+```math
+\left|\operatorname{Tr}[X(\rho-\sigma)]\right|
+\le \frac12\|\rho-\sigma\|_1.
+```
+
+Subtracting the smallest eigenvalue times the identity turns $`X`$ into an effect without changing its expectation on the traceless difference.
+
+**Dependencies and story role.** M01 and M03 establish normalized states and branch probabilities. This supplies the direct error conversion used by the converse.
+
+**Conceptual connection.** One observable can combine correct overlap and total selected probability, avoiding a separate normalization of the selected branch.
+
+**Source pointers.** Watrous §3.1, through [distinguishability and the factor of two](WATROUS_BRIDGE.md#distinguishability-and-the-factor-of-two); [the channel-error witness](../science/dimension_cost.md#converting-the-conjugation-bound-into-channel-error).
+
+### M07. Diamond distance and external references
+
+**Central question.** What does it mean to approximate a channel on every possible input?
+
+**Understanding target.** The error convention is $`\tfrac12\|\mathcal A-\mathcal B\|_\diamond`$, including joint inputs with a reference that the channel does not act on. A channel has diamond norm one, and pre- or post-composition with channels cannot increase this distance. A lower bound may use a single chosen input, while an upper bound must control all joint inputs.
+
+**Dependencies and story role.** M02, M04, and M06 connect entangled inputs, physical maps, and state distinguishability. This fixes the error metric for every theorem.
+
+**Conceptual connection.** The same metric permits a simple fixed-input converse and a telescoping composition argument for an upper construction.
+
+**Source pointers.** Watrous §§3.3.2–3.3.3, through [distinguishability and the factor of two](WATROUS_BRIDGE.md#distinguishability-and-the-factor-of-two); [error and minimax copy cost](../science/model.md#2-error-and-minimax-copy-cost).
+
+### M08. Frobenius norm, operator norm, and vectorization
+
+**Central question.** How can an operator be encoded as a normalized state without encoding its action as a free operation?
+
+**Understanding target.** The vectorization convention is $`|L\rangle=(L\otimes I)|\Gamma_d\rangle`$ with $`|\Gamma_d\rangle=\sum_j|j,j\rangle`$ unnormalized. Hence $`\langle L|L\rangle=\|L\|_{\mathrm F}^2`$. The Frobenius norm is the square root of the sum of squared singular values, whereas the operator norm is the largest singular value, so $`\|L\|_\infty\le\|L\|_{\mathrm F}`$. A rank-one operator vectorizes as $`|a\rangle\langle b|\mapsto|a\rangle|\bar b\rangle`$.
+
+**Dependencies and story role.** M01 and M02 supply state normalization and tensor notation. The final identity fixes the conjugation orientation of the hard programs.
+
+**Conceptual connection.** Normalized coefficients form a valid state, but applying the encoded operator to independent data requires a physical processor.
+
+**Source pointers.** Watrous §1.1.2, Eqs. (1.127)–(1.134), and §1.1.3, through [notation and resource model](WATROUS_BRIDGE.md#notation-and-resource-model); [supplied-copy access](../science/model.md#1-supplied-copy-access).
+
+### M09. A single-jump Lindblad generator
+
+**Central question.** How does one jump operator specify a continuous family of quantum channels?
+
+**Understanding target.** With no additional Hamiltonian, the generator and target are
+
+```math
+\mathcal D_L(X)=LXL^\dagger-\frac12\{L^\dagger L,X\},
+\qquad
+\mathcal E_{L,t}=e^{t\mathcal D_L}.
+```
+
+The jump term and anticommutator together preserve trace, and the exponential is a channel for $`t\ge0`$. The generator itself need not be a completely positive map. The convention $`\|L\|_{\mathrm F}=1`$ fixes the time scale; rescaling the jump by $`\sqrt\gamma`$ replaces time by $`\gamma t`$.
+
+**Dependencies and story role.** M04 and M08 supply channels and the operator normalization. This defines the dynamics that the program must reproduce.
+
+**Conceptual connection.** The upper proof compares first-order generators while keeping the actual finite-time maps CPTP.
+
+**Source pointers.** [Single-jump Lindblad dynamics](WATROUS_BRIDGE.md#single-jump-lindblad-dynamics), which supplies the dynamics beyond the book's channel preliminaries; [supplied-copy access](../science/model.md#1-supplied-copy-access).
+
+### M10. Exact rank-one damping
+
+**Central question.** Which populations and coherences change when a single direction decays into an orthogonal sink?
+
+**Understanding target.** For $`L=|s\rangle\langle\phi|`$ with $`\phi\perp s`$, define $`P_\phi=|\phi\rangle\langle\phi|`$ and $`\beta=1-e^{-t/2}`$. The exact Kraus operators are $`I-\beta P_\phi`$ and $`\sqrt{2\beta-\beta^2}\,|s\rangle\langle\phi|`$. Population in $`\phi`$ decays as $`e^{-t}`$, coherences with its orthogonal complement decay as $`e^{-t/2}`$, and the lost population enters the sink.
+
+**Dependencies and story role.** M04 and M09 give the Kraus and generator descriptions. Their agreement supplies an exact family for the reduction.
+
+**Conceptual connection.** A first-order change in a no-jump amplitude can generate a second-order probability in a selected orthogonal subspace.
+
+**Source pointers.** [Single-jump Lindblad dynamics](WATROUS_BRIDGE.md#single-jump-lindblad-dynamics); [family and target channel](../science/rank_one_processor.md#1-family-and-target-channel).
+
+### M11. Symmetric tensors and occupation sectors
+
+**Central question.** What smaller, parameter-independent space contains all identical pure-state copies?
+
+**Understanding target.** The vector $`|\psi\rangle^{\otimes k}`$ lies in $`\operatorname{Sym}^k(\mathbb C^D)`$, whose dimension is $`h_k=\binom{D+k-1}{k}`$. For a direct sum of a known reference direction and an unknown-vector space, the symmetric tensor power decomposes into orthogonal sectors indexed by how many factors occupy the unknown space. This is a representation of ordinary copy registers and does not assume that the source physically supplies bosons.
+
+**Dependencies and story role.** M02 supplies tensor powers. This structure supports both the phase-sector converse and the collective contraction.
+
+**Conceptual connection.** Counting symmetric degrees determines the fidelity ratio in the converse and the normalization of the projector used by the upper processor.
+
+**Source pointers.** Watrous §7.1.1 and Proposition 7.1, through [symmetric tensors and Haar moments](WATROUS_BRIDGE.md#symmetric-tensors-and-haar-moments); [the reference-bearing program decomposition](../science/conjugation.md#lemma-2-conjugation-from-a-reference-bearing-program).
+
+### M12. The Haar pure-state moment
+
+**Central question.** What operator results from averaging identical pure-state copies over all directions?
+
+**Understanding target.** Normalized uniform measure on the complex unit sphere gives
+
+```math
+\int P_\psi^{\otimes k}\,d\psi=\frac{P_k}{h_k},
+\qquad
+h_k=\binom{D+k-1}{k},
+```
+
+where $`P_k`$ projects onto the symmetric subspace. The sphere measure includes the global phase, although the integrand above is phase invariant. At $`k=0`$, both $`P_0`$ and $`h_0`$ equal one.
+
+**Dependencies and story role.** M01 and M11 supply pure-state projectors and symmetric subspaces. The identity turns an unknown-direction average into a known operator.
+
+**Conceptual connection.** The input-transpose identity at M05 makes the desired overlap an average with $`k+1`$ identical factors, while success probability has only $`k`$.
+
+**Source pointers.** Watrous §7.2.1 and Lemma 7.24, Eq. (7.159), through [symmetric tensors and Haar moments](WATROUS_BRIDGE.md#symmetric-tensors-and-haar-moments); [conjugation Lemma 1](../science/conjugation.md#lemma-1-conjugation-with-arbitrary-success-probability).
+
+### M13. Positive-operator order and Choi trace inequalities
+
+**Central question.** How can an operator inclusion constrain every completely positive processor at once?
+
+**Understanding target.** If $`A\le B`$ and $`J\ge0`$, then $`\operatorname{Tr}(JA)\le\operatorname{Tr}(JB)`$, without any commutation assumption. In particular, the inclusion of symmetric subspaces gives $`P_{k+1}\le I\otimes P_k`$. Combining this with a positive Choi operator produces an inequality uniform over CP maps, including trace-nonincreasing branches.
+
+**Dependencies and story role.** M05, M11, and M12 provide the Choi matrix and the averaged projectors. This is the mathematical comparison at the center of the conjugation bound.
+
+**Conceptual connection.** The argument constrains all admissible processors through positivity, so it does not require their optimization or a restriction to state estimation.
+
+**Source pointers.** Watrous Theorem 2.22 and [success-weighted conjugation](WATROUS_BRIDGE.md#success-weighted-conjugation); [the Choi proof of Lemma 1](../science/conjugation.md#lemma-1-conjugation-with-arbitrary-success-probability).
+
+### M14. The complete minimax access model
+
+**Central question.** Which resource is minimized, against which unknown instances, and under what uniform accuracy requirement?
+
+**Understanding target.** A fixed CPTP processor may depend on $`d,n,t`$ but receives information about the unknown normalized jump only through $`n`$ supplied programs. The minimax error takes the infimum over such processors and the supremum over $`\|L\|_{\mathrm F}=1`$, using half diamond distance. The copy cost is the smallest integer budget meeting the error target, with an empty feasible set assigned $`+\infty`$. A deterministic cap includes adaptive protocols by supplying and discarding unused copies.
+
+**Dependencies and story role.** M02, M04, M07, M08, and M09 combine into the precise task. This closes the preliminary part and fixes every quantifier used below.
+
+**Conceptual connection.** An algorithm-specific lower bound and a lower bound on this infimum make different claims. Classical descriptions, preparation oracles, and expected-budget stopping rules also change the task.
+
+**Source pointers.** [Notation and resource model](WATROUS_BRIDGE.md#notation-and-resource-model); [supplied-copy access and minimax definitions](../science/model.md#1-supplied-copy-access); [counted and additional resources](../science/interpretation.md#counted-and-additional-resources).
+
+## Scientific narrative and innovation: M15 through M30
+
+### M15. The hard family and its program orientation
+
+**Central question.** Which simple dissipative family exposes the information missing from a vectorized program?
+
+**Understanding target.** Split the system into a known sink $`s`$, a known reference $`r`$, and an unknown-vector space of dimension $`D=d-2`$. Set $`\phi_\psi=(r+\psi)/\sqrt2`$ and $`L_\psi=|s\rangle\langle\phi_\psi|`$. Every jump is rank one and Frobenius normalized. Its program is the product $`|s\rangle(|r\rangle+|\bar\psi\rangle)/\sqrt2`$. The unknown direction enters conjugated, and the supplied data input will be the fixed reference state.
+
+**Dependencies and story role.** M08, M10, and M14 fix vectorization, damping, and allowed access. This sets up the reduction without supplying an extra unknown state.
+
+**Conceptual connection.** The difficulty survives with a known sink, a simple jump spectrum, and no entanglement between the two program registers.
+
+**Source pointers.** [The reference-flag program](WATROUS_BRIDGE.md#the-reference-flag-program); [the hard family](../science/dimension_cost.md#the-hard-family).
+
+### M16. Relative phase is a physical parameter
+
+**Central question.** Why must the hard family range over vectors with their phase, even though $`P_\psi`$ is phase invariant?
+
+**Understanding target.** Replacing $`\psi`$ by $`e^{i\theta}\psi`$ preserves $`P_\psi`$ but changes the relative phase in $`(r+\psi)/\sqrt2`$. It therefore changes the decay direction and its program. The family includes this parameter. In a sector containing $`k`$ conjugate unknown-vector factors, this transformation contributes the phase $`e^{-ik\theta}`$.
+
+**Dependencies and story role.** M01, M11, and M15 supply phase equivalence, sectors, and the flagged family. This establishes the legitimate averaging variable used at M19.
+
+**Conceptual connection.** A phase that is irrelevant for an isolated unknown ray becomes accessible relative to a known coherent reference. The proof tracks that information rather than silently discarding it.
+
+**Source pointers.** [The reference-flag program](WATROUS_BRIDGE.md#the-reference-flag-program) and [phase averaging](WATROUS_BRIDGE.md#phase-averaging-and-occupation-sectors); [what the reduction must preserve](../science/model.md#4-what-the-reduction-must-preserve).
+
+### M17. A known input produces the desired unknown branch
+
+**Central question.** How does the target damping channel reveal the unconjugated unknown direction?
+
+**Understanding target.** On the fixed input $`|r\rangle`$, the no-jump vector is $`(1-\beta/2)|r\rangle-(\beta/2)|\psi\rangle`$. Projection onto the unknown-vector space by $`Q`$ therefore gives
+
+```math
+Q\mathcal E_{L_\psi,t}(P_r)Q
+=p(t)P_\psi,
+\qquad
+p(t)=\frac{(1-e^{-t/2})^2}{4}.
+```
+
+The full output also contains the remaining reference component and sink population. The selected branch is subnormalized.
+
+**Dependencies and story role.** M03, M10, and M15 supply selection, exact damping, and the input family. This converts a channel simulator into a candidate conjugation device.
+
+**Conceptual connection.** The obstruction will be proportional to $`p(t)`$. At short times, the unknown component has first-order amplitude and second-order probability.
+
+**Source pointers.** [The reference-flag program](WATROUS_BRIDGE.md#the-reference-flag-program); [exact evolution of the known input](../science/dimension_cost.md#exact-evolution-of-the-known-input).
+
+### M18. The CP conjugation inequality
+
+**Central question.** How much correct output weight can an arbitrary CP map obtain from conjugate copies?
+
+**Understanding target.** For $`k`$ copies, let $`s_\psi=\operatorname{Tr}\mathcal T(\overline P_\psi^{\otimes k})`$ and $`f_\psi=\operatorname{Tr}[P_\psi\mathcal T(\overline P_\psi^{\otimes k})]`$. The inherited Haar–Choi argument gives
+
+```math
+\int f_\psi\,d\psi
+\le \frac{k+1}{k+D}\int s_\psi\,d\psi.
+```
+
+The coefficient is $`h_k/h_{k+1}`$. Choi positivity and $`P_{k+1}\le I\otimes P_k`$ suffice; trace preservation, covariance, and estimation-based processing are unnecessary.
+
+**Dependencies and story role.** M05, M12, and M13 provide every proof ingredient. This supplies the established conjugation restriction used in the dissipative reduction.
+
+**Conceptual connection.** The inequality retains success probability and includes $`k=0`$, where the coefficient is $`1/D`$. Its conjugation fidelity and underlying proof are credited to Brzić et al.
+
+**Source pointers.** [Success-weighted conjugation](WATROUS_BRIDGE.md#success-weighted-conjugation); [conjugation Lemma 1](../science/conjugation.md#lemma-1-conjugation-with-arbitrary-success-probability); [attribution of the transposition ingredient](../references/RELATED_WORK.md#transposition-and-conjugation-as-an-inherited-ingredient).
+
+### M19. Averaging the flagged occupation sectors
+
+**Central question.** Why does a coherent reference in every program still permit the conjugation bound?
+
+**Understanding target.** The flagged tensor power has components $`\sqrt{2^{-n}\binom nk}\,V_k|\bar\psi\rangle^{\otimes k}`$. Averaging the physical phase from M16 removes terms between distinct occupation sectors in both the success and overlap integrals. The surviving sector maps remain CP. Applying M18 in each sector and using $`(k+1)/(k+D)\le(n+1)/(n+D)`$ yields the flagged coefficient $`c=(n+1)/(n+D)`$.
+
+**Dependencies and story role.** M11, M16, and M18 provide the decomposition, phase, and sector bound. This completes the information-theoretic bound for the actual supplied programs.
+
+**Conceptual connection.** The phase average is part of the mathematical objective. It does not assume that the processor dephases its input or is covariant.
+
+**Source pointers.** [Phase averaging and occupation sectors](WATROUS_BRIDGE.md#phase-averaging-and-occupation-sectors); [conjugation Lemma 2](../science/conjugation.md#lemma-2-conjugation-from-a-reference-bearing-program).
+
+### M20. Postselection without renormalization
+
+**Central question.** How can the branch restriction constrain a simulator that uses measurements or state-dependent success probabilities?
+
+**Understanding target.** Fixing the known data input, absorbing the fixed sink program factors, and projecting the output defines a CP trace-nonincreasing map from the remaining programs. Its $`s_\psi`$ and $`f_\psi`$ satisfy the integrated flagged inequality even when success depends on $`\psi`$. The proof compares these unnormalized quantities directly. It does not assert a pointwise conditional-fidelity bound or divide the simulator's error by the rare target probability.
+
+**Dependencies and story role.** M03, M04, M17, and M19 connect physical branches with the actual simulator. This ensures that heralding and adaptive internal processing do not escape the converse.
+
+**Conceptual connection.** Conditioning can change the distribution of unknown instances among successes. The unnormalized integral keeps both this weighting and the unconditional channel-error guarantee intact.
+
+**Source pointers.** [Success-weighted conjugation](WATROUS_BRIDGE.md#success-weighted-conjugation); [why the unnormalized form matters](../science/conjugation.md#why-the-unnormalized-form-matters); [the channel-error reduction](../science/dimension_cost.md#converting-the-conjugation-bound-into-channel-error).
+
+### M21. A spectral-diameter witness
+
+**Central question.** Which single observable turns the success-weighted inequality into a channel-error bound?
+
+**Understanding target.** With $`c=(n+1)/(n+D)`$, use $`X_\psi=P_\psi-cQ`$. For $`D\ge2`$, its eigenvalues are $`1-c`$, $`-c`$, and zero, so its spectral diameter is one. The target expectation is $`p(t)(1-c)`$; the simulated expectation is $`f_\psi-cs_\psi`$. Trace distance bounds their difference, and the Haar average of the simulated expression is nonpositive.
+
+**Dependencies and story role.** M06, M07, M17, and M20 supply the metric, branch, and inequality. This is the step transferring a state-conversion restriction to every full channel simulator.
+
+**Conceptual connection.** The witness may depend on the unknown instance because it is a mathematical distinguishing test. The protocol is not granted its implementation as an additional resource.
+
+**Source pointers.** [The witness and the minimax bound](WATROUS_BRIDGE.md#the-witness-and-the-minimax-bound); [converting the conjugation bound into channel error](../science/dimension_cost.md#converting-the-conjugation-bound-into-channel-error).
+
+### M22. The finite-copy converse and the exact-simulation limit
+
+**Central question.** What uniform statement follows after averaging and minimizing over all processors?
+
+**Understanding target.** Substituting $`D=d-2`$ gives
+
+```math
+\delta_d(n,t)
+\ge
+\frac{(1-e^{-t/2})^2}{4}\,
+\frac{d-3}{n+d-2},
+\qquad
+d\ge4,\quad n\in\mathbb N_0,\quad t\ge0.
+```
+
+The bound already holds for the known-sink hard family. At positive time it excludes exact simulation of that entire family with any finite deterministic program budget. At $`t=0`$ the bound vanishes and the identity needs zero copies.
+
+**Dependencies and story role.** M14 and M21 supply the minimax definition and processor-wise inequality. This is the central unrestricted-processor converse.
+
+**Conceptual connection.** A lower bound on one known input suffices for a lower bound on diamond error. The conclusion is a worst-case family statement, not a claim that each individual known jump requires copies.
+
+**Source pointers.** [The witness and the minimax bound](WATROUS_BRIDGE.md#the-witness-and-the-minimax-bound); [finite-copy theorem](../science/dimension_cost.md#theorem-1-finite-copy-dimension-bound) and [scope and limiting cases](../science/dimension_cost.md#scope-and-limiting-cases).
+
+### M23. Short-time lower scaling and its accuracy domain
+
+**Central question.** When does the finite-copy theorem force a cost of order $`dt^2/\varepsilon`$?
+
+**Understanding target.** For $`0<t\le1`$, $`\beta(t)\ge t/4`$. If $`0<\varepsilon\le t^2/256`$, the error is also at most $`\beta(t)^2/16`$, allowing the additive offset from solving the finite-copy inequality for $`n`$ to be absorbed. The result is
+
+```math
+n_d^\star(t,\varepsilon)
+\ge \frac{dt^2}{512\varepsilon},
+\qquad d\ge4.
+```
+
+The sufficiently accurate regime is part of the statement.
+
+**Dependencies and story role.** M17 and M22 supply the branch scale and exact converse. This extracts the explicit asymptotic regime that will match WML.
+
+**Conceptual connection.** A branch of probability of order $`t^2`$ can constrain accuracy only when the allowed error is small enough relative to that probability. The theorem does not extend a quadratic lower dependence to arbitrarily long times.
+
+**Source pointers.** [From WML to the matching short-time scale](WATROUS_BRIDGE.md#from-wml-to-the-matching-short-time-scale); [proof of the explicit lower constant](../science/dimension_cost.md#proof-of-the-explicit-lower-constant); [why the short-time law is quadratic](../science/interpretation.md#why-the-short-time-law-is-quadratic).
+
+### M24. The WML processor and its first-order generator
+
+**Central question.** How can a fixed interaction turn one supplied program into one approximate dissipative step?
+
+**Understanding target.** WML appends $`\pi_L`$, applies a known joint Lindblad channel $`e^{\Delta\mathcal G}`$ on the data and program registers, and traces out the program. The reduced map $`\mathcal W_{L,\Delta}`$ is CPTP, and its derivative at zero is $`\mathcal D_L`$. The unknown jump enters only through the program state. Repetition uses fresh independent copies.
+
+**Dependencies and story role.** M03, M08, M09, and M14 supply reduction, encoding, dynamics, and allowed access. This introduces the established universal upper construction.
+
+**Conceptual connection.** Equality of first-order generators explains why the construction works locally; controlling the higher-order terms is needed before claiming an accurate finite-time channel.
+
+**Source pointers.** [From WML to the matching short-time scale](WATROUS_BRIDGE.md#from-wml-to-the-matching-short-time-scale); [one WML step](../science/upper_bound.md#1-one-program-copy-implements-one-wml-step) and [reduction to data maps](../science/upper_bound.md#3-reduction-to-data-maps-including-a-reference).
+
+### M25. Remainders, composition, and universal matching
+
+**Central question.** How does a local approximation become a uniform copy budget for arbitrary jumps?
+
+**Understanding target.** The invariant operator space bounds the WML remainder, while the exact channel has its own integral remainder. For $`\Delta<1/(2d)`$, the normalized one-step error is at most $`(2d+1)\Delta^2`$. Channel contraction and telescoping then give error at most $`(2d+1)t^2/n`$ when $`n>2dt`$. A sufficient integer budget enforces both conditions:
+
+```math
+N_d(t,\varepsilon)=
+\max\left\{\lfloor2dt\rfloor+1,\,
+\left\lceil\frac{(2d+1)t^2}{\varepsilon}\right\rceil\right\}.
+```
+
+Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0<t\le1`$, and $`0<\varepsilon\le t^2/256`$.
+
+**Dependencies and story role.** M07, M23, and M24 supply composition, the lower regime, and the local processor. This closes the universal short-time matching argument.
+
+**Conceptual connection.** A finite-step condition is a separate hypothesis that must survive conversion of an error estimate into a sample count.
+
+**Source pointers.** [From WML to the matching short-time scale](WATROUS_BRIDGE.md#from-wml-to-the-matching-short-time-scale); [WML remainder](../science/upper_bound.md#4-a-conservative-wml-remainder-bound), [exact-channel remainder](../science/upper_bound.md#5-exact-channel-remainder-and-one-step-error), and [integer budget](../science/upper_bound.md#6-composition-and-the-integer-sample-budget).
+
+### M26. The collective contraction and its projector
+
+**Central question.** What known joint operation can couple the data to all conjugate program copies at once?
+
+**Understanding target.** For the known-sink family, the active space $`\mathcal A=s^\perp`$ has dimension $`m=d-1`$. The $`n\ge1`$ conjugate program copies lie in $`\operatorname{Sym}^n(\overline{\mathcal A})`$. Define $`C=\sum_i\langle i|\otimes a_i`$, using the occupation-lowering maps $`a_i`$, and extend it by zero on sink inputs. The identity $`CC^\dagger=(n+m-1)I`$ makes
+
+```math
+\Pi=\frac{C^\dagger C}{n+m-1}
+```
+
+an orthogonal projector. The corresponding partial isometry $`J`$ sends the data to the sink and the program memory to degree $`n-1`$, with $`J^\dagger J=\Pi`$.
+
+**Dependencies and story role.** M08, M11, and M14 provide conjugate orientation, symmetric tensors, and collective access. This begins an explicit upper construction for the restricted family.
+
+**Conceptual connection.** The projector is independent of the unknown direction. Its parameter dependence arises only after inserting the supplied programs into a fixed joint operation.
+
+**Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [the parameter-independent contraction](../science/rank_one_processor.md#2-a-parameter-independent-contraction) and [program contractions](../science/rank_one_processor.md#3-program-contractions).
+
+### M27. The full CPTP interval and the exact error
+
+**Central question.** Which collective operation matches the target coherences, and what error remains?
+
+**Understanding target.** The operators $`A_0=I-\alpha\Pi`$ and $`A_1=\sqrt{\alpha(2-\alpha)}J`$ satisfy Kraus normalization for the full interval $`0\le\alpha\le2`$. With $`q=n/(n+m-1)`$, choose $`\alpha=\beta/q`$. This is allowed when $`n\ge\beta(m-1)/(2-\beta)`$; $`n\ge m-1`$ suffices at every time. For $`m\ge2`$, the induced channel matches all coherence terms and has exact normalized diamond error
+
+```math
+\frac12\left\|\widetilde{\mathcal E}^{(n)}_{\phi,t}
+-\mathcal E_{\phi,t}\right\|_\diamond
+=\frac{\beta(t)^2(m-1)}{n}.
+```
+
+**Dependencies and story role.** M04, M07, M10, and M26 supply physicality, the metric, the target, and the joint projector. This establishes the restricted family's copy sufficiency.
+
+**Conceptual connection.** The error transfers intended sink population to the active subspace orthogonal to the decay direction. Values $`\alpha>1`$ remain physical even though the joint operation need not itself be positive-time damping.
+
+**Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [Kraus construction](../science/rank_one_processor.md#2-a-parameter-independent-contraction) and [exact error channel](../science/rank_one_processor.md#4-exact-error-channel).
+
+### M28. All-time matching for the known-sink family
+
+**Central question.** Which promise allows the upper and lower time dependence to match beyond short times?
+
+**Understanding target.** The hard family of M15 is a subset of all $`L_\phi=|s\rangle\langle\phi|`$ with known $`s`$ and unknown $`\phi\perp s`$. Combining its converse with M27 gives
+
+```math
+\frac{d\,\beta(t)^2}{32\varepsilon}
+\le n^\star_{d,s}(t,\varepsilon)
+\le
+\left\lceil\frac{(d-2)\beta(t)^2}{\varepsilon}\right\rceil
+```
+
+for $`d\ge4`$, $`t>0`$, and $`0<\varepsilon\le\beta(t)^2/16`$. The chosen upper budget automatically meets the CPTP condition. The optimal order is $`d(1-e^{-t/2})^2/\varepsilon`$ and saturates at order $`d/\varepsilon`$ for long times.
+
+**Dependencies and story role.** M22 and M27 supply a lower bound on a subset and an upper bound on the full promised family. This completes the all-time family result.
+
+**Conceptual connection.** The promise changes the supremum in the minimax problem. This upper construction does not establish an all-time upper law for arbitrary jumps.
+
+**Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [matching family copy law](../science/rank_one_processor.md#5-matching-copy-law-for-this-family-at-all-times); [long-time scope](../science/interpretation.md#long-times-distinguish-the-family-from-the-general-task).
+
+### M29. Attribution, resources, and model boundaries
+
+**Central question.** Which ingredients are inherited, which implication is established here, and which resources remain uncounted?
+
+**Understanding target.** Universal conjugation fidelity and its Haar–Choi proof are credited to Brzić et al. WML originates with Patel and Wilde; Go et al. supply an unrestricted earlier lower bound without a growing dimension factor, and Park et al. supply the linear-dimension upper scaling and an algorithm-specific WML lower bound. The reference-flag dissipative reduction makes the dimension obstruction apply to every processor in the stated model. The collective construction supplies the matching all-time law for the known-sink family.
+
+**Dependencies and story role.** M14, M18, M25, and M28 identify the task and the distinct proof components. This places the results against their precise comparators.
+
+**Conceptual connection.** Copy sufficiency under arbitrary CPTP processing does not establish efficient gates, small memory, or cheap preparation. Stronger oracle access and expected-copy budgets are separate resource models; finite numerical checks support identities but do not prove the uniform theorem.
+
+**Source pointers.** [Notation and resource model](WATROUS_BRIDGE.md#notation-and-resource-model); [related work](../references/RELATED_WORK.md); [counted resources](../science/interpretation.md#counted-and-additional-resources) and [contribution and evidence](../science/interpretation.md#contribution-and-evidence).
+
+### M30. The complete scientific mechanism
+
+**Central question.** How do the lower reduction and the two constructions explain the cost of implementing a dissipative program?
+
+**Understanding target.** Vectorization places a decay direction in conjugate form. A coherent reference makes the target dynamics produce the unconjugated direction from one known input, with an explicit branch weight. Complete positivity, symmetric Haar moments, and phase-sector averaging bound the achievable correct weight. A diameter-one witness transfers that bound to unrestricted channel simulation. WML attains the universal short-time order, while a collective projector attains the known-sink family's saturating all-time order. Each conclusion retains its accuracy regime and access assumptions.
+
+**Dependencies and story role.** M22, M23, M25, M28, and M29 combine the converse, both matching results, and their attribution. This is the synthesis of the complete argument.
+
+**Conceptual connection.** Storing coefficients in a compact quantum state and reproducing their action on independent data are distinct operational tasks. The dimension factor quantifies that distinction for supplied programs, while the time dependence records how the target dynamics exposes the unknown direction.
+
+**Source pointers.** [The witness and minimax bound](WATROUS_BRIDGE.md#the-witness-and-the-minimax-bound), [the WML bridge](WATROUS_BRIDGE.md#from-wml-to-the-matching-short-time-scale), and [the collective bridge](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [main scientific results](../science/model.md#3-main-results) and [physical interpretation](../science/interpretation.md).
+
+---
+
+[Repository overview](../README.md) · [Watrous bridge](WATROUS_BRIDGE.md) · [Science and model](../science/model.md) · [Related work](../references/RELATED_WORK.md)
+

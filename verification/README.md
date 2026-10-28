@@ -36,7 +36,7 @@ The phase-sector check uses $`n+1`$ evenly spaced phases. Their discrete average
 
 ## Recorded outcome
 
-The committed run passed. The largest core identity residual was approximately $`5.73\times10^{-16}`$, below the core tolerance $`10^{-10}`$. The smallest eigenvalue of the Haar/Choi slack matrix was approximately $`-1.26\times10^{-16}`$, within the same floating-point tolerance. The WML identities had maximum relative residual approximately $`5.17\times10^{-16}`$, below their tolerance $`10^{-12}`$.
+The committed run passed. The largest core identity residual was approximately $`5.72\times10^{-16}`$, below the core tolerance $`10^{-10}`$. The smallest eigenvalue of the Haar/Choi slack matrix was approximately $`-1.26\times10^{-16}`$, within the same floating-point tolerance. The WML identities had maximum relative residual approximately $`5.16\times10^{-16}`$, below their tolerance $`10^{-12}`$.
 
 These numbers describe finite matrix checks. They are not an estimate of theorem correctness or a certification of all dimensions.
 

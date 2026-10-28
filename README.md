@@ -12,7 +12,7 @@ The target is $`e^{t\mathcal D_L}`$, with $`\mathcal D_L(X)=LXL^\dagger-\{L^\dag
 
 ## Principal result
 
-For every fixed CPTP processor consuming $`n`$ supplied programs, its worst-case error satisfies
+The minimum worst-case error over all fixed CPTP processors using $`n`$ supplied programs satisfies
 
 ```math
 \boxed{
@@ -81,6 +81,14 @@ Start with the [model and exact claims](science/model.md), then follow the proof
 | Finite computational checks and recorded outputs | [Verification](verification/README.md) |
 
 [The reading guide](llms.txt) maps scientific questions to their authoritative files.
+
+## Learn the project
+
+The single educational anchor is **John Watrous, *The Theory of Quantum Information* (2018)**. The [Watrous bridge](learning/WATROUS_BRIDGE.md) identifies the relevant sections of the author's available manuscript, translates its notation, and develops the missing steps from channel theory and symmetric tensors to this project's dissipative-programming result.
+
+The [30-milestone map](learning/MILESTONES.md) is a common route through the scientific story. Its **14 background/preliminaries milestones** assemble the state, channel, norm, and symmetry tools into the supplied-copy model. Its **16 narrative/innovation milestones** connect the reference-bearing hard family to the universal converse, the two upper constructions, and their resource interpretation.
+
+The map states understanding targets, earlier dependencies, conceptual connections, and source pointers. The bridge includes a complete four-dimensional example and explains which claims come from the anchor, which are established research ingredients, and which are derived in this project.
 
 ## Reproduce the finite checks
 

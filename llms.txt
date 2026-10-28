@@ -16,6 +16,14 @@ Start with README.md for the results and science/model.md for the exact access m
 - Source attribution and model comparisons: references/RELATED_WORK.md and references/references.bib.
 - Executable finite checks, tolerances, and recorded outputs: verification/README.md.
 
+## Learning route
+
+The single educational anchor is John Watrous, The Theory of Quantum Information (Cambridge University Press, 2018), using the author-hosted manuscript and chapter files. Read learning/WATROUS_BRIDGE.md for the section map, notation translation, and local derivations.
+
+learning/MILESTONES.md contains exactly 30 project-defined milestones: M01-M14 are background/preliminaries, and M15-M30 are narrative/innovation. The map is learner independent. Each entry gives a central question, understanding target, earlier dependencies and story role, conceptual connection, and source pointers.
+
+Use the bridge and milestones together; use the science pages as the authoritative statements and proofs. The four-dimensional worked example explains the fixed-input branch without replacing the general theorem.
+
 ## Essential distinctions
 
 The main lower bound permits all fixed CPTP processors, including collective and adaptive processing with a deterministic copy cap. It is stronger in scope than an algorithm-specific lower bound.
