@@ -2,7 +2,7 @@
 
 Wave matrix Lindbladization (WML) gives a universal processor using one supplied jump-program copy per step. This page reconstructs a conservative explicit bound from the invariant operator space used by Park et al. The upper bound is an inherited result; the constants below are chosen for a short, self-contained proof.
 
-For $`d\ge 2`$, $`t>0`$, and $`\varepsilon>0`$, define
+For $`d\ge 2`$, $`t\gt 0`$, and $`\varepsilon\gt 0`$, define
 
 ```math
 N_d(t,\varepsilon)
@@ -26,7 +26,7 @@ There is a fixed processor using exactly $`N_d(t,\varepsilon)`$ program copies s
 
 Here $`\mathcal D_L(X)=LXL^\dagger-\tfrac12\{L^\dagger L,X\}`$, and each $`\mathcal W_{L,\Delta}`$ is implemented by the same channel acting on the data and one supplied program. The channel's dependence on $`L`$ comes entirely from that program.
 
-In the matching regime $`d\ge4`$, $`0<t\le1`$, and $`0<\varepsilon\le t^2/256`$, the ceiling term already exceeds $`2dt`$. Consequently,
+In the matching regime $`d\ge4`$, $`0\lt t\le1`$, and $`0\lt \varepsilon\le t^2/256`$, the ceiling term already exceeds $`2dt`$. Consequently,
 
 ```math
 n_d^\star(t,\varepsilon)
@@ -54,7 +54,7 @@ The condition $`\|L\|_{\mathrm F}=1`$ makes $`\pi_L`$ a normalized state. Define
 ```math
 M=\frac1{\sqrt d}
 \left(I_1\otimes|\Gamma\rangle\langle\Gamma|_{23}\right)
-\left(\operatorname{SWAP}_{12}\otimes I_3\right)
+\left(\mathrm{SWAP}_{12}\otimes I_3\right)
 ```
 
 and its Lindblad generator
@@ -67,7 +67,7 @@ For a duration $`\Delta\ge0`$, set
 
 ```math
 \mathcal W_{L,\Delta}(X)
-=\operatorname{Tr}_{23}
+=\mathrm{Tr}_{23}
  \left[e^{\Delta\mathcal G}(X\otimes\pi_L)\right].
 ```
 
@@ -141,21 +141,21 @@ Let $`\mathcal A_{\pi_L}(X)=X\otimes\pi_L`$. Reducing each basis map gives
 ```math
 \begin{aligned}
 \mathcal R_1(X)
-&:=\operatorname{Tr}_{23}\mathcal S_1
+&:=\mathrm{Tr}_{23}\mathcal S_1
        \mathcal A_{\pi_L}(X)
  =LXL^\dagger,\\
 \mathcal R_2(X)
-&:=\operatorname{Tr}_{23}\mathcal S_2
+&:=\mathrm{Tr}_{23}\mathcal S_2
        \mathcal A_{\pi_L}(X)
  =\tfrac12\{L^\dagger L,X\},\\
 \mathcal R_3(X)
-&:=\operatorname{Tr}_{23}\mathcal S_3
+&:=\mathrm{Tr}_{23}\mathcal S_3
        \mathcal A_{\pi_L}(X)
  =LXL^\dagger,\\
 \mathcal R_4(X)
-&:=\operatorname{Tr}_{23}\mathcal S_4
+&:=\mathrm{Tr}_{23}\mathcal S_4
        \mathcal A_{\pi_L}(X)
- =\frac{I}{d}\operatorname{Tr}(LXL^\dagger).
+ =\frac{I}{d}\mathrm{Tr}(LXL^\dagger).
 \end{aligned}
 ```
 
@@ -170,12 +170,12 @@ M(X\otimes\pi_L)M^\dagger
 while
 
 ```math
-\operatorname{Tr}_{23}
+\mathrm{Tr}_{23}
 \!\left[A(X\otimes\pi_L)M^\dagger\right]
 =\frac1{\sqrt d}LXL^\dagger.
 ```
 
-The adjoint cross term has the same reduction, which verifies $`\mathcal R_3`$. Applying $`A`$ on both sides and tracing registers $`2,3`$ gives $`I\operatorname{Tr}(LXL^\dagger)`$, which verifies $`\mathcal R_4`$ after its factor $`1/d`$. The corresponding source identities are in Appendix B, Eqs. (B10)-(B12) and the text following Eq. (B28).
+The adjoint cross term has the same reduction, which verifies $`\mathcal R_3`$. Applying $`A`$ on both sides and tracing registers $`2,3`$ gives $`I\mathrm{Tr}(LXL^\dagger)`$, which verifies $`\mathcal R_4`$ after its factor $`1/d`$. The corresponding source identities are in Appendix B, Eqs. (B10)-(B12) and the text following Eq. (B28).
 
 All these identities remain valid after tensoring with the identity on any reference $`R`$: expand an operator on $`R1`$ into reference matrix units and apply the identities to each data block. In the last line, the reference version replaces only the data system by $`I/d`$ and retains the reference's unnormalized marginal.
 
@@ -191,7 +191,7 @@ For $`\mathcal R_1=\mathcal R_3`$, the norm equals $`\|L^\dagger L\|_\infty=a`$.
 In particular,
 
 ```math
-\operatorname{Tr}_{23}\mathcal G
+\mathrm{Tr}_{23}\mathcal G
  \mathcal A_{\pi_L}
 =\mathcal R_1-\mathcal R_2
 =\mathcal D_L.
@@ -205,7 +205,7 @@ For $`k\ge1`$, define
 
 ```math
 \mathcal B_k
-=\operatorname{Tr}_{23}\circ\mathcal G^k
+=\mathrm{Tr}_{23}\circ\mathcal G^k
  \circ\mathcal A_{\pi_L}.
 ```
 
@@ -243,7 +243,7 @@ e^x-1-x
 \le x^2.
 ```
 
-Consequently, whenever $`0\le\Delta<1/(2d)`$,
+Consequently, whenever $`0\le\Delta\lt 1/(2d)`$,
 
 ```math
 \left\|
@@ -311,7 +311,7 @@ n\,\frac12\left\|
 \right\|_\diamond.
 ```
 
-Provided $`n>2dt`$, the one-step condition holds and therefore
+Provided $`n\gt 2dt`$, the one-step condition holds and therefore
 
 ```math
 \frac12\left\|
@@ -321,9 +321,9 @@ Provided $`n>2dt`$, the one-step condition holds and therefore
 \le \frac{(2d+1)t^2}{n}.
 ```
 
-The announced $`N_d(t,\varepsilon)`$ enforces both this strict step-size condition and the desired error. Park et al.'s Lemma 2 also imposes $`n>2dt`$; the integer maximum makes that condition explicit here.
+The announced $`N_d(t,\varepsilon)`$ enforces both this strict step-size condition and the desired error. Park et al.'s Lemma 2 also imposes $`n\gt 2dt`$; the integer maximum makes that condition explicit here.
 
-For $`d\ge4`$, $`0<t\le1`$, and $`\varepsilon\le t^2/256`$, let $`x=t^2/\varepsilon\ge256`$. Then $`(2d+1)x>2dt`$, so
+For $`d\ge4`$, $`0\lt t\le1`$, and $`\varepsilon\le t^2/256`$, let $`x=t^2/\varepsilon\ge256`$. Then $`(2d+1)x\gt 2dt`$, so
 
 ```math
 N_d(t,\varepsilon)

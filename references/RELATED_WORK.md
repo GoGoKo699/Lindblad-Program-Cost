@@ -22,7 +22,7 @@ A processor independent of the unknown jump operator uses at most $`n`$ copies t
 n_d^*(t,\varepsilon)\ge 10^{-4}t^2/\varepsilon
 ```
 
-for $`0<\varepsilon\le\min\{0.039,0.013t\}`$. The proof uses two qubit jumps $`L_\varphi=\operatorname{diag}(1,e^{i\varphi})/\sqrt2`$, together with a reduction from simulated-channel discrimination to discrimination of the supplied programs. It therefore already permits collective processing. Its hard instances have fixed dimension. Their WML analysis gives an $`O(d^2t^2/\varepsilon)`$ upper bound. Theorem numbers and conditions here refer to v3, dated 29 September 2025. Bibliography key: `Go2025`.
+for $`0\lt \varepsilon\le\min\{0.039,0.013t\}`$. The proof uses two qubit jumps $`L_\varphi=\mathrm{diag}(1,e^{i\varphi})/\sqrt2`$, together with a reduction from simulated-channel discrimination to discrimination of the supplied programs. It therefore already permits collective processing. Its hard instances have fixed dimension. Their WML analysis gives an $`O(d^2t^2/\varepsilon)`$ upper bound. Theorem numbers and conditions here refer to v3, dated 29 September 2025. Bibliography key: `Go2025`.
 
 ### Park et al.: linear-dimensional WML performance
 
@@ -32,15 +32,15 @@ for $`0<\varepsilon\le\min\{0.039,0.013t\}`$. The proof uses two qubit jumps $`L
 O\!\left(d\|L\|_\infty^2t^2/\varepsilon\right).
 ```
 
-Theorem 3 and its supporting Lemma 2 supply the upper bound; the lemma assumes the step condition $`n>2dt`$. Frobenius normalization implies $`\|L\|_\infty^2\le1`$, giving worst-case order $`O(dt^2/\varepsilon)`$ in the relevant accuracy regime. Theorem 10 supplies a matching dimension-dependent lower bound for WML on an explicit rank-one jump. It analyzes that algorithm's output. Section VII separately conjectures that the remaining factor of $`d`$ is also necessary for arbitrary processors. Their typical-case analysis concerns normalized random jumps with small operator norm; a worst-case converse does not turn that statement into a typical-case lower bound. Bibliography key: `Park2026`.
+Theorem 3 and its supporting Lemma 2 supply the upper bound; the lemma assumes the step condition $`n\gt 2dt`$. Frobenius normalization implies $`\|L\|_\infty^2\le1`$, giving worst-case order $`O(dt^2/\varepsilon)`$ in the relevant accuracy regime. Theorem 10 supplies a matching dimension-dependent lower bound for WML on an explicit rank-one jump. It analyzes that algorithm's output. Section VII separately conjectures that the remaining factor of $`d`$ is also necessary for arbitrary processors. Their typical-case analysis concerns normalized random jumps with small operator norm; a worst-case converse does not turn that statement into a typical-case lower bound. Bibliography key: `Park2026`.
 
 ## Transposition and conjugation as an inherited ingredient
 
 [Brzić, Grinko, Studziński, and Quintino, arXiv:2603.23628v3](https://arxiv.org/abs/2603.23628v3), dated 26 September 2026, prove in Theorem 1 that optimal deterministic $`N`$-to-$`K`$ universal pure-state transposition has worst-case fidelity
 
 ```math
-\frac{\dim\operatorname{Sym}^N(\mathbb C^D)}
-{\dim\operatorname{Sym}^{N+K}(\mathbb C^D)}.
+\frac{\dim\mathrm{Sym}^N(\mathbb C^D)}
+{\dim\mathrm{Sym}^{N+K}(\mathbb C^D)}.
 ```
 
 Their Appendix B derives the Haar-average formulation and its Choi-operator optimization. For $`K=1`$, the fidelity is $`(N+1)/(N+D)`$. This formula and the underlying symmetric-subspace argument are inherited. Bibliography key: `Brzic2026`.
@@ -52,7 +52,7 @@ The proof in this repository uses the same positive-operator comparison for a co
 ```math
 \int\langle\psi|T(\overline{P_\psi}^{\otimes k})|\psi\rangle\,d\psi
 \le \frac{k+1}{k+D}
-\int\operatorname{Tr}T(\overline{P_\psi}^{\otimes k})\,d\psi.
+\int\mathrm{Tr}T(\overline{P_\psi}^{\otimes k})\,d\psi.
 ```
 
 This is the success-weighted formulation needed for a postselected branch, including state-dependent success probabilities. It follows directly from positivity of the Choi operator and $`\Pi_{\mathrm{sym}}^{(k+1)}\le\Pi_{\mathrm{sym}}^{(k)}\otimes I`$. It is not claimed as a separate new conjugation limit.

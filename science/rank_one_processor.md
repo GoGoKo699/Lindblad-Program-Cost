@@ -27,16 +27,16 @@ A program is $`|s\rangle|\bar\phi\rangle`$. Its fixed sink factor can be discard
 \mathcal E_{\phi,t}(X)
 =
 X-\beta(PX+XP)+\beta^2PXP
-+(2\beta-\beta^2)\operatorname{Tr}(PX)P_s.
++(2\beta-\beta^2)\mathrm{Tr}(PX)P_s.
 ```
 
-This follows from the Kraus operators $`I-\beta P`$ and $`\sqrt{2\beta-\beta^2}\,|s\rangle\langle\phi|`$. Since $`P`$ has rank one, $`PXP=\operatorname{Tr}(PX)P`$.
+This follows from the Kraus operators $`I-\beta P`$ and $`\sqrt{2\beta-\beta^2}\,|s\rangle\langle\phi|`$. Since $`P`$ has rank one, $`PXP=\mathrm{Tr}(PX)P`$.
 
 The basis used to conjugate $`|\phi\rangle`$ is the same known basis used in the program vectorization.
 
 ## 2. A parameter-independent contraction
 
-Take an integer $`n\ge1`$. The $`n`$ program copies lie in $`\operatorname{Sym}^n(\overline{\mathcal A})`$. This symmetric subspace is known independently of $`\phi`$. It can be used as a mathematical description of the original registers; no efficient compression circuit is assumed.
+Take an integer $`n\ge1`$. The $`n`$ program copies lie in $`\mathrm{Sym}^n(\overline{\mathcal A})`$. This symmetric subspace is known independently of $`\phi`$. It can be used as a mathematical description of the original registers; no efficient compression circuit is assumed.
 
 To define the processor on the full tensor-product program space, first project onto this known symmetric subspace and its orthogonal complement. Use the construction below on the symmetric outcome and any fixed trace-and-prepare channel on the other outcome. This is a CPTP extension, and every valid supplied program enters the symmetric outcome with certainty.
 
@@ -90,7 +90,7 @@ I.
 
 The degree-$`n`$ and degree-$`n-1`$ output memory spaces can be placed in an orthogonal direct sum. Discarding that memory gives the system output. Thus this is a finite, fixed CPTP processor using exactly the supplied $`n`$ copies.
 
-The interval $`\alpha\in[0,2]`$ is material. For $`\alpha>1`$, the surviving amplitude on $`\Pi`$ is negative, but the operation remains CPTP. Requiring the joint processor itself to be a positive-time amplitude-damping semigroup would impose an unnecessary restriction on the allowed processor class.
+The interval $`\alpha\in[0,2]`$ is material. For $`\alpha\gt 1`$, the surviving amplitude on $`\Pi`$ is negative, but the operation remains CPTP. Requiring the joint processor itself to be a positive-time amplitude-damping semigroup would impose an unnecessary restriction on the allowed processor class.
 
 ## 3. Program contractions
 
@@ -116,12 +116,12 @@ a_i|\bar\phi\rangle^{\otimes n}
 For every system operator $`X`$, this gives
 
 ```math
-\operatorname{Tr}_{\mathrm{prog}}
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[\Pi(X\otimes\sigma_\phi)\bigr]
 =
 qPX,
 \qquad
-\operatorname{Tr}_{\mathrm{prog}}
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[(X\otimes\sigma_\phi)\Pi\bigr]
 =
 qXP.
@@ -130,10 +130,10 @@ qXP.
 The quadratic contraction is
 
 ```math
-\operatorname{Tr}_{\mathrm{prog}}
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[\Pi(X\otimes\sigma_\phi)\Pi\bigr]
 =
-\operatorname{Tr}(PX)
+\mathrm{Tr}(PX)
 \left[
 q^2P+\frac{q^2}{n}(I_{\mathcal A}-P)
 \right].
@@ -184,7 +184,7 @@ The preceding contractions show that the reduced processor channel $`\widetilde{
 -
 \mathcal E_{\phi,t}(X)
 =
-\frac{\beta^2}{n}\operatorname{Tr}(PX)
+\frac{\beta^2}{n}\mathrm{Tr}(PX)
 \bigl[I_{\mathcal A}-P-(m-1)P_s\bigr].
 ```
 
@@ -200,7 +200,7 @@ For $`m\ge2`$, define
 \tau_\perp=\frac{I_{\mathcal A}-P}{m-1}.
 ```
 
-The error map is $`X\mapsto\delta_{\mathrm{coll}}\operatorname{Tr}(PX)(\tau_\perp-P_s)`$. The two output states have orthogonal supports. Therefore,
+The error map is $`X\mapsto\delta_{\mathrm{coll}}\mathrm{Tr}(PX)(\tau_\perp-P_s)`$. The two output states have orthogonal supports. Therefore,
 
 ```math
 \boxed{
@@ -220,10 +220,10 @@ For completeness, on a joint system-reference density operator the error output 
 ```math
 \omega_R
 =
-\operatorname{Tr}_{\mathcal H}
+\mathrm{Tr}_{\mathcal H}
 \bigl[(P\otimes I_R)\rho_{\mathcal HR}\bigr]
 \ge0,\qquad
-\operatorname{Tr}\omega_R\le1.
+\mathrm{Tr}\omega_R\le1.
 ```
 
 Its trace norm is at most $`2\delta_{\mathrm{coll}}`$. A system input $`P`$ attains equality. Thus the error calculation includes arbitrary reference entanglement.
@@ -232,10 +232,10 @@ Its trace norm is at most $`2\delta_{\mathrm{coll}}`$. A system input $`P`$ atta
 
 Let $`n^\star_{d,s}(t,\varepsilon)`$ denote the minimax copy count over this known-sink rank-one family. The processor may know $`|s\rangle`$ and its orthogonal complement, but not $`|\phi\rangle`$.
 
-For $`d\ge4`$, $`t>0`$, and
+For $`d\ge4`$, $`t\gt 0`$, and
 
 ```math
-0<\varepsilon\le\frac{\beta(t)^2}{16},
+0\lt \varepsilon\le\frac{\beta(t)^2}{16},
 ```
 
 the construction uses
@@ -280,4 +280,4 @@ The construction is collective: it uses a projector on the system and the symmet
 
 The symmetric input memory has dimension $`\binom{n+m-1}{n}`$, and the output includes a degree-$`n-1`$ sector of dimension $`\binom{n+m-2}{n-1}`$. These are dimensions of an explicit mathematical implementation, not additional supplied copies.
 
-The [finite verification](../verification/README.md) builds the annihilation operators, constructs this CPTP map directly, and compares its entire superoperator against the derived target-plus-error identity. It includes $`\alpha>1`$ cases so that the full admissible interval is tested.
+The [finite verification](../verification/README.md) builds the annihilation operators, constructs this CPTP map directly, and compares its entire superoperator against the derived target-plus-error identity. It includes $`\alpha\gt 1`$ cases so that the full admissible interval is tested.

@@ -50,7 +50,7 @@ n^\star_{d,s}(t,\varepsilon)
 \right)
 ```
 
-for $`d\ge4`$, $`t>0`$, and $`0<\varepsilon\le\beta(t)^2/16`$.
+for $`d\ge4`$, $`t\gt 0`$, and $`0\lt \varepsilon\le\beta(t)^2/16`$.
 
 The optimal cost in this family therefore saturates at order $`d/\varepsilon`$ for long times. The construction allows a negative surviving amplitude on one known joint projector. That operation is a valid CPTP processor even when it is not itself a positive-time damping semigroup.
 

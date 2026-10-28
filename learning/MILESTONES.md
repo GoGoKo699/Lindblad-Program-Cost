@@ -64,7 +64,7 @@ The background text is John Watrous, *The Theory of Quantum Information* (2018).
 
 ```math
 \mathcal T(X)
-=\operatorname{Tr}_{\mathrm{in}}
+=\mathrm{Tr}_{\mathrm{in}}
 \left[J_{\mathcal T}(I_{\mathrm{out}}\otimes X^{\mathsf T})\right].
 ```
 
@@ -83,7 +83,7 @@ Complete positivity is equivalent to $`J_{\mathcal T}\ge0`$. For a conjugate pur
 **Understanding target.** For normalized states, $`\tfrac12\|\rho-\sigma\|_1`$ is the maximum distinguishing advantage expressed as an effect expectation difference. An effect satisfies $`0\le E\le I`$. More generally, a Hermitian observable whose largest and smallest eigenvalues differ by one obeys
 
 ```math
-\left|\operatorname{Tr}[X(\rho-\sigma)]\right|
+\left|\mathrm{Tr}[X(\rho-\sigma)]\right|
 \le \frac12\|\rho-\sigma\|_1.
 ```
 
@@ -155,7 +155,7 @@ The jump term and anticommutator together preserve trace, and the exponential is
 
 **Central question.** What smaller, parameter-independent space contains all identical pure-state copies?
 
-**Understanding target.** The vector $`|\psi\rangle^{\otimes k}`$ lies in $`\operatorname{Sym}^k(\mathbb C^D)`$, whose dimension is $`h_k=\binom{D+k-1}{k}`$. For a direct sum of a known reference direction and an unknown-vector space, the symmetric tensor power decomposes into orthogonal sectors indexed by how many factors occupy the unknown space. This is a representation of ordinary copy registers and does not assume that the source physically supplies bosons.
+**Understanding target.** The vector $`|\psi\rangle^{\otimes k}`$ lies in $`\mathrm{Sym}^k(\mathbb C^D)`$, whose dimension is $`h_k=\binom{D+k-1}{k}`$. For a direct sum of a known reference direction and an unknown-vector space, the symmetric tensor power decomposes into orthogonal sectors indexed by how many factors occupy the unknown space. This is a representation of ordinary copy registers and does not assume that the source physically supplies bosons.
 
 **Dependencies and story role.** M02 supplies tensor powers. This structure supports both the phase-sector converse and the collective contraction.
 
@@ -187,7 +187,7 @@ where $`P_k`$ projects onto the symmetric subspace. The sphere measure includes 
 
 **Central question.** How can an operator inclusion constrain every completely positive processor at once?
 
-**Understanding target.** If $`A\le B`$ and $`J\ge0`$, then $`\operatorname{Tr}(JA)\le\operatorname{Tr}(JB)`$, without any commutation assumption. In particular, the inclusion of symmetric subspaces gives $`P_{k+1}\le I\otimes P_k`$. Combining this with a positive Choi operator produces an inequality uniform over CP maps, including trace-nonincreasing branches.
+**Understanding target.** If $`A\le B`$ and $`J\ge0`$, then $`\mathrm{Tr}(JA)\le\mathrm{Tr}(JB)`$, without any commutation assumption. In particular, the inclusion of symmetric subspaces gives $`P_{k+1}\le I\otimes P_k`$. Combining this with a positive Choi operator produces an inequality uniform over CP maps, including trace-nonincreasing branches.
 
 **Dependencies and story role.** M05, M11, and M12 provide the Choi matrix and the averaged projectors. This is the mathematical comparison at the center of the conjugation bound.
 
@@ -258,7 +258,7 @@ The full output also contains the remaining reference component and sink populat
 
 **Central question.** How much correct output weight can an arbitrary CP map obtain from conjugate copies?
 
-**Understanding target.** For $`k`$ copies, let $`s_\psi=\operatorname{Tr}\mathcal T(\overline P_\psi^{\otimes k})`$ and $`f_\psi=\operatorname{Tr}[P_\psi\mathcal T(\overline P_\psi^{\otimes k})]`$. The inherited Haar–Choi argument gives
+**Understanding target.** For $`k`$ copies, let $`s_\psi=\mathrm{Tr}\mathcal T(\overline P_\psi^{\otimes k})`$ and $`f_\psi=\mathrm{Tr}[P_\psi\mathcal T(\overline P_\psi^{\otimes k})]`$. The inherited Haar–Choi argument gives
 
 ```math
 \int f_\psi\,d\psi
@@ -336,7 +336,7 @@ The bound already holds for the known-sink hard family. At positive time it excl
 
 **Central question.** When does the finite-copy theorem force a cost of order $`dt^2/\varepsilon`$?
 
-**Understanding target.** For $`0<t\le1`$, $`\beta(t)\ge t/4`$. If $`0<\varepsilon\le t^2/256`$, the error is also at most $`\beta(t)^2/16`$, allowing the additive offset from solving the finite-copy inequality for $`n`$ to be absorbed. The result is
+**Understanding target.** For $`0\lt t\le1`$, $`\beta(t)\ge t/4`$. If $`0\lt \varepsilon\le t^2/256`$, the error is also at most $`\beta(t)^2/16`$, allowing the additive offset from solving the finite-copy inequality for $`n`$ to be absorbed. The result is
 
 ```math
 n_d^\star(t,\varepsilon)
@@ -368,7 +368,7 @@ The sufficiently accurate regime is part of the statement.
 
 **Central question.** How does a local approximation become a uniform copy budget for arbitrary jumps?
 
-**Understanding target.** The invariant operator space bounds the WML remainder, while the exact channel has its own integral remainder. For $`\Delta<1/(2d)`$, the normalized one-step error is at most $`(2d+1)\Delta^2`$. Channel contraction and telescoping then give error at most $`(2d+1)t^2/n`$ when $`n>2dt`$. A sufficient integer budget enforces both conditions:
+**Understanding target.** The invariant operator space bounds the WML remainder, while the exact channel has its own integral remainder. For $`\Delta\lt 1/(2d)`$, the normalized one-step error is at most $`(2d+1)\Delta^2`$. Channel contraction and telescoping then give error at most $`(2d+1)t^2/n`$ when $`n\gt 2dt`$. A sufficient integer budget enforces both conditions:
 
 ```math
 N_d(t,\varepsilon)=
@@ -376,7 +376,7 @@ N_d(t,\varepsilon)=
 \left\lceil\frac{(2d+1)t^2}{\varepsilon}\right\rceil\right\}.
 ```
 
-Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0<t\le1`$, and $`0<\varepsilon\le t^2/256`$.
+Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0\lt t\le1`$, and $`0\lt \varepsilon\le t^2/256`$.
 
 **Dependencies and story role.** M07, M23, and M24 supply composition, the lower regime, and the local processor. This closes the universal short-time matching argument.
 
@@ -388,7 +388,7 @@ Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0<t\
 
 **Central question.** What known joint operation can couple the data to all conjugate program copies at once?
 
-**Understanding target.** For the known-sink family, the active space $`\mathcal A=s^\perp`$ has dimension $`m=d-1`$. The $`n\ge1`$ conjugate program copies lie in $`\operatorname{Sym}^n(\overline{\mathcal A})`$. Define $`C=\sum_i\langle i|\otimes a_i`$, using the occupation-lowering maps $`a_i`$, and extend it by zero on sink inputs. The identity $`CC^\dagger=(n+m-1)I`$ makes
+**Understanding target.** For the known-sink family, the active space $`\mathcal A=s^\perp`$ has dimension $`m=d-1`$. The $`n\ge1`$ conjugate program copies lie in $`\mathrm{Sym}^n(\overline{\mathcal A})`$. Define $`C=\sum_i\langle i|\otimes a_i`$, using the occupation-lowering maps $`a_i`$, and extend it by zero on sink inputs. The identity $`CC^\dagger=(n+m-1)I`$ makes
 
 ```math
 \Pi=\frac{C^\dagger C}{n+m-1}
@@ -416,7 +416,7 @@ an orthogonal projector. The corresponding partial isometry $`J`$ sends the data
 
 **Dependencies and story role.** M04, M07, M10, and M26 supply physicality, the metric, the target, and the joint projector. This establishes the restricted family's copy sufficiency.
 
-**Conceptual connection.** The error transfers intended sink population to the active subspace orthogonal to the decay direction. Values $`\alpha>1`$ remain physical even though the joint operation need not itself be positive-time damping.
+**Conceptual connection.** The error transfers intended sink population to the active subspace orthogonal to the decay direction. Values $`\alpha\gt 1`$ remain physical even though the joint operation need not itself be positive-time damping.
 
 **Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [Kraus construction](../science/rank_one_processor.md#2-a-parameter-independent-contraction) and [exact error channel](../science/rank_one_processor.md#4-exact-error-channel).
 
@@ -433,7 +433,7 @@ an orthogonal projector. The corresponding partial isometry $`J`$ sends the data
 \left\lceil\frac{(d-2)\beta(t)^2}{\varepsilon}\right\rceil
 ```
 
-for $`d\ge4`$, $`t>0`$, and $`0<\varepsilon\le\beta(t)^2/16`$. The chosen upper budget automatically meets the CPTP condition. The optimal order is $`d(1-e^{-t/2})^2/\varepsilon`$ and saturates at order $`d/\varepsilon`$ for long times.
+for $`d\ge4`$, $`t\gt 0`$, and $`0\lt \varepsilon\le\beta(t)^2/16`$. The chosen upper budget automatically meets the CPTP condition. The optimal order is $`d(1-e^{-t/2})^2/\varepsilon`$ and saturates at order $`d/\varepsilon`$ for long times.
 
 **Dependencies and story role.** M22 and M27 supply a lower bound on a subset and an upper bound on the full promised family. This completes the all-time family result.
 

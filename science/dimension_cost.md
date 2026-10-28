@@ -55,7 +55,7 @@ For every integer $`d\ge4`$, every integer $`n\ge0`$, and every $`t\ge0`$,
 \frac{d-3}{n+d-2}.}
 ```
 
-The same bound already holds when the unknown jump is promised to have rank one and a fixed, known sink state. If a processor achieves error at most $`\epsilon>0`$, then necessarily
+The same bound already holds when the unknown jump is promised to have rank one and a fixed, known sink state. If a processor achieves error at most $`\epsilon\gt 0`$, then necessarily
 
 ```math
 n\ge
@@ -151,9 +151,9 @@ Fix any allowed processor using $`n`$ programs and denote its output on the know
 Absorbing the known data input and the fixed sink factors into $`\mathcal P`$, the map from its remaining programs to $`Q\widetilde\rho_\psi Q`$ is CP and trace nonincreasing. Define
 
 ```math
-s_\psi=\operatorname{Tr}(Q\widetilde\rho_\psi),
+s_\psi=\mathrm{Tr}(Q\widetilde\rho_\psi),
 \qquad
-f_\psi=\operatorname{Tr}(P_\psi\widetilde\rho_\psi),
+f_\psi=\mathrm{Tr}(P_\psi\widetilde\rho_\psi),
 \qquad
 c=\frac{n+1}{n+D}.
 ```
@@ -175,11 +175,11 @@ It has eigenvalue $`1-c`$ on $`\psi`$, eigenvalue $`-c`$ on the orthogonal part 
 For any two density matrices $`\rho,\sigma`$ and any Hermitian $`X`$ with spectral diameter one,
 
 ```math
-|\operatorname{Tr}[X(\rho-\sigma)]|
+|\mathrm{Tr}[X(\rho-\sigma)]|
 \le\frac12\|\rho-\sigma\|_1.
 ```
 
-To see this, subtract the smallest eigenvalue of $`X`$ times the identity. The result is an effect between zero and identity, and $`\operatorname{Tr}(\rho-\sigma)=0`$.
+To see this, subtract the smallest eigenvalue of $`X`$ times the identity. The result is an effect between zero and identity, and $`\mathrm{Tr}(\rho-\sigma)=0`$.
 
 Suppose the processor's worst-case normalized diamond error is $`\epsilon_{\mathcal P}`$. Diamond distance bounds the trace distance on the particular input $`|r\rangle`$, so for every $`\psi`$,
 
@@ -187,7 +187,7 @@ Suppose the processor's worst-case normalized diamond error is $`\epsilon_{\math
 \begin{aligned}
 \epsilon_{\mathcal P}
 &\ge
-\operatorname{Tr}\!\left[
+\mathrm{Tr}\!\left[
 X_\psi\left(
 \mathcal E_{L_\psi,t}(|r\rangle\langle r|)
 -\widetilde\rho_\psi\right)\right]\\
@@ -211,10 +211,10 @@ The witness depends on the unknown state only as a mathematical test used to low
 
 ### Corollary 2
 
-For $`d\ge4`$, $`0<t\le1`$, and
+For $`d\ge4`$, $`0\lt t\le1`$, and
 
 ```math
-0<\epsilon\le\frac{t^2}{256},
+0\lt \epsilon\le\frac{t^2}{256},
 ```
 
 the minimum copy cost obeys
@@ -235,7 +235,7 @@ throughout the stated regime, with constants independent of $`d,t,\epsilon`$. Th
 
 #### Proof of the explicit lower constant
 
-For $`0<t\le1`$,
+For $`0\lt t\le1`$,
 
 ```math
 \beta(t)=1-e^{-t/2}\ge\frac{t}{4}.
@@ -255,7 +255,7 @@ where the second inequality uses $`D\ge2`$ and $`D\le2(D-1)`$. Finally, $`\beta(
 
 The finite-copy theorem applies for every $`t\ge0`$. At $`t=0`$, the target is the identity channel and zero copies suffice; the bound is exactly zero. For positive time and $`d\ge4`$, its right-hand side is positive at every finite $`n`$, excluding an exact finite-copy processor for the entire promised family. The proof includes $`n=0`$ through the zero-copy case of the conjugation lemma.
 
-At long times, $`\beta(t)^2`$ approaches one, and the lower bound approaches $`(d-3)/[4(n+d-2)]`$. The matching universal $`dt^2/\epsilon`$ result above is stated for $`0<t\le1`$. The finite-copy theorem does not establish quadratic growth in arbitrarily long evolution time. The construction uses an unknown subspace of dimension at least two, which is why the theorem begins at $`d=4`$.
+At long times, $`\beta(t)^2`$ approaches one, and the lower bound approaches $`(d-3)/[4(n+d-2)]`$. The matching universal $`dt^2/\epsilon`$ result above is stated for $`0\lt t\le1`$. The finite-copy theorem does not establish quadratic growth in arbitrarily long evolution time. The construction uses an unknown subspace of dimension at least two, which is why the theorem begins at $`d=4`$.
 
 Adaptive protocols are included when they have a deterministic cap of $`n`$ source copies. Such a protocol can be supplied all $`n`$ copies at the outset, leave unused copies untouched, and discard them at the end. Its measurement outcomes and feedforward are part of one CPTP processor. Internal heralding is also allowed, with all outcomes included in the channel whose error is assessed. The theorem does not replace this deterministic cap with an expected-copy budget.
 
