@@ -1,0 +1,31 @@
+# Lindblad Program Cost
+
+This repository studies the number of independent quantum program copies required to simulate an unknown single-jump Lindblad evolution.
+
+Start with README.md for the results and science/model.md for the exact access model. The jump is Frobenius normalized, the program is its vectorization with an unnormalized maximally entangled vector, and error is one half of the diamond norm.
+
+## Scientific routes
+
+- Full argument: science/model.md -> science/conjugation.md -> science/dimension_cost.md -> science/upper_bound.md -> science/interpretation.md.
+- Exact minimax assumptions, ancillary resources, and program orientation: science/model.md.
+- Haar/Choi inequality for CP branches, including postselection: science/conjugation.md.
+- Physical reference flag, fixed-input damping reduction, finite-copy lower bound, and short-time corollary: science/dimension_cost.md.
+- Universal WML processor, invariant algebra, remainder estimates, and integer sample budget: science/upper_bound.md.
+- Explicit collective processor for known-sink rank-one jumps, including all-time scaling: science/rank_one_processor.md.
+- Physical meaning, time regimes, and counted resources: science/interpretation.md.
+- Source attribution and model comparisons: references/RELATED_WORK.md and references/references.bib.
+- Executable finite checks, tolerances, and recorded outputs: verification/README.md.
+
+## Essential distinctions
+
+The main lower bound permits all fixed CPTP processors, including collective and adaptive processing with a deterministic copy cap. It is stronger in scope than an algorithm-specific lower bound.
+
+The universal matching law is Theta(d t^2 / epsilon) for d >= 4, 0 < t <= 1, and 0 < epsilon <= t^2 / 256. The finite-copy lower bound holds at all times, but does not imply a universal quadratic long-time law.
+
+The known-sink rank-one family has a separate all-time matching law Theta(d (1 - exp(-t/2))^2 / epsilon), for epsilon <= (1 - exp(-t/2))^2 / 16. Its constructive upper bound must not be transferred to arbitrary jumps.
+
+The conjugation fidelity and WML upper scaling are inherited results. The dissipative reduction and its arbitrary-processor dimension converse are the central contribution. The bibliography preserves exact source versions.
+
+Copy sufficiency does not imply gate efficiency. The program-preparation cost, an inverse preparation oracle, a classical description of the jump, and expected-cost stopping rules are outside the stated resource guarantee.
+
+The written proofs establish the general claims. The numerical checks test specific identities and conventions.
