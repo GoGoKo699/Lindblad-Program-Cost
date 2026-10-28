@@ -1,0 +1,142 @@
+{
+  "core": {
+    "collective_rank_one_processor": {
+      "alpha_greater_than_one_cases": 17,
+      "cases": 38,
+      "max_attained_error_residual": 4.440892098500626e-16,
+      "max_contraction_projector_residual": 3.3306690738754696e-16,
+      "max_full_channel_identity_residual": 5.722246114428857e-16,
+      "max_trace_preservation_residual": 1.8960667787614551e-16
+    },
+    "conjugation_operator": {
+      "cases": 8,
+      "max_symmetric_projector_residual": 3.552713678800501e-16,
+      "minimum_choi_slack_eigenvalue": -1.255092003844746e-16
+    },
+    "hard_family": {
+      "cases": 15,
+      "max_kraus_vs_exponential_residual": 4.856569374645914e-16,
+      "max_success_branch_residual": 2.8251690207800563e-16,
+      "max_vectorization_residual": 0.0
+    },
+    "reference_phase_sectors": {
+      "cases": 5,
+      "max_phase_dephasing_residual": 3.9301268939246396e-16
+    },
+    "seed": 20261028,
+    "status": "passed",
+    "tolerance": 1e-10
+  },
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.12.14",
+    "scipy": "1.17.0"
+  },
+  "scope": "Finite identity and convention checks; general claims rely on the proofs.",
+  "status": "passed",
+  "wml": {
+    "check_count": 18,
+    "checks": [
+      {
+        "dimension": 2,
+        "name": "invariant_map_row_0",
+        "relative_residual": 0.0
+      },
+      {
+        "dimension": 2,
+        "name": "invariant_map_row_1",
+        "relative_residual": 1.780305007145651e-16
+      },
+      {
+        "dimension": 2,
+        "name": "invariant_map_row_2",
+        "relative_residual": 2.681754136043902e-16
+      },
+      {
+        "dimension": 2,
+        "name": "invariant_map_row_3",
+        "relative_residual": 3.2467630633677727e-16
+      },
+      {
+        "dimension": 2,
+        "name": "invariant_map_row_4",
+        "relative_residual": 5.160938683340537e-16
+      },
+      {
+        "dimension": 2,
+        "name": "reference_reduction_R1",
+        "relative_residual": 2.044672065868816e-16
+      },
+      {
+        "dimension": 2,
+        "name": "reference_reduction_R2",
+        "relative_residual": 1.7013278764006919e-16
+      },
+      {
+        "dimension": 2,
+        "name": "reference_reduction_R3",
+        "relative_residual": 2.1977269770131684e-16
+      },
+      {
+        "dimension": 2,
+        "name": "reference_reduction_R4",
+        "relative_residual": 4.535449088888719e-16
+      },
+      {
+        "dimension": 3,
+        "name": "invariant_map_row_0",
+        "relative_residual": 0.0
+      },
+      {
+        "dimension": 3,
+        "name": "invariant_map_row_1",
+        "relative_residual": 3.3484196221417294e-16
+      },
+      {
+        "dimension": 3,
+        "name": "invariant_map_row_2",
+        "relative_residual": 2.0176579908325758e-16
+      },
+      {
+        "dimension": 3,
+        "name": "invariant_map_row_3",
+        "relative_residual": 2.575716214153986e-16
+      },
+      {
+        "dimension": 3,
+        "name": "invariant_map_row_4",
+        "relative_residual": 3.517341562415802e-16
+      },
+      {
+        "dimension": 3,
+        "name": "reference_reduction_R1",
+        "relative_residual": 3.288049449945991e-16
+      },
+      {
+        "dimension": 3,
+        "name": "reference_reduction_R2",
+        "relative_residual": 1.7057757327497288e-16
+      },
+      {
+        "dimension": 3,
+        "name": "reference_reduction_R3",
+        "relative_residual": 3.130427036502852e-16
+      },
+      {
+        "dimension": 3,
+        "name": "reference_reduction_R4",
+        "relative_residual": 4.141181439788793e-16
+      }
+    ],
+    "maximum_relative_residual": 5.160938683340537e-16,
+    "passed": true,
+    "reference_dimension": 2,
+    "scope": "Finite invariant-map and data-reference reduction identities; the analytic proof establishes the uniform diamond-norm bound.",
+    "seed": 207,
+    "system_dimensions": [
+      2,
+      3
+    ],
+    "tolerance": 1e-12
+  }
+}
