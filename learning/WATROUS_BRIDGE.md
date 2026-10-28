@@ -23,10 +23,10 @@ The Lindblad evolution, the supplied-copy model, the reference-flag reduction, a
 
 A quantum state is a positive semidefinite matrix of trace one. A unit vector $`|\psi\rangle`$ represents the pure state $`P_\psi=|\psi\rangle\langle\psi|`$. Multiplying the vector by a phase leaves this projector unchanged. In a coherent sum with a fixed reference vector, however, changing only the unknown component's phase generally changes the state. That distinction will be used in the hard family.
 
-For a joint state on registers $`A,B`$, discarding $`B`$ means applying the partial trace $`\operatorname{Tr}_B`$. On matrix units,
+For a joint state on registers $`A,B`$, discarding $`B`$ means applying the partial trace $`\mathrm{Tr}_B`$. On matrix units,
 
 ```math
-\operatorname{Tr}_B
+\mathrm{Tr}_B
 \bigl(|i\rangle\langle j|\otimes|k\rangle\langle\ell|\bigr)
 =\delta_{k\ell}|i\rangle\langle j|.
 ```
@@ -41,7 +41,7 @@ For singular values $`s_j`$, the three norms needed here are
 \|A\|_1=\sum_j s_j,
 \qquad
 \|A\|_{\mathrm F}
-=\sqrt{\operatorname{Tr}(A^\dagger A)}
+=\sqrt{\mathrm{Tr}(A^\dagger A)}
 =\sqrt{\sum_j s_j^2},
 \qquad
 \|A\|_\infty=\max_j s_j.
@@ -53,7 +53,7 @@ The unknown jump $`L`$ acts on $`\mathbb C^d`$ and satisfies $`\|L\|_{\mathrm F}
 
 ```math
 |L\rangle
-=\operatorname{vec}(L)
+=\mathrm{vec}(L)
 =\sum_{i,j}L_{ij}|i\rangle|j\rangle
 =(L\otimes I)|\Gamma_d\rangle,
 \qquad
@@ -96,12 +96,12 @@ The reconstruction formula corresponding to Watrous Eq. (2.66) is
 
 ```math
 \mathcal T(X)
-=\operatorname{Tr}_{\mathrm{in}}
+=\mathrm{Tr}_{\mathrm{in}}
 \left[J_{\mathcal T}
 \bigl(I_{\mathrm{out}}\otimes X^{\mathsf T}\bigr)\right].
 ```
 
-The transpose is required: $`\operatorname{Tr}(|i\rangle\langle j|X^{\mathsf T})=X_{ij}`$, so the right-hand side is $`\sum_{ij}X_{ij}\mathcal T(|i\rangle\langle j|)`$. Omitting the transpose would reconstruct the action on $`X^{\mathsf T}`$.
+The transpose is required: $`\mathrm{Tr}(|i\rangle\langle j|X^{\mathsf T})=X_{ij}`$, so the right-hand side is $`\sum_{ij}X_{ij}\mathcal T(|i\rangle\langle j|)`$. Omitting the transpose would reconstruct the action on $`X^{\mathsf T}`$.
 
 The matrix $`J_{\mathcal T}`$ is positive exactly when $`\mathcal T`$ is CP. Indeed, a Kraus representation gives
 
@@ -109,11 +109,11 @@ The matrix $`J_{\mathcal T}`$ is positive exactly when $`\mathcal T`$ is CP. Ind
 \mathcal T(X)=\sum_a A_aXA_a^\dagger,
 \qquad
 J_{\mathcal T}
-=\sum_a|\operatorname{vec}(A_a)\rangle
-\langle\operatorname{vec}(A_a)|.
+=\sum_a|\mathrm{vec}(A_a)\rangle
+\langle\mathrm{vec}(A_a)|.
 ```
 
-Conversely, a positive-matrix decomposition of $`J_{\mathcal T}`$ can be reshaped into those Kraus operators. Trace preservation is $`\sum_aA_a^\dagger A_a=I`$, equivalently $`\operatorname{Tr}_{\mathrm{out}}J_{\mathcal T}=I`$. Replacing equality by an operator inequality gives the trace-nonincreasing condition.
+Conversely, a positive-matrix decomposition of $`J_{\mathcal T}`$ can be reshaped into those Kraus operators. Trace preservation is $`\sum_aA_a^\dagger A_a=I`$, equivalently $`\mathrm{Tr}_{\mathrm{out}}J_{\mathcal T}=I`$. Replacing equality by an operator inequality gives the trace-nonincreasing condition.
 
 The supplied program has a useful Choi interpretation:
 
@@ -126,7 +126,7 @@ This is the Choi matrix of the CP jump branch. It is a normalized state because 
 For a rank-one operator, vectorization gives
 
 ```math
-\operatorname{vec}(|s\rangle\langle\phi|)
+\mathrm{vec}(|s\rangle\langle\phi|)
 =|s\rangle\otimes|\bar\phi\rangle.
 ```
 
@@ -143,7 +143,7 @@ d_1(\rho,\sigma)=\frac12\|\rho-\sigma\|_1.
 If $`0\le F\le I`$ is a measurement effect, then
 
 ```math
-|\operatorname{Tr}[F(\rho-\sigma)]|
+|\mathrm{Tr}[F(\rho-\sigma)]|
 \le d_1(\rho,\sigma).
 ```
 
@@ -156,7 +156,7 @@ d_\diamond(\mathcal A,\mathcal B)
 =\frac12\|\mathcal A-\mathcal B\|_\diamond
 =\max_{\rho_{SR}}
 \frac12\left\|
-\bigl[(\mathcal A-\mathcal B)\otimes\operatorname{id}_R\bigr]
+\bigl[(\mathcal A-\mathcal B)\otimes\mathrm{id}_R\bigr]
 (\rho_{SR})\right\|_1.
 ```
 
@@ -165,7 +165,7 @@ A reference of dimension equal to the input dimension suffices. Watrous's norm i
 An upper bound must control every input and its reference correlations. For a lower bound, one fixed input and one measurement test already constrain a uniform channel guarantee. If a Hermitian observable $`X`$ has spectral diameter at most one, subtracting its smallest eigenvalue times the identity makes it an effect. Hence
 
 ```math
-|\operatorname{Tr}[X(\rho-\sigma)]|
+|\mathrm{Tr}[X(\rho-\sigma)]|
 \le\frac12\|\rho-\sigma\|_1.
 ```
 
@@ -176,7 +176,7 @@ This form permits the witness used below to contain a negative eigenvalue withou
 Identical pure-state copies lie in the symmetric subspace: permuting their tensor factors leaves the vector unchanged. Write
 
 ```math
-\mathsf S_k=\operatorname{Sym}^k(\mathbb C^D),
+\mathsf S_k=\mathrm{Sym}^k(\mathbb C^D),
 \qquad
 \Pi_k=\frac1{k!}\sum_{\pi\in S_k}U_\pi,
 \qquad
@@ -250,15 +250,15 @@ K_1&=\sqrt{1-e^{-t}}\,|s\rangle\langle\phi|,
 \end{aligned}
 ```
 
-The identity $`2\beta-\beta^2=1-e^{-t}`$ verifies Kraus normalization. To verify the dynamics itself, decompose operators into blocks along $`\phi`$ and its orthogonal complement. The $`P`$ population decays as $`e^{-t}`$ and is transferred to $`s`$. The off-diagonal blocks decay as $`e^{-t/2}`$. The pre-existing block fully orthogonal to $`\phi`$ is retained and additionally receives $`(1-e^{-t})\operatorname{Tr}(PX)P_s`$. These are precisely the solutions of the generator equation.
+The identity $`2\beta-\beta^2=1-e^{-t}`$ verifies Kraus normalization. To verify the dynamics itself, decompose operators into blocks along $`\phi`$ and its orthogonal complement. The $`P`$ population decays as $`e^{-t}`$ and is transferred to $`s`$. The off-diagonal blocks decay as $`e^{-t/2}`$. The pre-existing block fully orthogonal to $`\phi`$ is retained and additionally receives $`(1-e^{-t})\mathrm{Tr}(PX)P_s`$. These are precisely the solutions of the generator equation.
 
 Expanding the same channel gives a useful form for the later construction:
 
 ```math
 \mathcal E_{\phi,t}(X)
 =X-\beta(PX+XP)
-+\beta^2\operatorname{Tr}(PX)P
-+(2\beta-\beta^2)\operatorname{Tr}(PX)P_s.
++\beta^2\mathrm{Tr}(PX)P
++(2\beta-\beta^2)\mathrm{Tr}(PX)P_s.
 ```
 
 These formulas are derived here for the project. They are not being attributed to a Lindblad chapter of the selected book.
@@ -321,8 +321,8 @@ Replacing $`\psi`$ by $`e^{i\theta}\psi`$ does not change $`P_\psi`$, but it cha
 The symmetric program space splits according to the number of factors in the hidden subspace:
 
 ```math
-\operatorname{Sym}^n(\mathbb C|r\rangle\oplus\mathcal H)
-\cong\bigoplus_{k=0}^n\operatorname{Sym}^k(\mathcal H).
+\mathrm{Sym}^n(\mathbb C|r\rangle\oplus\mathcal H)
+\cong\bigoplus_{k=0}^n\mathrm{Sym}^k(\mathcal H).
 ```
 
 Let $`V_k`$ insert $`n-k`$ reference factors and symmetrize with the normalization making it an isometry. Then
@@ -354,10 +354,10 @@ Consider a CP map $`\mathcal T`$ from $`k`$ copies of $`\mathcal H`$ to $`\mathc
 
 ```math
 f_\psi
-=\operatorname{Tr}\bigl[P_\psi\mathcal T(\overline P_\psi^{\otimes k})\bigr],
+=\mathrm{Tr}\bigl[P_\psi\mathcal T(\overline P_\psi^{\otimes k})\bigr],
 \qquad
 s_\psi
-=\operatorname{Tr}\mathcal T(\overline P_\psi^{\otimes k}).
+=\mathrm{Tr}\mathcal T(\overline P_\psi^{\otimes k}).
 ```
 
 For a trace-nonincreasing branch, $`s_\psi`$ is success probability. If it is positive, the conditional probability of passing the $`P_\psi`$ test is $`f_\psi/s_\psi`$. The quantities $`f_\psi`$ and $`s_\psi`$ themselves are linear in the CP map, which is what a channel-error comparison needs.
@@ -367,9 +367,9 @@ Choi reconstruction, the transpose cancellation, and the Haar moment give
 ```math
 \begin{aligned}
 \int f_\psi\,d\psi
-&=\frac1{h_{k+1}}\operatorname{Tr}(J_{\mathcal T}\Pi_{k+1}),\\
+&=\frac1{h_{k+1}}\mathrm{Tr}(J_{\mathcal T}\Pi_{k+1}),\\
 \int s_\psi\,d\psi
-&=\frac1{h_k}\operatorname{Tr}
+&=\frac1{h_k}\mathrm{Tr}
 \bigl[J_{\mathcal T}(I\otimes\Pi_k)\bigr].
 \end{aligned}
 ```
@@ -407,9 +407,9 @@ This is the [conjugation lemma](../science/conjugation.md) in the form used by t
 Fix any processor and supply its known data input $`P_r`$. Let its full output be $`\widetilde\rho_\psi`$. Selecting $`Q`$ defines a CP trace-nonincreasing map from its programs, so set
 
 ```math
-s_\psi=\operatorname{Tr}(Q\widetilde\rho_\psi),
+s_\psi=\mathrm{Tr}(Q\widetilde\rho_\psi),
 \qquad
-f_\psi=\operatorname{Tr}(P_\psi\widetilde\rho_\psi).
+f_\psi=\mathrm{Tr}(P_\psi\widetilde\rho_\psi).
 ```
 
 The selected target has both success and correct-output weight equal to $`p(t)`$. The witness
@@ -425,7 +425,7 @@ Let $`\varepsilon_{\mathcal P}`$ be this processor's worst-case half-diamond err
 ```math
 \begin{aligned}
 \varepsilon_{\mathcal P}
-&\ge\operatorname{Tr}
+&\ge\mathrm{Tr}
 \left[X_\psi\left(\mathcal E_{L_\psi,t}(P_r)
 -\widetilde\rho_\psi\right)\right]\\
 &=p(t)(1-c)-(f_\psi-cs_\psi).
@@ -524,7 +524,7 @@ Q\rho_\psi Q=\frac1{16}P_\psi.
 For any processor using $`n`$ supplied programs, the conjugation coefficient is $`c=(n+1)/(n+2)`$. The witness has eigenvalues $`1/(n+2)`$ and $`-(n+1)/(n+2)`$ on the hidden plane, and zero on the remaining two directions. Its target expectation is
 
 ```math
-\operatorname{Tr}(X_\psi\rho_\psi)
+\mathrm{Tr}(X_\psi\rho_\psi)
 =\frac1{16(n+2)}.
 ```
 
@@ -536,7 +536,7 @@ Its average simulator expectation is nonpositive. Thus
 }
 ```
 
-For a requested error $`\varepsilon`$, this implies $`n\ge1/(16\varepsilon)-2`$ whenever the right-hand side is positive. For example, error at most $`1/1600`$ requires at least $`98`$ copies. This is the all-time finite-copy bound. Since $`2\log2>1`$, this example does not invoke the separate $`0<t\le1`$ matching corollary.
+For a requested error $`\varepsilon`$, this implies $`n\ge1/(16\varepsilon)-2`$ whenever the right-hand side is positive. For example, error at most $`1/1600`$ requires at least $`98`$ copies. This is the all-time finite-copy bound. Since $`2\log2\gt 1`$, this example does not invoke the separate $`0\lt t\le1`$ matching corollary.
 
 ## From WML to the matching short-time scale
 
@@ -549,7 +549,7 @@ Let register 1 contain the data and registers 2,3 contain one program. Define th
 ```math
 M=\frac1{\sqrt d}
 \bigl(I_1\otimes|\Gamma_d\rangle\langle\Gamma_d|_{23}\bigr)
-\bigl(\operatorname{SWAP}_{12}\otimes I_3\bigr),
+\bigl(\mathrm{SWAP}_{12}\otimes I_3\bigr),
 ```
 
 and the known generator
@@ -562,7 +562,7 @@ One step is the channel
 
 ```math
 \mathcal W_{L,\Delta}(X)
-=\operatorname{Tr}_{23}
+=\mathrm{Tr}_{23}
 e^{\Delta\mathcal G}(X\otimes\pi_L).
 ```
 
@@ -579,7 +579,7 @@ M(X\otimes\pi_L)M^\dagger
 The program contraction produces precisely the jump term. The two reduced anticommutator terms produce $`L^\dagger LX/2`$ and $`XL^\dagger L/2`$. Hence
 
 ```math
-\operatorname{Tr}_{23}\mathcal G(X\otimes\pi_L)
+\mathrm{Tr}_{23}\mathcal G(X\otimes\pi_L)
 =\mathcal D_L(X),
 ```
 
@@ -591,7 +591,7 @@ Matching the first derivative makes the local error second order. Its dimension 
 
 ```math
 \left\|
-\operatorname{Tr}_{23}\circ\mathcal G^k
+\mathrm{Tr}_{23}\circ\mathcal G^k
 \circ(X\mapsto X\otimes\pi_L)
 \right\|_\diamond
 \le2a(2d)^{k-1},
@@ -609,7 +609,7 @@ Summing the exponential series yields
 \le4ad\Delta^2
 ```
 
-when $`0\le\Delta<1/(2d)`$. The last inequality uses $`e^x-1-x\le x^2`$ for $`0\le x\le1`$. For the exact channel, $`\|\mathcal D_L\|_\diamond\le2a`$ and the integral Taylor remainder give
+when $`0\le\Delta\lt 1/(2d)`$. The last inequality uses $`e^x-1-x\le x^2`$ for $`0\le x\le1`$. For the exact channel, $`\|\mathcal D_L\|_\diamond\le2a`$ and the integral Taylor remainder give
 
 ```math
 \left\|e^{\Delta\mathcal D_L}
@@ -630,7 +630,7 @@ Now set $`\Delta=t/n`$ and use a fresh copy at every step. A telescoping expansi
 d_\diamond\left(\mathcal W_{L,t/n}^{\,n},e^{t\mathcal D_L}\right)
 \le n(2d+1)(t/n)^2
 =\frac{(2d+1)t^2}{n},
-\qquad n>2dt.
+\qquad n\gt 2dt.
 ```
 
 An explicit sufficient integer count is therefore
@@ -647,7 +647,7 @@ The first term enforces the step-size condition. The second enforces the request
 
 ### Matching the converse in its stated regime
 
-For $`0<t\le1`$, the elementary bound $`\beta(t)\ge t/4`$ holds. If also $`0<\varepsilon\le t^2/256`$, then $`\varepsilon\le\beta(t)^2/16`$. Set $`A=\beta(t)^2/(4\varepsilon)\ge4`$. The finite-copy converse gives
+For $`0\lt t\le1`$, the elementary bound $`\beta(t)\ge t/4`$ holds. If also $`0\lt \varepsilon\le t^2/256`$, then $`\varepsilon\le\beta(t)^2/16`$. Set $`A=\beta(t)^2/(4\varepsilon)\ge4`$. The finite-copy converse gives
 
 ```math
 n\ge A(D-1)-D
@@ -671,7 +671,7 @@ In this regime the ceiling term in $`N_d`$ already enforces the strict step cond
 \le\frac{3dt^2}{\varepsilon}
 }
 \quad
-\left(d\ge4,\ 0<t\le1,\ 0<\varepsilon\le\frac{t^2}{256}\right).
+\left(d\ge4,\ 0\lt t\le1,\ 0\lt \varepsilon\le\frac{t^2}{256}\right).
 ```
 
 The upper construction is sequential, but its existence is enough for the unrestricted minimax upper bound. The converse already permits collective processing. Together they show that allowing more general processors cannot remove the dimension factor in this regime.
@@ -688,7 +688,7 @@ The hard family also suggests a separate constructive question. Suppose the jump
 
 The symbol $`m`$ refers to this entire active space. It differs from the converse's $`D=d-2`$, which reserves one active direction as a known reference.
 
-For the construction, take $`m\ge2`$ and an integer $`n\ge1`$. After discarding the fixed sink factors, the programs are $`|\bar\phi\rangle^{\otimes n}`$. They lie in $`\operatorname{Sym}^n(\overline{\mathcal A})`$, where $`\overline{\mathcal A}`$ is the coordinatewise conjugate of the known active space. Choose a known orthonormal data basis $`\{|i\rangle\}_{i=1}^m`$ for $`\mathcal A`$ and the conjugate basis $`\{|\bar i\rangle\}_{i=1}^m`$ for the program modes. Thus $`\phi=\sum_i\phi_i|i\rangle`$ corresponds to $`\bar\phi=\sum_i\bar\phi_i|\bar i\rangle`$. The following operations are known linear maps on that symmetric space. An occupation basis makes them explicit; no physical bosonic encoding is assumed.
+For the construction, take $`m\ge2`$ and an integer $`n\ge1`$. After discarding the fixed sink factors, the programs are $`|\bar\phi\rangle^{\otimes n}`$. They lie in $`\mathrm{Sym}^n(\overline{\mathcal A})`$, where $`\overline{\mathcal A}`$ is the coordinatewise conjugate of the known active space. Choose a known orthonormal data basis $`\{|i\rangle\}_{i=1}^m`$ for $`\mathcal A`$ and the conjugate basis $`\{|\bar i\rangle\}_{i=1}^m`$ for the program modes. Thus $`\phi=\sum_i\phi_i|i\rangle`$ corresponds to $`\bar\phi=\sum_i\bar\phi_i|\bar i\rangle`$. The following operations are known linear maps on that symmetric space. An occupation basis makes them explicit; no physical bosonic encoding is assumed.
 
 ### A known contraction creates the unknown overlap
 
@@ -761,22 +761,22 @@ A_0^\dagger A_0+A_1^\dagger A_1
 
 Discarding the output memory therefore defines a channel. A CPTP extension to invalid, nonsymmetric program inputs is obtained by first projecting onto the known symmetric subspace and using any fixed trace-and-prepare channel on its complement. Valid supplied programs enter the symmetric outcome with certainty.
 
-The interval $`1<\alpha\le2`$ is physically allowed: the surviving amplitude on the range of $`\Pi`$ is then negative. Complete positivity depends on the Kraus representation and normalization, not on that amplitude being positive. The allowed processor class does not require this joint operation to be a positive-time damping semigroup.
+The interval $`1\lt \alpha\le2`$ is physically allowed: the surviving amplitude on the range of $`\Pi`$ is then negative. Complete positivity depends on the Kraus representation and normalization, not on that amplitude being positive. The allowed processor class does not require this joint operation to be a positive-time damping semigroup.
 
 Let $`\sigma_\phi=\overline P_\phi^{\otimes n}`$ and $`q=n/N`$. Contraction with the coherent program gives
 
 ```math
 \begin{aligned}
-\operatorname{Tr}_{\mathrm{prog}}
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[\Pi(X\otimes\sigma_\phi)\bigr]&=qPX,\\
-\operatorname{Tr}_{\mathrm{prog}}
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[(X\otimes\sigma_\phi)\Pi\bigr]&=qXP,\\
-\operatorname{Tr}_{\mathrm{prog}}
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[J(X\otimes\sigma_\phi)J^\dagger\bigr]
-&=q\operatorname{Tr}(PX)P_s,\\
-\operatorname{Tr}_{\mathrm{prog}}
+&=q\mathrm{Tr}(PX)P_s,\\
+\mathrm{Tr}_{\mathrm{prog}}
 \bigl[\Pi(X\otimes\sigma_\phi)\Pi\bigr]
-&=\operatorname{Tr}(PX)
+&=\mathrm{Tr}(PX)
 \left[q^2P+\frac{q^2}{n}(I_{\mathcal A}-P)\right].
 \end{aligned}
 ```
@@ -809,7 +809,7 @@ In particular, $`n\ge m-1`$ suffices at every time. Substituting the contraction
 ```math
 \widetilde{\mathcal E}^{(n)}_{\phi,t}(X)
 -\mathcal E_{\phi,t}(X)
-=\frac{\beta^2}{n}\operatorname{Tr}(PX)
+=\frac{\beta^2}{n}\mathrm{Tr}(PX)
 \bigl[I_{\mathcal A}-P-(m-1)P_s\bigr].
 ```
 
@@ -850,7 +850,7 @@ This construction uses $`n`$ supplied copies coherently. Its symmetric memory di
 
 ### The all-time law and its domain
 
-For $`d\ge4`$, $`t>0`$, and $`0<\varepsilon\le\beta(t)^2/16`$, take
+For $`d\ge4`$, $`t\gt 0`$, and $`0\lt \varepsilon\le\beta(t)^2/16`$, take
 
 ```math
 n=\left\lceil\frac{(d-2)\beta(t)^2}{\varepsilon}\right\rceil.

@@ -35,7 +35,7 @@ n_d^\star(t,\varepsilon)
 }
 ```
 
-for $`d\ge4`$, $`0<t\le1`$, and $`0<\varepsilon\le t^2/256`$. Explicit conservative constants are
+for $`d\ge4`$, $`0\lt t\le1`$, and $`0\lt \varepsilon\le t^2/256`$. Explicit conservative constants are
 
 ```math
 \frac{dt^2}{512\varepsilon}
@@ -61,7 +61,7 @@ n_{d,s}^\star(t,\varepsilon)
 \right)
 ```
 
-for every $`t>0`$, $`d\ge4`$, and $`0<\varepsilon\le(1-e^{-t/2})^2/16`$. This family's cost saturates at order $`d/\varepsilon`$ for long times. The construction matches the desired coherences exactly and leaves a quantified population error.
+for every $`t\gt 0`$, $`d\ge4`$, and $`0\lt \varepsilon\le(1-e^{-t/2})^2/16`$. This family's cost saturates at order $`d/\varepsilon`$ for long times. The construction matches the desired coherences exactly and leaves a quantified population error.
 
 The all-time statement concerns this specified rank-one family. The matching result for arbitrary jumps has the short-time regime stated above.
 

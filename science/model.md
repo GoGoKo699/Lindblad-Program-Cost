@@ -9,7 +9,7 @@ The central question is how the required number of programs depends on the syste
 Let the system Hilbert space be $`\mathcal H=\mathbb C^d`$, with a known computational basis. An unknown operator $`L\in\mathsf L(\mathcal H)`$ obeys
 
 ```math
-\|L\|_{\mathrm F}^2=\operatorname{Tr}(L^\dagger L)=1.
+\|L\|_{\mathrm F}^2=\mathrm{Tr}(L^\dagger L)=1.
 ```
 
 There is one jump and no additional Hamiltonian. The generator and target channel are
@@ -125,8 +125,8 @@ For
 
 ```math
 d\ge4,\qquad
-0<t\le1,\qquad
-0<\varepsilon\le\frac{t^2}{256},
+0\lt t\le1,\qquad
+0\lt \varepsilon\le\frac{t^2}{256},
 ```
 
 the minimum copy cost satisfies
@@ -162,7 +162,7 @@ If the jump is promised to be $`L=|s\rangle\langle\phi|`$, with known sink $`s`$
 \left\lceil\frac{(d-2)\beta(t)^2}{\varepsilon}\right\rceil,
 ```
 
-for $`d\ge4`$, $`t>0`$, and $`0<\varepsilon\le\beta(t)^2/16`$. Thus this family's optimal cost is $`\Theta(d\beta(t)^2/\varepsilon)`$ at all times. The construction is an arbitrary allowed CPTP processor on the data and symmetric program space. Its coherent-memory and gate costs are separate from the copy count.
+for $`d\ge4`$, $`t\gt 0`$, and $`0\lt \varepsilon\le\beta(t)^2/16`$. Thus this family's optimal cost is $`\Theta(d\beta(t)^2/\varepsilon)`$ at all times. The construction is an arbitrary allowed CPTP processor on the data and symmetric program space. Its coherent-memory and gate costs are separate from the copy count.
 
 ## 4. What the reduction must preserve
 

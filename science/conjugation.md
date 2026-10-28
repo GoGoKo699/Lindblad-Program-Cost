@@ -20,8 +20,8 @@ Let $`k\ge0`$ be an integer, and let $`\mathcal T`$ be a completely positive map
 
 ```math
 \begin{aligned}
-s_\psi&=\operatorname{Tr}\mathcal T(\overline P_\psi^{\otimes k}),\\
-f_\psi&=\operatorname{Tr}\!\left[P_\psi\,
+s_\psi&=\mathrm{Tr}\mathcal T(\overline P_\psi^{\otimes k}),\\
+f_\psi&=\mathrm{Tr}\!\left[P_\psi\,
 \mathcal T(\overline P_\psi^{\otimes k})\right].
 \end{aligned}
 ```
@@ -37,10 +37,10 @@ When $`\mathcal T`$ is trace nonincreasing, $`s_\psi`$ is its success probabilit
 
 #### Proof
 
-Let $`P_k`$ be the projector onto the symmetric subspace $`\operatorname{Sym}^k(\mathcal H)`$, and let
+Let $`P_k`$ be the projector onto the symmetric subspace $`\mathrm{Sym}^k(\mathcal H)`$, and let
 
 ```math
-h_k=\dim\operatorname{Sym}^k(\mathcal H)
+h_k=\dim\mathrm{Sym}^k(\mathcal H)
 =\binom{D+k-1}{k}.
 ```
 
@@ -53,7 +53,7 @@ For $`k=0`$, set $`P_0=1`$ and $`h_0=1`$. Haar invariance and normalization give
 Use the unnormalized Choi convention
 
 ```math
-\mathcal T(X)=\operatorname{Tr}_{\mathrm{in}}
+\mathcal T(X)=\mathrm{Tr}_{\mathrm{in}}
 \left[J_{\mathcal T}(I_{\mathrm{out}}\otimes X^{\mathsf T})\right],
 \qquad J_{\mathcal T}\ge0.
 ```
@@ -65,14 +65,14 @@ Consequently,
 ```math
 \begin{aligned}
 \int f_\psi\,d\psi
-&=\frac{1}{h_{k+1}}\operatorname{Tr}(J_{\mathcal T}P_{k+1}),\\
+&=\frac{1}{h_{k+1}}\mathrm{Tr}(J_{\mathcal T}P_{k+1}),\\
 \int s_\psi\,d\psi
-&=\frac{1}{h_k}\operatorname{Tr}
+&=\frac{1}{h_k}\mathrm{Tr}
 \left[J_{\mathcal T}(I_{\mathrm{out}}\otimes P_k)\right].
 \end{aligned}
 ```
 
-Here $`P_{k+1}`$ acts on the output factor followed by the $`k`$ input factors, identified in the fixed basis. Its range lies inside $`\mathcal H\otimes\operatorname{Sym}^k(\mathcal H)`$, so
+Here $`P_{k+1}`$ acts on the output factor followed by the $`k`$ input factors, identified in the fixed basis. Its range lies inside $`\mathcal H\otimes\mathrm{Sym}^k(\mathcal H)`$, so
 
 ```math
 P_{k+1}\le I_{\mathrm{out}}\otimes P_k.
@@ -104,9 +104,9 @@ Let $`n\ge0`$ be an integer, and let $`\mathcal T`$ be a completely positive map
 
 ```math
 \begin{aligned}
-s_\psi&=\operatorname{Tr}\mathcal T
+s_\psi&=\mathrm{Tr}\mathcal T
 \left((|\chi_\psi\rangle\langle\chi_\psi|)^{\otimes n}\right),\\
-f_\psi&=\operatorname{Tr}\!\left[P_\psi\,\mathcal T
+f_\psi&=\mathrm{Tr}\!\left[P_\psi\,\mathcal T
 \left((|\chi_\psi\rangle\langle\chi_\psi|)^{\otimes n}\right)\right].
 \end{aligned}
 ```
@@ -126,8 +126,8 @@ As in Lemma 1, the statement includes trace-nonincreasing branches and state-dep
 There is an orthogonal occupation decomposition
 
 ```math
-\operatorname{Sym}^n(\mathbb C|r\rangle\oplus\mathcal H)
-\cong\bigoplus_{k=0}^{n}\operatorname{Sym}^k(\mathcal H).
+\mathrm{Sym}^n(\mathbb C|r\rangle\oplus\mathcal H)
+\cong\bigoplus_{k=0}^{n}\mathrm{Sym}^k(\mathcal H).
 ```
 
 Let $`V_k`$ be the normalized isometry embedding the sector with exactly $`k`$ factors in $`\mathcal H`$ and $`n-k`$ reference factors. The program expands as
@@ -147,7 +147,7 @@ Define the CP maps
 \mathcal T_k(X)=\mathcal T(V_kXV_k^\dagger).
 ```
 
-Here $`\mathcal T_k`$ is initially defined on $`\operatorname{Sym}^k(\mathcal H)`$. Composing with the projection onto that subspace extends it to a CP map on all $`k`$ input factors, so Lemma 1 applies directly.
+Here $`\mathcal T_k`$ is initially defined on $`\mathrm{Sym}^k(\mathcal H)`$. Composing with the projection onto that subspace extends it to a CP map on all $`k`$ input factors, so Lemma 1 applies directly.
 
 After phase averaging,
 
@@ -155,11 +155,11 @@ After phase averaging,
 \begin{aligned}
 \int f_\psi\,d\psi
 &=\sum_{k=0}^{n}w_k
-\int\operatorname{Tr}
+\int\mathrm{Tr}
 \left[P_\psi\,\mathcal T_k(\overline P_\psi^{\otimes k})\right]d\psi,\\
 \int s_\psi\,d\psi
 &=\sum_{k=0}^{n}w_k
-\int\operatorname{Tr}\mathcal T_k(\overline P_\psi^{\otimes k})\,d\psi.
+\int\mathrm{Tr}\mathcal T_k(\overline P_\psi^{\otimes k})\,d\psi.
 \end{aligned}
 ```
 
