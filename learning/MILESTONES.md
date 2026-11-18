@@ -1,8 +1,6 @@
 # Milestones for the scientific argument
 
-These 30 milestones organize the dependencies of the Lindblad program-cost results. M01 through M14 establish the background and the complete access model. M15 through M30 follow the reduction, the two upper constructions, and the resulting resource laws.
-
-The 14 background milestones join channel distinguishability, dissipative dynamics, and symmetric-tensor tools; the 16 narrative milestones then develop the unrestricted converse and the two distinct upper constructions.
+These 30 milestones organize the Lindblad program-cost results. M01 through M14 build the access model from channel distinguishability, dissipative dynamics, and symmetric tensors. M15 through M30 develop the short-time converse, the known orthogonal sink, and the time law for arbitrary rank-one jumps.
 
 The background text is John Watrous, *The Theory of Quantum Information* (2018). The [Watrous bridge](WATROUS_BRIDGE.md) records the verified section and equation pointers, fixes conventions, and supplies the additional dissipative and programming material. Each milestone states a scientific understanding target, its earlier dependencies, its place in the argument, and precise source pointers. The [science pages](../science/model.md) remain the full proofs.
 
@@ -141,15 +139,15 @@ The jump term and anticommutator together preserve trace, and the exponential is
 
 ### M10. Exact rank-one damping
 
-**Central question.** Which populations and coherences change when a single direction decays into an orthogonal sink?
+**Central question.** How does the overlap of the two jump directions change the decay?
 
-**Understanding target.** For $`L=|s\rangle\langle\phi|`$ with $`\phi\perp s`$, define $`P_\phi=|\phi\rangle\langle\phi|`$ and $`\beta=1-e^{-t/2}`$. The exact Kraus operators are $`I-\beta P_\phi`$ and $`\sqrt{2\beta-\beta^2}\,|s\rangle\langle\phi|`$. Population in $`\phi`$ decays as $`e^{-t}`$, coherences with its orthogonal complement decay as $`e^{-t/2}`$, and the lost population enters the sink.
+**Understanding target.** For $`L=|s\rangle\langle\phi|`$, define $`P_\phi=|\phi\rangle\langle\phi|`$ and $`q=1-|\langle\phi|s\rangle|^2`$. The population in $`\phi`$ decays by a factor $`e^{-qt}`$ because the jump returns a fraction $`1-q`$ to that direction. The no-jump operator is $`I-\beta P_\phi`$, where $`\beta=1-e^{-t/2}`$. At $`q=1`$, the other Kraus operator is $`\sqrt{2\beta-\beta^2}\,|s\rangle\langle\phi|`$ and all lost population enters the orthogonal sink.
 
-**Dependencies and story role.** M04 and M09 give the Kraus and generator descriptions. Their agreement supplies an exact family for the reduction.
+**Dependencies and story role.** M04 and M09 give the Kraus and generator descriptions. The orthogonal case supplies the first reduction. The population equation explains why nearly parallel directions matter later.
 
-**Conceptual connection.** A first-order change in a no-jump amplitude can generate a second-order probability in a selected orthogonal subspace.
+**Conceptual connection.** A short-time change in a no-jump amplitude can generate a second-order probability in a selected subspace. When the directions nearly coincide, recycling gives a second mechanism that becomes substantial at time of order $`1/q`$.
 
-**Source pointers.** [Single-jump Lindblad dynamics](WATROUS_BRIDGE.md#single-jump-lindblad-dynamics); [family and target channel](../science/rank_one_processor.md#1-family-and-target-channel).
+**Source pointers.** [Single-jump Lindblad dynamics](WATROUS_BRIDGE.md#single-jump-lindblad-dynamics), [orthogonal-sink channel](../science/rank_one_processor.md#1-family-and-target-channel), and [exact channel for arbitrary rank-one jumps](../science/rank_one_time_law.md#exact-channel).
 
 ### M11. Symmetric tensors and occupation sectors
 
@@ -384,86 +382,65 @@ Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0\lt
 
 **Source pointers.** [From WML to the matching short-time scale](WATROUS_BRIDGE.md#from-wml-to-the-matching-short-time-scale); [WML remainder](../science/upper_bound.md#4-a-conservative-wml-remainder-bound), [exact-channel remainder](../science/upper_bound.md#5-exact-channel-remainder-and-one-step-error), and [integer budget](../science/upper_bound.md#6-composition-and-the-integer-sample-budget).
 
-### M26. The collective contraction and its projector
+### M26. Collective programming for a known orthogonal sink
 
-**Central question.** What known joint operation can couple the data to all conjugate program copies at once?
+**Central question.** Why does the copy cost stop growing once an orthogonal-sink channel has mostly decayed?
 
-**Understanding target.** For the known-sink family, the active space $`\mathcal A=s^\perp`$ has dimension $`m=d-1`$. The $`n\ge1`$ conjugate program copies lie in $`\mathrm{Sym}^n(\overline{\mathcal A})`$. Define $`C=\sum_i\langle i|\otimes a_i`$, using the occupation-lowering maps $`a_i`$, and extend it by zero on sink inputs. The identity $`CC^\dagger=(n+m-1)I`$ makes
+**Understanding target.** The active space is $`s^\perp`$ with dimension $`m=d-1`$. Its occupation-lowering operators give a fixed contraction $`C=\sum_i\langle i|\otimes a_i`$. Because $`CC^\dagger=(n+m-1)I`$, the normalized $`C^\dagger C`$ is a projector and defines a two-Kraus processor. It reproduces the target coherences and incurs exact half-diamond error $`\beta(t)^2(d-2)/n`$ when its Kraus parameter lies in the allowed interval. The budget $`\lceil(d-2)\beta(t)^2/\varepsilon\rceil`$ lies in this interval and matches the converse in order when $`0\lt\varepsilon\le\beta(t)^2/16`$. Since $`\beta(t)=1-e^{-t/2}`$ approaches one, its long-time cost has order $`d/\varepsilon`$.
 
-```math
-\Pi=\frac{C^\dagger C}{n+m-1}
-```
+**Dependencies and story role.** M04, M07, M10, and M11 supply physical operations, error, the target channel, and the program symmetry. M22 supplies the matching converse on a subset of the same family.
 
-an orthogonal projector. The corresponding partial isometry $`J`$ sends the data to the sink and the program memory to degree $`n-1`$, with $`J^\dagger J=\Pi`$.
+**Conceptual connection.** The fixed joint projector uses the conjugate copies to recognize the unknown decay direction without learning a classical description. Its error sends some intended sink population into the active space orthogonal to the decay direction.
 
-**Dependencies and story role.** M08, M11, and M14 provide conjugate orientation, symmetric tensors, and collective access. This begins an explicit upper construction for the restricted family.
+**Source pointers.** [Collective processor bridge](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink), [fixed contraction](../science/rank_one_processor.md#2-a-parameter-independent-contraction), and [exact copy law](../science/rank_one_processor.md#5-matching-copy-law-for-this-family-at-all-times).
 
-**Conceptual connection.** The projector is independent of the unknown direction. Its parameter dependence arises only after inserting the supplied programs into a fixed joint operation.
+### M27. Nearly parallel jumps and the long-time converse
 
-**Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [the parameter-independent contraction](../science/rank_one_processor.md#2-a-parameter-independent-contraction) and [program contractions](../science/rank_one_processor.md#3-program-contractions).
+**Central question.** How can a direction with weak weight in the programs become visible with constant probability in the target output?
 
-### M27. The full CPTP interval and the exact error
+**Understanding target.** Choose a known output direction $`r`$, an unknown unit direction $`\psi\perp r`$, and $`\phi=\sqrt{1-q}\,r+\sqrt q\,\psi`$ with $`q=1/t`$ for $`t\ge4`$. Input $`r`$ leaves constant mass in the unknown direction because $`qt=1`$. A program has weight $`q`$ on the conjugate unknown direction. Averaging its relative phase gives a binomial sector count with mean $`nq`$. The sector-wise conjugation bound, weighted by actual branch success, forces $`\Omega(dt/\varepsilon)`$ copies at sufficiently small error.
 
-**Central question.** Which collective operation matches the target coherences, and what error remains?
+**Dependencies and story role.** M10 gives the slow decay rate. M18 through M21 supply the conjugation inequality, phase averaging, success weights, and operational witness. This reuses the same tools in a family where the sector distribution changes with time.
 
-**Understanding target.** The operators $`A_0=I-\alpha\Pi`$ and $`A_1=\sqrt{\alpha(2-\alpha)}J`$ satisfy Kraus normalization for the full interval $`0\le\alpha\le2`$. With $`q=n/(n+m-1)`$, choose $`\alpha=\beta/q`$. This is allowed when $`n\ge\beta(m-1)/(2-\beta)`$; $`n\ge m-1`$ suffices at every time. For $`m\ge2`$, the induced channel matches all coherence terms and has exact normalized diamond error
+**Conceptual connection.** The known output direction is enough for this lower bound. Slow removal from the decay direction lets the target amplify the weight of the hidden direction without supplying more information in each program.
 
-```math
-\frac12\left\|\widetilde{\mathcal E}^{(n)}_{\phi,t}
--\mathcal E_{\phi,t}\right\|_\diamond
-=\frac{\beta(t)^2(m-1)}{n}.
-```
+**Source pointers.** [Recycling and the lower bound](WATROUS_BRIDGE.md#how-recycling-changes-the-lower-bound) and [processor-independent lower bound](../science/rank_one_time_law.md#processor-independent-lower-bound).
 
-**Dependencies and story role.** M04, M07, M10, and M26 supply physicality, the metric, the target, and the joint projector. This establishes the restricted family's copy sufficiency.
+### M28. Estimating both directions and averaging channels
 
-**Conceptual connection.** The error transfers intended sink population to the active subspace orthogonal to the decay direction. Values $`\alpha\gt 1`$ remain physical even though the joint operation need not itself be positive-time damping.
+**Central question.** How does estimating two unknown directions yield channel error of order $`td/n`$?
 
-**Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [Kraus construction](../science/rank_one_processor.md#2-a-parameter-independent-contraction) and [exact error channel](../science/rank_one_processor.md#4-exact-error-channel).
+**Understanding target.** Each rank-one program factors as $`|s\rangle|\bar\phi\rangle`$. Apply the covariant pure-state measurement separately to the two families of factors, conjugate the classical estimate of $`\bar\phi`$, apply the exact channel for the estimated directions, and discard the estimates. The squared angular error is of order $`d/(n+d)`$ for each direction. Conditional on its angle, each tangent direction has mean zero. The linear term of the channel expansion therefore cancels. A uniform second-order bound proportional to $`t`$ gives an error of order $`td/(n+d)`$ in the averaged channel for $`t\ge1`$.
 
-### M28. All-time matching for the known-sink family
+**Dependencies and story role.** M07 gives the channel error criterion including a reference. M08 identifies the factors, M10 supplies the decay law, and M12 yields the covariant measurement and its fidelity moment. This is the matching upper construction for long times.
 
-**Central question.** Which promise allows the upper and lower time dependence to match beyond short times?
+**Conceptual connection.** A single estimated channel can have first-order error. The protocol implements the average by using the estimates internally. The uniform bound remains valid when the two directions coincide.
 
-**Understanding target.** The hard family of M15 is a subset of all $`L_\phi=|s\rangle\langle\phi|`$ with known $`s`$ and unknown $`\phi\perp s`$. Combining its converse with M27 gives
+**Source pointers.** Watrous §7.2.1 and Lemma 7.24, through [covariant estimation and the averaged channel](WATROUS_BRIDGE.md#covariant-estimation-and-the-averaged-channel); [processor for arbitrary rank-one jumps](../science/rank_one_time_law.md#processor-for-arbitrary-rank-one-jumps).
 
-```math
-\frac{d\,\beta(t)^2}{32\varepsilon}
-\le n^\star_{d,s}(t,\varepsilon)
-\le
-\left\lceil\frac{(d-2)\beta(t)^2}{\varepsilon}\right\rceil
-```
+### M29. Time crossover and a positive decay-rate floor
 
-for $`d\ge4`$, $`t\gt 0`$, and $`0\lt \varepsilon\le\beta(t)^2/16`$. The chosen upper budget automatically meets the CPTP condition. The optimal order is $`d(1-e^{-t/2})^2/\varepsilon`$ and saturates at order $`d/\varepsilon`$ for long times.
+**Central question.** Which regimes can a rank-one jump exhibit as evolution time grows?
 
-**Dependencies and story role.** M22 and M27 supply a lower bound on a subset and an upper bound on the full promised family. This completes the all-time family result.
+**Understanding target.** For $`d\ge4`$, $`t\gt0`$, and $`0\lt\varepsilon\le\min(t^2,1)/1024`$, the arbitrary rank-one copy cost has order $`(d/\varepsilon)\min\{t^2,t\}`$. If a floor $`0\lt q_0\le1/4`$ is supplied and $`q\ge q_0`$ is promised, the order is $`(d/\varepsilon)\min\{t^2,t,q_0^{-1}\}`$. The hard choice for $`t\ge4`$ becomes $`q=\max(q_0,1/t)`$. The same estimator attains saturation by bounding its channel remainder on estimate paths that stay away from $`q=0`$ and bounding the probability of the remaining paths.
 
-**Conceptual connection.** The promise changes the supremum in the minimax problem. This upper construction does not establish an all-time upper law for arbitrary jumps.
+**Dependencies and story role.** M23 and M25 match short times, M27 and M28 match long times, and M26 exhibits the faster known orthogonal-sink promise. The floor result isolates the effect of a minimum population removal rate.
 
-**Source pointers.** [A collective processor for a known sink](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [matching family copy law](../science/rank_one_processor.md#5-matching-copy-law-for-this-family-at-all-times); [long-time scope](../science/interpretation.md#long-times-distinguish-the-family-from-the-general-task).
+**Conceptual connection.** Linear time growth comes from a uniform worst case in which the decay rate can shrink as time increases. A fixed floor limits the longest relevant decay time.
 
-### M29. Attribution, resources, and model boundaries
-
-**Central question.** Which ingredients are inherited, which implication is established here, and which resources remain uncounted?
-
-**Understanding target.** Universal conjugation fidelity and its Haar–Choi proof are credited to Brzić et al. WML originates with Patel and Wilde; Go et al. supply an unrestricted earlier lower bound without a growing dimension factor, and Park et al. supply the linear-dimension upper scaling and an algorithm-specific WML lower bound. The reference-flag dissipative reduction makes the dimension obstruction apply to every processor in the stated model. The collective construction supplies the matching all-time law for the known-sink family.
-
-**Dependencies and story role.** M14, M18, M25, and M28 identify the task and the distinct proof components. This places the results against their precise comparators.
-
-**Conceptual connection.** Copy sufficiency under arbitrary CPTP processing does not establish efficient gates, small memory, or cheap preparation. Stronger oracle access and expected-copy budgets are separate resource models; finite numerical checks support identities but do not prove the uniform theorem.
-
-**Source pointers.** [Notation and resource model](WATROUS_BRIDGE.md#notation-and-resource-model); [related work](../references/RELATED_WORK.md); [counted resources](../science/interpretation.md#counted-and-additional-resources) and [contribution and evidence](../science/interpretation.md#contribution-and-evidence).
+**Source pointers.** [Time regimes and scope](WATROUS_BRIDGE.md#time-regimes-and-scope) and [rank-one time law and rate-floor result](../science/rank_one_time_law.md).
 
 ### M30. The complete scientific mechanism
 
-**Central question.** How do the lower reduction and the two constructions explain the cost of implementing a dissipative program?
+**Central question.** What does the time law tell us about implementing a dissipative program from supplied copies?
 
-**Understanding target.** Vectorization places a decay direction in conjugate form. A coherent reference makes the target dynamics produce the unconjugated direction from one known input, with an explicit branch weight. Complete positivity, symmetric Haar moments, and phase-sector averaging bound the achievable correct weight. A diameter-one witness transfers that bound to unrestricted channel simulation. WML attains the universal short-time order, while a collective projector attains the known-sink family's saturating all-time order. Each conclusion retains its accuracy regime and access assumptions.
+**Understanding target.** Vectorization places the decay direction in conjugate form. A fixed data input makes the target reveal the unconjugated direction, with a weight set by the dynamics. Positive Choi operators and symmetric Haar moments restrict the correct output that any processor can obtain from the conjugate copies. WML attains the universal short-time order, the collective contraction attains the sharper orthogonal-sink law, and covariant estimation with channel averaging attains the long-time rank-one law. Each processor uses a deterministic copy budget and is judged by the data channel on arbitrary referenced inputs.
 
-**Dependencies and story role.** M22, M23, M25, M28, and M29 combine the converse, both matching results, and their attribution. This is the synthesis of the complete argument.
+**Dependencies and story role.** M22, M25, M26, M27, M28, and M29 connect the lower and upper mechanisms to their resource laws. This joins the early access model to all three scientific regimes.
 
-**Conceptual connection.** Storing coefficients in a compact quantum state and reproducing their action on independent data are distinct operational tasks. The dimension factor quantifies that distinction for supplied programs, while the time dependence records how the target dynamics exposes the unknown direction.
+**Conceptual connection.** The dimension factor measures the cost of recovering an unknown direction from conjugate data, while the time dependence measures how strongly the target exposes it. The model counts supplied copies. Gate synthesis and classical estimation costs are separate resources. The source bridge and research citations identify the inherited conjugation, measurement, and WML ingredients.
 
-**Source pointers.** [The witness and minimax bound](WATROUS_BRIDGE.md#the-witness-and-the-minimax-bound), [the WML bridge](WATROUS_BRIDGE.md#from-wml-to-the-matching-short-time-scale), and [the collective bridge](WATROUS_BRIDGE.md#a-collective-processor-for-a-known-sink); [main scientific results](../science/model.md#3-main-results) and [physical interpretation](../science/interpretation.md).
+**Source pointers.** [Watrous bridge and scientific dependencies](WATROUS_BRIDGE.md#scientific-dependencies-and-contribution), [main results](../science/model.md#3-main-results), [physical interpretation](../science/interpretation.md), and [research attribution](../references/RELATED_WORK.md).
 
 ---
 

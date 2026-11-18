@@ -28,11 +28,11 @@
     "tolerance": 1e-10
   },
   "documents": {
-    "documents": 13,
-    "fenced_blocks": 225,
+    "documents": 14,
+    "fenced_blocks": 239,
     "heading_fragments": 83,
-    "inline_math": 734,
-    "math_blocks": 221,
+    "inline_math": 1019,
+    "math_blocks": 235,
     "milestones": {
       "count": 30,
       "fields_per_milestone": 5,
@@ -41,16 +41,50 @@
         "M15-M30": 16
       }
     },
-    "relative_links": 170,
+    "relative_links": 189,
     "scope": "Source navigation and Markdown structure; hosted rendering requires visual inspection.",
     "status": "passed",
-    "table_rows": 52,
+    "table_rows": 58,
     "tables": 6
   },
   "environment": {
     "numpy": "2.3.5",
     "python": "3.12.14",
     "scipy": "1.17.0"
+  },
+  "rank_one_time": {
+    "exact_channel": {
+      "cases": 196,
+      "channel_tolerance": 1e-11,
+      "max_matrix_exponential_residual": 7.156962010494768e-14,
+      "max_trace_preservation_residual": 4.440934966873657e-16,
+      "trace_tolerance": 1e-12
+    },
+    "hard_family": {
+      "minimum_signal": 0.299682300670296,
+      "minimum_signal_minus_analytic_bound": -1.1102230246251565e-16,
+      "rate_floors": [
+        0,
+        0.0001,
+        0.01,
+        0.25
+      ],
+      "time_points": 101
+    },
+    "seed": 73191,
+    "status": "passed",
+    "symmetric_channel_average": {
+      "averaged_error_halving_ratio_range": [
+        3.990528715630556,
+        3.9999973964059743
+      ],
+      "cases": 54,
+      "individual_error_halving_ratio_range": [
+        1.9995126244607253,
+        2.3602466496355583
+      ],
+      "max_averaged_error_over_time_times_angle_squared": 0.7539240620266767
+    }
   },
   "scope": "Finite identities, conventions, and document structure; general claims rely on the proofs and hosted rendering is inspected separately.",
   "status": "passed",

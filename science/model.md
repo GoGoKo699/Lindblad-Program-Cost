@@ -2,7 +2,7 @@
 
 The resource considered here is a collection of quantum programs. Each program is one copy of a pure state encoding an unknown Lindblad jump operator. A fixed processor must use those programs to simulate the associated dissipative channel on an arbitrary input, including an input entangled with a reference.
 
-The central question is how the required number of programs depends on the system dimension. A lower bound restricted to one simulation algorithm does not determine this cost: a different processor may process all programs coherently. The converse below permits every completely positive, trace-preserving processor.
+The central question is how the required number of programs depends on dimension, evolution time, and accuracy. The converse permits every completely positive, trace-preserving processor, including one that processes all programs coherently.
 
 ## 1. Supplied-copy access
 
@@ -149,9 +149,26 @@ n^\star_d(t,\varepsilon)
 
 The [universal upper bound](upper_bound.md) constructs a fixed processor using fresh programs and proves a sufficient integer copy count. Its proof retains the finite-step condition rather than extrapolating a small-step estimate beyond its domain. The universal construction is inherited from wave matrix Lindbladization; the unrestricted-processor converse is the central contribution here.
 
-The exact finite-copy converse holds at all times. The displayed $`t^2`$ matching law is asserted only in the stated regime. In particular, its lower-bound mechanism saturates as $`t\to\infty`$.
+The exact finite-copy converse holds at all times and its lower-bound mechanism saturates as $`t\to\infty`$. The following rank-one result resolves the long-time behavior by choosing a hard jump whose decay rate depends on the target time.
 
-### A matching all-time law for known-sink rank-one jumps
+### An all-time law for arbitrary rank-one jumps
+
+Restrict the supremum in the minimax error to $`L=|s\rangle\langle\phi|`$ with both directions unknown and unit norm. Write the corresponding copy cost as $`n^\star_{\mathrm{rank}\,1}(d,t,\varepsilon)`$. The [rank-one time law](rank_one_time_law.md) gives
+
+```math
+\boxed{
+n^\star_{\mathrm{rank}\,1}(d,t,\varepsilon)
+=\Theta\!\left(\frac{d}{\varepsilon}\min\{t^2,t\}\right)
+}
+```
+
+for $`d\ge4`$, $`t\gt0`$, and $`0\lt\varepsilon\le\min(t^2,1)/1024`$. The case $`t=0`$ uses zero copies.
+
+Set $`q=1-|\langle\phi|s\rangle|^2`$. Bright population decays as $`e^{-qt}`$, and a choice $`q=1/t`$ at long times keeps the output signal constant while reducing the expected number of informative factors in $`n`$ programs to $`n/t`$. The matching processor uses an averaged channel and an error estimate uniform down to $`q=0`$.
+
+With the additional promise $`q\ge q_0`$ for a supplied $`0\lt q_0\le1/4`$, the same proof gives time factor $`\min\{t^2,t,1/q_0\}`$ on the same accuracy domain. The known orthogonal-sink case below has its own finite-copy result.
+
+### An all-time law for known orthogonal-sink rank-one jumps
 
 If the jump is promised to be $`L=|s\rangle\langle\phi|`$, with known sink $`s`$ and unknown unit vector $`\phi\perp s`$, let $`n^\star_{d,s}(t,\varepsilon)`$ be the corresponding minimax copy cost. The [collective processor](rank_one_processor.md) and the same converse give
 
@@ -180,7 +197,8 @@ Finally, the converse uses the full normalized output of the simulator. A witnes
 | How well can a CP branch conjugate unknown state copies? | [Conjugation and reference flags](conjugation.md) |
 | Why does dissipative simulation inherit the dimension cost? | [Universal dimension converse](dimension_cost.md) |
 | Which algorithm supplies the matching universal upper bound? | [Wave matrix Lindbladization](upper_bound.md) |
-| Can the rank-one family attain its time-dependent lower scaling? | [Collective processor](rank_one_processor.md) |
+| Why does the worst-case rank-one copy cost grow at long times? | [Rank-one time law](rank_one_time_law.md) |
+| What changes when the sink is known and orthogonal? | [Collective processor](rank_one_processor.md) |
 | What is the physical meaning of the resource law? | [Interpretation and scope](interpretation.md) |
 | Which ingredients and nearby results are established work? | [Related work](../references/RELATED_WORK.md) |
 | Which finite identities were checked computationally? | [Verification](../verification/README.md) |

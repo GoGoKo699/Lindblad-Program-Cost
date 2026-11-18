@@ -1,6 +1,6 @@
 # From Watrous to the cost of a Lindblad program
 
-The proof uses three connections: an operator becomes a supplied quantum state through vectorization; a desired dissipative channel becomes a probabilistic state-conjugation task; and a restriction on that task becomes a channel-error lower bound. This page develops those connections from the finite-dimensional language of John Watrous, *The Theory of Quantum Information* (Cambridge University Press, 2018).
+Vectorization turns the jump operator into a quantum program. The target channel can reveal an unconjugated direction from those programs, which gives a lower bound through state conjugation. The matching long-time processor estimates two directions and averages the channels it applies. This page connects those steps to John Watrous, *The Theory of Quantum Information* (Cambridge University Press, 2018).
 
 The [author's book page](https://jhwatrous.github.io/books-and-courses.html) provides a manuscript and individual chapters. The locations below refer to that author-hosted text. The subsequent derivations use this repository's notation. The [model](../science/model.md) fixes the resource assumptions and theorem statements; the [milestones](MILESTONES.md) organize the background and proof narrative.
 
@@ -15,7 +15,7 @@ The [author's book page](https://jhwatrous.github.io/books-and-courses.html) pro
 | [§3.1](https://jhwatrous.github.io/TQI.3.pdf) | State discrimination and the operational meaning of trace norm |
 | [§§3.3.2–3.3.3](https://jhwatrous.github.io/TQI.3.pdf) | Completely bounded trace norm and channel discrimination |
 | [§7.1.1, Proposition 7.1](https://jhwatrous.github.io/TQI.7.pdf) | Symmetric tensors and their projector |
-| [§7.2.1, Lemma 7.24, Eq. (7.159)](https://jhwatrous.github.io/TQI.7.pdf) | Uniform spherical measure, Haar measure, and the normalized symmetric-projector moment identity |
+| [§7.2.1, Lemma 7.24, Eq. (7.159)](https://jhwatrous.github.io/TQI.7.pdf) | Uniform spherical measure, Haar measure, and the normalized symmetric-projector moment identity used in the converse and the covariant measurement |
 
 The Lindblad evolution, the supplied-copy model, the reference-flag reduction, and the two simulation constructions are developed locally below. The [related-work account](../references/RELATED_WORK.md) identifies the primary research sources for the inherited conjugation and wave matrix Lindbladization results.
 
@@ -867,12 +867,49 @@ This automatically meets the CPTP condition. The flagged hard family is containe
 
 As time grows, $`\beta(t)`$ approaches one, and this family's cost saturates at order $`d/\varepsilon`$. At $`t=0`$ the identity channel needs no programs. The construction assumes a known sink and a rank-one jump; the matching result for arbitrary jumps remains the separate short-time theorem.
 
+## Arbitrary rank-one jumps over long times
+
+The overlap of the two directions in $`L=|s\rangle\langle\phi|`$ changes the decay time. Each jump out of $`\phi`$ returns a fraction $`|\langle\phi|s\rangle|^2`$ of the transferred population to that direction. The population equation for $`P_\phi=|\phi\rangle\langle\phi|`$ is
+
+```math
+\frac{d}{dt}\mathrm{Tr}(P_\phi\rho_t)
+=-q\,\mathrm{Tr}(P_\phi\rho_t),
+\qquad q=1-|\langle\phi|s\rangle|^2.
+```
+
+For $`q=1`$ this recovers the orthogonal-sink channel. At $`q=0`$ the population is constant and the channel dephases across the two subspaces of $`P_\phi`$. For intermediate $`q`$, the [exact rank-one channel](../science/rank_one_time_law.md#exact-channel) integrates the population transferred into $`s`$ under the subsequent no-jump evolution. Its formula includes both endpoints.
+
+### How recycling changes the lower bound
+
+Take a known unit vector $`r`$ and a hidden unit vector $`\psi\perp r`$. Set $`s=r`$ and $`\phi=\sqrt{1-q}\,r+\sqrt q\,\psi`$. At $`t=10`$ and $`q=1/10`$, starting the data in $`r`$ gives population $`(9/10)e^{-1}`$ in $`\phi`$ and the rest in its orthogonal direction within the span of $`r,\psi`$. That orthogonal direction has squared overlap $`9/10`$ with $`\psi`$. Positivity bounds the coherence between the two output directions, so even destructive interference leaves more than one third of the output in $`\psi`$.
+
+Each program has squared weight $`1/10`$ on $`\bar\psi`$ in its second factor. With 100 copies, averaging the relative phase in the two output tests gives 10 informative factors in expectation. Since the processor can favor high-occupation sectors, the proof weights each sector by its actual success probability and then bounds the total incorrect-direction mass. Setting $`q=1/t`$ maintains a constant target signal and reduces the mean occupation to $`n/t`$. This gives the [processor-independent lower bound](../science/rank_one_time_law.md#processor-independent-lower-bound), including processors that know $`r`$.
+
+### Covariant estimation and the averaged channel
+
+The supplied copy factors as $`|s\rangle|\bar\phi\rangle`$. Estimate the rays of the two factors independently. The normalized symmetric-projector identity in Watrous's Lemma 7.24 gives the covariant measurement on $`n`$ identical factors. If $`v`$ is the true direction, $`x`$ the candidate ray and $`h_n=\dim\mathrm{Sym}^n(\mathbb C^d)`$, its effect density is $`h_n P_x^{\otimes n}`$ with respect to uniform ray measure. Inserting one more factor of $`|\langle x|v\rangle|^2`$ into the outcome average gives expected fidelity $`h_n/h_{n+1}=(n+1)/(n+d)`$.
+
+Choose the estimate's phase so that $`\widehat v=\cos\theta\,v+\sin\theta\,z`$, where $`z`$ is a unit vector perpendicular to $`v`$. At each angle $`\theta`$ the law of $`z`$ is symmetric, so its mean is zero. Conjugate the classical estimate of the second ray to obtain an estimate of $`\phi`$, apply the channel for the two estimates, and discard the outcomes. Conditional symmetry cancels the linear change of the channel along the two angular paths in the outcome average. The expected squared angle is at most a constant multiple of $`(d-1)/(n+d)`$.
+
+The [second-order estimate](../science/rank_one_time_law.md#uniform-second-order-bound) bounds the remaining channel error by a constant times $`td/(n+d)`$ for $`t\ge1`$. The key small-rate step is to differentiate $`q=\|(I-P_\phi)s\|^2`$ along the estimate paths. The first derivative is proportional to at most $`\sqrt q`$ times the total angular displacement, so differentiating the slowly decaying exponential does not cost an extra factor of $`t`$. The error bound concerns the averaged data channel with an arbitrary reference and with the outcomes internal to the processor.
+
+### Time regimes and scope
+
+For $`d\ge4`$, $`t\gt0`$, and $`0\lt\varepsilon\le\min(t^2,1)/1024`$, WML at short times and the averaged processor at long times give the matching law
+
+```math
+n^\star_{\mathrm{rank}\,1}(d,t,\varepsilon)
+=\Theta\!\left(\frac d\varepsilon\min\{t^2,t\}\right).
+```
+
+With a supplied floor $`0\lt q_0\le1/4`$ and the promise $`q\ge q_0`$, the time factor becomes $`\min\{t^2,t,q_0^{-1}\}`$. A hard family can still arrange substantial transfer at $`q=\max(q_0,1/t)`$ when $`t\ge4`$. On the processor side, the paths of sufficiently accurate ray estimates stay away from $`q=0`$. The bound then depends on the lifetime $`1/q_0`$, and the probability of leaving the accurate-estimate region is controlled by the same angular second moment. The [time-law proof](../science/rank_one_time_law.md) quantifies these statements. The orthogonal known-sink construction remains a separate, sharper copy guarantee. The rank-one law counts supplied copies; implementing the collective measurements and synthesizing conditional channels have their own costs.
+
 ## Scientific dependencies and contribution
 
 Watrous supplies the general framework of states, CP maps, Choi operators, operational norms, and symmetric tensors. The universal transposition limit and WML construction are established research ingredients. The reference-flag reduction identifies a fixed-input dissipative output whose success-weighted correct overlap is restricted by that limit. The witness then forces the dimension factor for every processor in the supplied-copy model.
 
-The known-sink construction provides explicit collective sufficiency for the promised family and identifies its all-time dependence. Its formulas are proved in [the construction page](../science/rank_one_processor.md); the [related-work page](../references/RELATED_WORK.md) bounds the attribution claims. The [verification suite](../verification/README.md) checks finite-dimensional identities and normalizations. The general minimax conclusions follow from the analytical arguments and their quantifiers.
+The [collective contraction](../science/rank_one_processor.md) gives the sharper orthogonal known-sink law. For [arbitrary rank-one jumps](../science/rank_one_time_law.md), the absolute rate of population removal sets both the size of the informative program component and the target evolution time needed to reveal it. The new converse uses this connection. The covariant pure-state estimator is an established ingredient, while the time-dependent channel error follows from the new second-order analysis. The [related-work page](../references/RELATED_WORK.md) records attribution. The [verification suite](../verification/README.md) checks finite-dimensional identities and normalizations.
 
 ---
 
-[Milestones](MILESTONES.md) · [Model](../science/model.md) · [Dimension converse](../science/dimension_cost.md) · [WML upper bound](../science/upper_bound.md) · [Collective processor](../science/rank_one_processor.md)
+[Milestones](MILESTONES.md) · [Model](../science/model.md) · [Dimension converse](../science/dimension_cost.md) · [WML upper bound](../science/upper_bound.md) · [Collective processor](../science/rank_one_processor.md) · [Rank-one time law](../science/rank_one_time_law.md)
