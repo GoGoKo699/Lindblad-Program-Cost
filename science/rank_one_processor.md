@@ -197,10 +197,10 @@ For $`m\ge2`$, define
 =
 \frac{\beta^2(m-1)}{n},
 \qquad
-\tau_\perp=\frac{I_{\mathcal A}-P}{m-1}.
+\tau_⟂=\frac{I_{\mathcal A}-P}{m-1}.
 ```
 
-The error map is $`X\mapsto\delta_{\mathrm{coll}}\mathrm{Tr}(PX)(\tau_\perp-P_s)`$. The two output states have orthogonal supports. Therefore,
+The error map is $`X\mapsto\delta_{\mathrm{coll}}\mathrm{Tr}(PX)(\tau_⟂-P_s)`$. The two output states have orthogonal supports. Therefore,
 
 ```math
 \boxed{
@@ -215,7 +215,7 @@ The error map is $`X\mapsto\delta_{\mathrm{coll}}\mathrm{Tr}(PX)(\tau_\perp-P_s)
 }
 ```
 
-For completeness, on a joint system-reference density operator the error output is $`\delta_{\mathrm{coll}}(\tau_\perp-P_s)\otimes\omega_R`$, where
+For completeness, on a joint system-reference density operator the error output is $`\delta_{\mathrm{coll}}(\tau_⟂-P_s)\otimes\omega_R`$, where
 
 ```math
 \omega_R

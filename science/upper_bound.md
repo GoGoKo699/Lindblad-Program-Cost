@@ -15,7 +15,7 @@ N_d(t,\varepsilon)
 There is a fixed processor using exactly $`N_d(t,\varepsilon)`$ program copies such that
 
 ```math
-\sup_{\|L\|_{\mathrm F}=1}
+\sup_{\left\|L\right\|_{\mathrm F}=1}
 \frac12
 \left\|
 \mathcal W_{L,t/N_d}^{\,N_d}
@@ -49,7 +49,7 @@ Let registers $`1,2,3`$ each have dimension $`d`$. Register $`1`$ is the data, a
 \pi_L=|L\rangle\langle L|.
 ```
 
-The condition $`\|L\|_{\mathrm F}=1`$ makes $`\pi_L`$ a normalized state. Define the known operator
+The condition $`\left\|L\right\|_{\mathrm F}=1`$ makes $`\pi_L`$ a normalized state. Define the known operator
 
 ```math
 M=\frac1{\sqrt d}
@@ -179,14 +179,14 @@ The adjoint cross term has the same reduction, which verifies $`\mathcal R_3`$. 
 
 All these identities remain valid after tensoring with the identity on any reference $`R`$: expand an operator on $`R1`$ into reference matrix units and apply the identities to each data block. In the last line, the reference version replaces only the data system by $`I/d`$ and retains the reference's unnormalized marginal.
 
-Set $`a=\|L\|_\infty^2\le1`$. Each reduced map has diamond norm at most $`a`$:
+Set $`a=\left\|L\right\|_\infty^2\le1`$. Each reduced map has diamond norm at most $`a`$:
 
 ```math
-\|\mathcal R_j\|_\diamond\le a,
+\left\|\mathcal R_j\right\|_\diamond\le a,
 \qquad j=1,2,3,4.
 ```
 
-For $`\mathcal R_1=\mathcal R_3`$, the norm equals $`\|L^\dagger L\|_\infty=a`$. For $`\mathcal R_2`$, left and right multiplication each have completely bounded trace norm at most $`a`$. Finally, $`\mathcal R_4`$ is $`\mathcal R_1`$ followed by the completely depolarizing channel, whose diamond norm is one. These arguments bound arbitrary ancilla extensions, not just ordinary output trace distance.
+For $`\mathcal R_1=\mathcal R_3`$, the norm equals $`\left\|L^\dagger L\right\|_\infty=a`$. For $`\mathcal R_2`$, left and right multiplication each have completely bounded trace norm at most $`a`$. Finally, $`\mathcal R_4`$ is $`\mathcal R_1`$ followed by the completely depolarizing channel, whose diamond norm is one. These arguments bound arbitrary ancilla extensions, not just ordinary output trace distance.
 
 In particular,
 
@@ -212,7 +212,7 @@ For $`k\ge1`$, define
 After the first application of $`\mathcal G`$, the coefficient vector in the ordered basis $`(\mathcal S_1,\mathcal S_2,\mathcal S_3,\mathcal S_4)`$ is $`(1,-1,0,0)`$, with sum of absolute values two. Every subsequent row in the composition rules has sum of absolute coefficients at most $`2d`$. There is no return to $`\mathcal S_0`$. Induction therefore gives
 
 ```math
-\|\mathcal B_k\|_\diamond
+\left\|\mathcal B_k\right\|_\diamond
 \le 2a(2d)^{k-1},
 \qquad k\ge1.
 ```
@@ -259,8 +259,8 @@ No sign cancellation between different basis maps is used in this estimate.
 The target generator satisfies
 
 ```math
-\|\mathcal D_L\|_\diamond
-\le \|\mathcal R_1\|_\diamond+\|\mathcal R_2\|_\diamond
+\left\|\mathcal D_L\right\|_\diamond
+\le \left\|\mathcal R_1\right\|_\diamond+\left\|\mathcal R_2\right\|_\diamond
 \le 2a.
 ```
 
@@ -295,7 +295,7 @@ Combining the two remainders and restoring the normalization factor $`1/2`$ yiel
 \end{aligned}
 ```
 
-The first inequality retains the dependence on $`\|L\|_\infty`$. The final inequality supplies a single budget valid for all Frobenius-normalized jumps.
+The first inequality retains the dependence on $`\left\|L\right\|_\infty`$. The final inequality supplies a single budget valid for all Frobenius-normalized jumps.
 
 ## 6. Composition and the integer sample budget
 

@@ -95,7 +95,7 @@ At $`t\le1`$ apply the [existing WML upper bound](upper_bound.md). For $`t\ge1`$
 
 ### Why averaging cancels the first-order error
 
-Relative to the true direction choose the estimate representative $`\widehat v=\cos\theta\,v+\sin\theta\,z`$ with $`z\perp v`$ unit and $`0\le\theta\le\pi/2`$. Given $`\theta`$, the direction $`z`$ is uniform on that sphere, including phase. The POVM and the $`(n+1)`$-copy Haar integral give
+Relative to the true direction choose the estimate representative $`\widehat v=\cos\theta\,v+\sin\theta\,z`$ with $`z⟂ v`$ unit and $`0\le\theta\le\pi/2`$. Given $`\theta`$, the direction $`z`$ is uniform on that sphere, including phase. The POVM and the $`(n+1)`$-copy Haar integral give
 
 ```math
 \mathbb E[\sin^2\theta]=1-\frac{m_{n,d}}{m_{n+1,d}}
@@ -114,18 +114,18 @@ Primes denote differentiation in $`\lambda`$. The projector and the two vectors 
 
 ```math
 \begin{gathered}
-\|P'\|_\infty,\ \|g_u'\|\le2a,
+\left\|P'\right\|_\infty,\ \left\|g_u'\right\|\le2a,
 \qquad
-\|P''\|_\infty,\ \|g_u''\|\le4a^2,\\
+\left\|P''\right\|_\infty,\ \left\|g_u''\right\|\le4a^2,\\
 |q'|\le4a\sqrt q,
 \qquad
 |q''|\le16a^2,
 \qquad
-\|g_u\|^2=q+(1-q)e^{-u}.
+\left\|g_u\right\|^2=q+(1-q)e^{-u}.
 \end{gathered}
 ```
 
-The $`q`$ bounds follow by differentiating $`q=\|(I-P)s\|^2`$, since the first and second derivatives of $`(I-P)s`$ have norms at most $`2a`$ and $`4a^2`$. With $`w=t-u`$, the trace norm of the second derivative of the $`R_t`$ integrand is at most
+The $`q`$ bounds follow by differentiating $`q=\left\|(I-P)s\right\|^2`$, since the first and second derivatives of $`(I-P)s`$ have norms at most $`2a`$ and $`4a^2`$. With $`w=t-u`$, the trace norm of the second derivative of the $`R_t`$ integrand is at most
 
 ```math
 a^2e^{-qw}
@@ -133,9 +133,9 @@ a^2e^{-qw}
 +32w\sqrt q(\sqrt q+e^{-u/2})+16\right].
 ```
 
-The terms containing $`(wq)^2`$ and $`wq`$ times $`e^{-qw}`$ are bounded pointwise by constants. For the terms containing $`e^{-u}`$, use $`w^2q e^{-qw}\le w/e`$ and $`w\le t`$. The cross term containing $`e^{-u/2}`$ also integrates to order $`t`$ since $`w\sqrt q\le t`$. This gives $`\|R_t''\|_1\le144ta^2`$. Applying the same inequalities to the first derivative gives $`\|R_t'\|_1\le16ta`$.
+The terms containing $`(wq)^2`$ and $`wq`$ times $`e^{-qw}`$ are bounded pointwise by constants. For the terms containing $`e^{-u}`$, use $`w^2q e^{-qw}\le w/e`$ and $`w\le t`$. The cross term containing $`e^{-u/2}`$ also integrates to order $`t`$ since $`w\sqrt q\le t`$. This gives $`\left\|R_t''\right\|_1\le144ta^2`$. Applying the same inequalities to the first derivative gives $`\left\|R_t'\right\|_1\le16ta`$.
 
-The map $`X\mapsto A X B`$ has diamond norm at most $`\|A\|_\infty\|B\|_\infty`$. The map $`X\mapsto\mathrm{Tr}(AX)B`$ has diamond norm at most $`\|A\|_\infty\|B\|_1`$. Since $`\|K_t\|_\infty\le1`$ and $`\|R_t\|_1\le1`$, the total diamond norm of the channel's second derivative is at most $`256 t a^2`$ for $`t\ge1`$. Taylor's integral remainder and the cancellation of its linear term yield
+The map $`X\mapsto A X B`$ has diamond norm at most $`\left\|A\right\|_\infty\left\|B\right\|_\infty`$. The map $`X\mapsto\mathrm{Tr}(AX)B`$ has diamond norm at most $`\left\|A\right\|_\infty\left\|B\right\|_1`$. Since $`\left\|K_t\right\|_\infty\le1`$ and $`\left\|R_t\right\|_1\le1`$, the total diamond norm of the channel's second derivative is at most $`256 t a^2`$ for $`t\ge1`$. Taylor's integral remainder and the cancellation of its linear term yield
 
 ```math
 \frac12\left\|\mathbb E[\mathcal E_{t,\widehat s,\widehat\phi}]
@@ -155,7 +155,7 @@ n^\star_{\mathrm{rank}\,1}(d,t,\varepsilon;q_0)
 ```
 
 with $`q_0^{-1}=+\infty`$ when $`q_0=0`$. To obtain the lower bound for $`t\ge4`$, choose $`q=\max(q_0,1/t)`$ in the same hard family. Then $`q\le1/4`$ and $`qt\ge1`$, so the output signal remains above $`1/8`$. The sector argument gives $`n\ge(d-2)/(512q\varepsilon)`$ as above. The orthogonal-sink hard set used for $`t\le4`$ has $`q=1`$ and satisfies the rate floor.
-For a supplied $`q_0\gt0`$, consider the event $`a\le\sqrt{q_0}/4`$. The derivative bound for $`(I-P)s`$ implies $`q_\lambda\ge q_0/4`$ along the complete interpolation on this event. There the same integrand estimates give $`\|R_t''\|_1=O(a^2/q_0)`$ and $`\|R_t'\|_1=O(a/q_0)`$. For terms containing only $`wq`$ and $`e^{-qw}`$, substitute $`x=wq`$ in the integral. For terms also containing $`e^{-u}`$ or $`e^{-u/2}`$, use $`w e^{-qw}=O(1/q)`$, $`w^2q e^{-qw}=O(1/q)`$, and $`w\sqrt q\,e^{-qw}=O(1/\sqrt q)`$ before integrating the remaining exponential.
+For a supplied $`q_0\gt0`$, consider the event $`a\le\sqrt{q_0}/4`$. The derivative bound for $`(I-P)s`$ implies $`q_\lambda\ge q_0/4`$ along the complete interpolation on this event. There the same integrand estimates give $`\left\|R_t''\right\|_1=O(a^2/q_0)`$ and $`\left\|R_t'\right\|_1=O(a/q_0)`$. For terms containing only $`wq`$ and $`e^{-qw}`$, substitute $`x=wq`$ in the integral. For terms also containing $`e^{-u}`$ or $`e^{-u/2}`$, use $`w e^{-qw}=O(1/q)`$, $`w^2q e^{-qw}=O(1/q)`$, and $`w\sqrt q\,e^{-qw}=O(1/\sqrt q)`$ before integrating the remaining exponential.
 
 The event depends only on the two angles, so the first-order term still averages to zero there. The complementary event has probability at most $`16\mathbb E[a^2]/q_0`$ by Markov's inequality and half-diamond error at most one. The same processor therefore also gives error $`O(d/[(n+d)q_0])`$ for $`t\ge1`$. Taking the two valid bounds together gives the claimed $`\min\{t,q_0^{-1}\}`$ long-time factor.
 

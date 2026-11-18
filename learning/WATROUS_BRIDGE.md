@@ -38,18 +38,18 @@ Watrous writes the adjoint of a matrix as $`A^*`$; this repository writes $`A^\d
 For singular values $`s_j`$, the three norms needed here are
 
 ```math
-\|A\|_1=\sum_j s_j,
+\left\|A\right\|_1=\sum_j s_j,
 \qquad
-\|A\|_{\mathrm F}
+\left\|A\right\|_{\mathrm F}
 =\sqrt{\mathrm{Tr}(A^\dagger A)}
 =\sqrt{\sum_j s_j^2},
 \qquad
-\|A\|_\infty=\max_j s_j.
+\left\|A\right\|_\infty=\max_j s_j.
 ```
 
-The Frobenius norm is the Schatten 2-norm. We write its subscript as $`\mathrm F`$ so that the normalization of a program cannot be confused with the operator norm controlling a channel estimate. The inequality $`\|A\|_\infty\le\|A\|_{\mathrm F}`$ follows immediately from these formulas.
+The Frobenius norm is the Schatten 2-norm. We write its subscript as $`\mathrm F`$ so that the normalization of a program cannot be confused with the operator norm controlling a channel estimate. The inequality $`\left\|A\right\|_\infty\le\left\|A\right\|_{\mathrm F}`$ follows immediately from these formulas.
 
-The unknown jump $`L`$ acts on $`\mathbb C^d`$ and satisfies $`\|L\|_{\mathrm F}=1`$. Its vectorized program is
+The unknown jump $`L`$ acts on $`\mathbb C^d`$ and satisfies $`\left\|L\right\|_{\mathrm F}=1`$. Its vectorized program is
 
 ```math
 |L\rangle
@@ -65,7 +65,7 @@ The vector $`\Gamma_d`$ is unnormalized. Directly summing matrix entries gives
 ```math
 \langle L|L\rangle
 =\sum_{i,j}|L_{ij}|^2
-=\|L\|_{\mathrm F}^2
+=\left\|L\right\|_{\mathrm F}^2
 =1.
 ```
 
@@ -137,7 +137,7 @@ Thus the supplied hidden direction is complex conjugated. Later, when $`\overlin
 For density operators, define trace distance by
 
 ```math
-d_1(\rho,\sigma)=\frac12\|\rho-\sigma\|_1.
+d_1(\rho,\sigma)=\frac12\left\|\rho-\sigma\right\|_1.
 ```
 
 If $`0\le F\le I`$ is a measurement effect, then
@@ -147,13 +147,13 @@ If $`0\le F\le I`$ is a measurement effect, then
 \le d_1(\rho,\sigma).
 ```
 
-To derive the bound, write the traceless Hermitian difference as $`\rho-\sigma=\Delta_+-\Delta_-`$, where the positive and negative parts have orthogonal support. Each has trace $`\|\rho-\sigma\|_1/2`$. An effect cannot collect more weight than the positive part or remove more weight than the negative part. The projector onto the positive support attains the upper bound. With equal prior probabilities, optimal binary discrimination therefore succeeds with probability $`(1+d_1)/2`$.
+To derive the bound, write the traceless Hermitian difference as $`\rho-\sigma=\Delta_+-\Delta_-`$, where the positive and negative parts have orthogonal support. Each has trace $`\left\|\rho-\sigma\right\|_1/2`$. An effect cannot collect more weight than the positive part or remove more weight than the negative part. The projector onto the positive support attains the upper bound. With equal prior probabilities, optimal binary discrimination therefore succeeds with probability $`(1+d_1)/2`$.
 
 The completely bounded trace norm in Watrous is the diamond norm used here. For the difference of two channels,
 
 ```math
 d_\diamond(\mathcal A,\mathcal B)
-=\frac12\|\mathcal A-\mathcal B\|_\diamond
+=\frac12\left\|\mathcal A-\mathcal B\right\|_\diamond
 =\max_{\rho_{SR}}
 \frac12\left\|
 \bigl[(\mathcal A-\mathcal B)\otimes\mathrm{id}_R\bigr]
@@ -166,7 +166,7 @@ An upper bound must control every input and its reference correlations. For a lo
 
 ```math
 |\mathrm{Tr}[X(\rho-\sigma)]|
-\le\frac12\|\rho-\sigma\|_1.
+\le\frac12\left\|\rho-\sigma\right\|_1.
 ```
 
 This form permits the witness used below to contain a negative eigenvalue without paying an additional factor of two.
@@ -239,7 +239,7 @@ V_0=\sqrt{I-hL^\dagger L},
 
 They obey $`V_0^\dagger V_0+V_1^\dagger V_1=I`$. Expanding the square root shows that their channel is $`\mathcal I+h\mathcal D_L+O(h^2)`$. Repeating steps of duration $`t/m`$ and taking $`m\to\infty`$ gives the exponential in finite dimensions. The jump term transfers population; the anticommutator supplies the corresponding loss and coherence decay. Its trace cancels the jump term's trace.
 
-For $`L=|s\rangle\langle\phi|`$ with unit vectors $`s\perp\phi`$, let $`P=|\phi\rangle\langle\phi|`$ and $`P_s=|s\rangle\langle s|`$. Then $`L^\dagger L=P`$, $`L^2=0`$, and the exact channel is
+For $`L=|s\rangle\langle\phi|`$ with unit vectors $`s⟂\phi`$, let $`P=|\phi\rangle\langle\phi|`$ and $`P_s=|s\rangle\langle s|`$. Then $`L^\dagger L=P`$, $`L^2=0`$, and the exact channel is
 
 ```math
 \begin{aligned}
@@ -587,7 +587,7 @@ so the WML step and the desired semigroup have the same derivative at zero durat
 
 ### Why the accumulated error is of order one over the copy count
 
-Matching the first derivative makes the local error second order. Its dimension coefficient requires controlling higher terms after tracing out the programs. The explicit invariant-span calculation in [the upper-bound proof](../science/upper_bound.md#2-algebra-that-controls-the-higher-order-terms) gives, for $`a=\|L\|_\infty^2\le1`$,
+Matching the first derivative makes the local error second order. Its dimension coefficient requires controlling higher terms after tracing out the programs. The explicit invariant-span calculation in [the upper-bound proof](../science/upper_bound.md#2-algebra-that-controls-the-higher-order-terms) gives, for $`a=\left\|L\right\|_\infty^2\le1`$,
 
 ```math
 \left\|
@@ -609,7 +609,7 @@ Summing the exponential series yields
 \le4ad\Delta^2
 ```
 
-when $`0\le\Delta\lt 1/(2d)`$. The last inequality uses $`e^x-1-x\le x^2`$ for $`0\le x\le1`$. For the exact channel, $`\|\mathcal D_L\|_\diamond\le2a`$ and the integral Taylor remainder give
+when $`0\le\Delta\lt 1/(2d)`$. The last inequality uses $`e^x-1-x\le x^2`$ for $`0\le x\le1`$. For the exact channel, $`\left\|\mathcal D_L\right\|_\diamond\le2a`$ and the integral Taylor remainder give
 
 ```math
 \left\|e^{\Delta\mathcal D_L}
@@ -681,7 +681,7 @@ The upper construction is sequential, but its existence is enough for the unrest
 The hard family also suggests a separate constructive question. Suppose the jump is promised to be $`L=|s\rangle\langle\phi|`$, where the sink is known and $`\phi`$ is any unknown unit vector orthogonal to it. This is a larger family than the flagged hard instances, but smaller than the set of all single jumps. Write
 
 ```math
-\mathcal A=s^\perp,
+\mathcal A=s^⟂,
 \qquad m=\dim\mathcal A=d-1,
 \qquad P=|\phi\rangle\langle\phi|.
 ```
@@ -822,20 +822,20 @@ Put
 ```math
 \eta=\frac{\beta^2(m-1)}n,
 \qquad
-\tau_\perp=\frac{I_{\mathcal A}-P}{m-1}.
+\tau_⟂=\frac{I_{\mathcal A}-P}{m-1}.
 ```
 
 For any joint data-reference density operator, the difference channel produces
 
 ```math
-\eta(\tau_\perp-P_s)\otimes\omega_R,
+\eta(\tau_⟂-P_s)\otimes\omega_R,
 \qquad
 \omega_R
 =(\langle\phi|\otimes I_R)\rho_{SR}
 (|\phi\rangle\otimes I_R).
 ```
 
-The operator $`\omega_R`$ is positive and has trace at most one. Since $`\tau_\perp`$ and $`P_s`$ have orthogonal supports, their difference has trace norm two. The output difference therefore has trace norm at most $`2\eta`$, and the data input $`P`$ attains equality. Restoring the half-diamond convention gives the exact error
+The operator $`\omega_R`$ is positive and has trace at most one. Since $`\tau_⟂`$ and $`P_s`$ have orthogonal supports, their difference has trace norm two. The output difference therefore has trace norm at most $`2\eta`$, and the data input $`P`$ attains equality. Restoring the half-diamond convention gives the exact error
 
 ```math
 \boxed{
@@ -881,7 +881,7 @@ For $`q=1`$ this recovers the orthogonal-sink channel. At $`q=0`$ the population
 
 ### How recycling changes the lower bound
 
-Take a known unit vector $`r`$ and a hidden unit vector $`\psi\perp r`$. Set $`s=r`$ and $`\phi=\sqrt{1-q}\,r+\sqrt q\,\psi`$. At $`t=10`$ and $`q=1/10`$, starting the data in $`r`$ gives population $`(9/10)e^{-1}`$ in $`\phi`$ and the rest in its orthogonal direction within the span of $`r,\psi`$. That orthogonal direction has squared overlap $`9/10`$ with $`\psi`$. Positivity bounds the coherence between the two output directions, so even destructive interference leaves more than one third of the output in $`\psi`$.
+Take a known unit vector $`r`$ and a hidden unit vector $`\psi⟂ r`$. Set $`s=r`$ and $`\phi=\sqrt{1-q}\,r+\sqrt q\,\psi`$. At $`t=10`$ and $`q=1/10`$, starting the data in $`r`$ gives population $`(9/10)e^{-1}`$ in $`\phi`$ and the rest in its orthogonal direction within the span of $`r,\psi`$. That orthogonal direction has squared overlap $`9/10`$ with $`\psi`$. Positivity bounds the coherence between the two output directions, so even destructive interference leaves more than one third of the output in $`\psi`$.
 
 Each program has squared weight $`1/10`$ on $`\bar\psi`$ in its second factor. With 100 copies, averaging the relative phase in the two output tests gives 10 informative factors in expectation. Since the processor can favor high-occupation sectors, the proof weights each sector by its actual success probability and then bounds the total incorrect-direction mass. Setting $`q=1/t`$ maintains a constant target signal and reduces the mean occupation to $`n/t`$. This gives the [processor-independent lower bound](../science/rank_one_time_law.md#processor-independent-lower-bound), including processors that know $`r`$.
 
@@ -891,7 +891,7 @@ The supplied copy factors as $`|s\rangle|\bar\phi\rangle`$. Estimate the rays of
 
 Choose the estimate's phase so that $`\widehat v=\cos\theta\,v+\sin\theta\,z`$, where $`z`$ is a unit vector perpendicular to $`v`$. At each angle $`\theta`$ the law of $`z`$ is symmetric, so its mean is zero. Conjugate the classical estimate of the second ray to obtain an estimate of $`\phi`$, apply the channel for the two estimates, and discard the outcomes. Conditional symmetry cancels the linear change of the channel along the two angular paths in the outcome average. The expected squared angle is at most a constant multiple of $`(d-1)/(n+d)`$.
 
-The [second-order estimate](../science/rank_one_time_law.md#uniform-second-order-bound) bounds the remaining channel error by a constant times $`td/(n+d)`$ for $`t\ge1`$. The key small-rate step is to differentiate $`q=\|(I-P_\phi)s\|^2`$ along the estimate paths. The first derivative is proportional to at most $`\sqrt q`$ times the total angular displacement, so differentiating the slowly decaying exponential does not cost an extra factor of $`t`$. The error bound concerns the averaged data channel with an arbitrary reference and with the outcomes internal to the processor.
+The [second-order estimate](../science/rank_one_time_law.md#uniform-second-order-bound) bounds the remaining channel error by a constant times $`td/(n+d)`$ for $`t\ge1`$. The key small-rate step is to differentiate $`q=\left\|(I-P_\phi)s\right\|^2`$ along the estimate paths. The first derivative is proportional to at most $`\sqrt q`$ times the total angular displacement, so differentiating the slowly decaying exponential does not cost an extra factor of $`t`$. The error bound concerns the averaged data channel with an arbitrary reference and with the outcomes internal to the processor.
 
 ### Time regimes and scope
 

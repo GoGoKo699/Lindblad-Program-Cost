@@ -7,7 +7,7 @@ The resource model supplies independent copies of the normalized vectorized jump
 ```math
 |L\rangle=(L\otimes I)|\Gamma\rangle,
 \qquad |\Gamma\rangle=\sum_{j=1}^{d}|j,j\rangle,
-\qquad \|L\|_F=1.
+\qquad \left\|L\right\|_F=1.
 ```
 
 A processor independent of the unknown jump operator uses at most $`n`$ copies to approximate $`e^{t\mathcal D_L}`$, where $`\mathcal D_L(\rho)=L\rho L^\dagger-\{L^\dagger L,\rho\}/2`$. Error is half the diamond norm. The quantities $`\delta_d(n,t)`$ and $`n_d^*(t,\varepsilon)`$ refer to the minimax error and corresponding sample complexity in this model. A classical description of $`L`$, a state-preparation unitary and its inverse, and additional complex-conjugated versions of the supplied programs are different resources.
@@ -29,10 +29,10 @@ for $`0\lt \varepsilon\le\min\{0.039,0.013t\}`$. The proof uses two qubit jumps 
 [Park et al., arXiv:2605.30301v1](https://arxiv.org/abs/2605.30301v1), dated 28 May 2026, refine WML to the scaling
 
 ```math
-O\!\left(d\|L\|_\infty^2t^2/\varepsilon\right).
+O\!\left(d\left\|L\right\|_\infty^2t^2/\varepsilon\right).
 ```
 
-Theorem 3 and its supporting Lemma 2 supply the upper bound; the lemma assumes the step condition $`n\gt 2dt`$. Frobenius normalization implies $`\|L\|_\infty^2\le1`$, giving worst-case order $`O(dt^2/\varepsilon)`$ in the relevant accuracy regime. Theorem 10 supplies a matching dimension-dependent lower bound for WML on an explicit rank-one jump. It analyzes that algorithm's output. Section VII separately conjectures that the remaining factor of $`d`$ is also necessary for arbitrary processors. Their typical-case analysis concerns normalized random jumps with small operator norm; a worst-case converse does not turn that statement into a typical-case lower bound. Bibliography key: `Park2026`.
+Theorem 3 and its supporting Lemma 2 supply the upper bound; the lemma assumes the step condition $`n\gt 2dt`$. Frobenius normalization implies $`\left\|L\right\|_\infty^2\le1`$, giving worst-case order $`O(dt^2/\varepsilon)`$ in the relevant accuracy regime. Theorem 10 supplies a matching dimension-dependent lower bound for WML on an explicit rank-one jump. It analyzes that algorithm's output. Section VII separately conjectures that the remaining factor of $`d`$ is also necessary for arbitrary processors. Their typical-case analysis concerns normalized random jumps with small operator norm; a worst-case converse does not turn that statement into a typical-case lower bound. Bibliography key: `Park2026`.
 
 ## Transposition and conjugation as an inherited ingredient
 

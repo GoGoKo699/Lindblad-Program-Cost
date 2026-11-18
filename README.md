@@ -2,7 +2,7 @@
 
 A simulator receives quantum copies encoding an unknown Lindblad jump operator and must reproduce its dissipative action on an independent input. The optimal copy cost grows linearly with dimension. For rank-one jumps, its time dependence crosses from quadratic at short times to linear at long times.
 
-The jump acts on a $`d`$-dimensional system, obeys $`\|L\|_{\mathrm F}=1`$, and is supplied through copies of
+The jump acts on a $`d`$-dimensional system, obeys $`\left\|L\right\|_{\mathrm F}=1`$, and is supplied through copies of
 
 ```math
 |L\rangle=(L\otimes I)\sum_{j=1}^{d}|j,j\rangle.
@@ -66,7 +66,7 @@ The universal conjugation bound and WML upper scaling are [established ingredien
 
 ## An orthogonal jump with known sink
 
-For the family $`L=|s\rangle\langle\phi|`$ with known sink $`s`$ and unknown unit vector $`\phi\perp s`$, an explicit collective processor attains
+For the family $`L=|s\rangle\langle\phi|`$ with known sink $`s`$ and unknown unit vector $`\phi⟂ s`$, an explicit collective processor attains
 
 ```math
 n_{d,s}^\star(t,\varepsilon)

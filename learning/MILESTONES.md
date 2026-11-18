@@ -78,11 +78,11 @@ Complete positivity is equivalent to $`J_{\mathcal T}\ge0`$. For a conjugate pur
 
 **Central question.** How does a difference between density operators bound every measurement probability difference?
 
-**Understanding target.** For normalized states, $`\tfrac12\|\rho-\sigma\|_1`$ is the maximum distinguishing advantage expressed as an effect expectation difference. An effect satisfies $`0\le E\le I`$. More generally, a Hermitian observable whose largest and smallest eigenvalues differ by one obeys
+**Understanding target.** For normalized states, $`\tfrac12\left\|\rho-\sigma\right\|_1`$ is the maximum distinguishing advantage expressed as an effect expectation difference. An effect satisfies $`0\le E\le I`$. More generally, a Hermitian observable whose largest and smallest eigenvalues differ by one obeys
 
 ```math
 \left|\mathrm{Tr}[X(\rho-\sigma)]\right|
-\le \frac12\|\rho-\sigma\|_1.
+\le \frac12\left\|\rho-\sigma\right\|_1.
 ```
 
 Subtracting the smallest eigenvalue times the identity turns $`X`$ into an effect without changing its expectation on the traceless difference.
@@ -97,7 +97,7 @@ Subtracting the smallest eigenvalue times the identity turns $`X`$ into an effec
 
 **Central question.** What does it mean to approximate a channel on every possible input?
 
-**Understanding target.** The error convention is $`\tfrac12\|\mathcal A-\mathcal B\|_\diamond`$, including joint inputs with a reference that the channel does not act on. A channel has diamond norm one, and pre- or post-composition with channels cannot increase this distance. A lower bound may use a single chosen input, while an upper bound must control all joint inputs.
+**Understanding target.** The error convention is $`\tfrac12\left\|\mathcal A-\mathcal B\right\|_\diamond`$, including joint inputs with a reference that the channel does not act on. A channel has diamond norm one, and pre- or post-composition with channels cannot increase this distance. A lower bound may use a single chosen input, while an upper bound must control all joint inputs.
 
 **Dependencies and story role.** M02, M04, and M06 connect entangled inputs, physical maps, and state distinguishability. This fixes the error metric for every theorem.
 
@@ -109,7 +109,7 @@ Subtracting the smallest eigenvalue times the identity turns $`X`$ into an effec
 
 **Central question.** How can an operator be encoded as a normalized state without encoding its action as a free operation?
 
-**Understanding target.** The vectorization convention is $`|L\rangle=(L\otimes I)|\Gamma_d\rangle`$ with $`|\Gamma_d\rangle=\sum_j|j,j\rangle`$ unnormalized. Hence $`\langle L|L\rangle=\|L\|_{\mathrm F}^2`$. The Frobenius norm is the square root of the sum of squared singular values, whereas the operator norm is the largest singular value, so $`\|L\|_\infty\le\|L\|_{\mathrm F}`$. A rank-one operator vectorizes as $`|a\rangle\langle b|\mapsto|a\rangle|\bar b\rangle`$.
+**Understanding target.** The vectorization convention is $`|L\rangle=(L\otimes I)|\Gamma_d\rangle`$ with $`|\Gamma_d\rangle=\sum_j|j,j\rangle`$ unnormalized. Hence $`\langle L|L\rangle=\left\|L\right\|_{\mathrm F}^2`$. The Frobenius norm is the square root of the sum of squared singular values, whereas the operator norm is the largest singular value, so $`\left\|L\right\|_\infty\le\left\|L\right\|_{\mathrm F}`$. A rank-one operator vectorizes as $`|a\rangle\langle b|\mapsto|a\rangle|\bar b\rangle`$.
 
 **Dependencies and story role.** M01 and M02 supply state normalization and tensor notation. The final identity fixes the conjugation orientation of the hard programs.
 
@@ -129,7 +129,7 @@ Subtracting the smallest eigenvalue times the identity turns $`X`$ into an effec
 \mathcal E_{L,t}=e^{t\mathcal D_L}.
 ```
 
-The jump term and anticommutator together preserve trace, and the exponential is a channel for $`t\ge0`$. The generator itself need not be a completely positive map. The convention $`\|L\|_{\mathrm F}=1`$ fixes the time scale; rescaling the jump by $`\sqrt\gamma`$ replaces time by $`\gamma t`$.
+The jump term and anticommutator together preserve trace, and the exponential is a channel for $`t\ge0`$. The generator itself need not be a completely positive map. The convention $`\left\|L\right\|_{\mathrm F}=1`$ fixes the time scale; rescaling the jump by $`\sqrt\gamma`$ replaces time by $`\gamma t`$.
 
 **Dependencies and story role.** M04 and M08 supply channels and the operator normalization. This defines the dynamics that the program must reproduce.
 
@@ -197,7 +197,7 @@ where $`P_k`$ projects onto the symmetric subspace. The sphere measure includes 
 
 **Central question.** Which resource is minimized, against which unknown instances, and under what uniform accuracy requirement?
 
-**Understanding target.** A fixed CPTP processor may depend on $`d,n,t`$ but receives information about the unknown normalized jump only through $`n`$ supplied programs. The minimax error takes the infimum over such processors and the supremum over $`\|L\|_{\mathrm F}=1`$, using half diamond distance. The copy cost is the smallest integer budget meeting the error target, with an empty feasible set assigned $`+\infty`$. A deterministic cap includes adaptive protocols by supplying and discarding unused copies.
+**Understanding target.** A fixed CPTP processor may depend on $`d,n,t`$ but receives information about the unknown normalized jump only through $`n`$ supplied programs. The minimax error takes the infimum over such processors and the supremum over $`\left\|L\right\|_{\mathrm F}=1`$, using half diamond distance. The copy cost is the smallest integer budget meeting the error target, with an empty feasible set assigned $`+\infty`$. A deterministic cap includes adaptive protocols by supplying and discarding unused copies.
 
 **Dependencies and story role.** M02, M04, M07, M08, and M09 combine into the precise task. This closes the preliminary part and fixes every quantifier used below.
 
@@ -386,7 +386,7 @@ Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0\lt
 
 **Central question.** Why does the copy cost stop growing once an orthogonal-sink channel has mostly decayed?
 
-**Understanding target.** The active space is $`s^\perp`$ with dimension $`m=d-1`$. Its occupation-lowering operators give a fixed contraction $`C=\sum_i\langle i|\otimes a_i`$. Because $`CC^\dagger=(n+m-1)I`$, the normalized $`C^\dagger C`$ is a projector and defines a two-Kraus processor. It reproduces the target coherences and incurs exact half-diamond error $`\beta(t)^2(d-2)/n`$ when its Kraus parameter lies in the allowed interval. The budget $`\lceil(d-2)\beta(t)^2/\varepsilon\rceil`$ lies in this interval and matches the converse in order when $`0\lt\varepsilon\le\beta(t)^2/16`$. Since $`\beta(t)=1-e^{-t/2}`$ approaches one, its long-time cost has order $`d/\varepsilon`$.
+**Understanding target.** The active space is $`s^⟂`$ with dimension $`m=d-1`$. Its occupation-lowering operators give a fixed contraction $`C=\sum_i\langle i|\otimes a_i`$. Because $`CC^\dagger=(n+m-1)I`$, the normalized $`C^\dagger C`$ is a projector and defines a two-Kraus processor. It reproduces the target coherences and incurs exact half-diamond error $`\beta(t)^2(d-2)/n`$ when its Kraus parameter lies in the allowed interval. The budget $`\lceil(d-2)\beta(t)^2/\varepsilon\rceil`$ lies in this interval and matches the converse in order when $`0\lt\varepsilon\le\beta(t)^2/16`$. Since $`\beta(t)=1-e^{-t/2}`$ approaches one, its long-time cost has order $`d/\varepsilon`$.
 
 **Dependencies and story role.** M04, M07, M10, and M11 supply physical operations, error, the target channel, and the program symmetry. M22 supplies the matching converse on a subset of the same family.
 
@@ -398,7 +398,7 @@ Together with M23, this gives $`\Theta(dt^2/\varepsilon)`$ for $`d\ge4`$, $`0\lt
 
 **Central question.** How can a direction with weak weight in the programs become visible with constant probability in the target output?
 
-**Understanding target.** Choose a known output direction $`r`$, an unknown unit direction $`\psi\perp r`$, and $`\phi=\sqrt{1-q}\,r+\sqrt q\,\psi`$ with $`q=1/t`$ for $`t\ge4`$. Input $`r`$ leaves constant mass in the unknown direction because $`qt=1`$. A program has weight $`q`$ on the conjugate unknown direction. Averaging its relative phase gives a binomial sector count with mean $`nq`$. The sector-wise conjugation bound, weighted by actual branch success, forces $`\Omega(dt/\varepsilon)`$ copies at sufficiently small error.
+**Understanding target.** Choose a known output direction $`r`$, an unknown unit direction $`\psi⟂ r`$, and $`\phi=\sqrt{1-q}\,r+\sqrt q\,\psi`$ with $`q=1/t`$ for $`t\ge4`$. Input $`r`$ leaves constant mass in the unknown direction because $`qt=1`$. A program has weight $`q`$ on the conjugate unknown direction. Averaging its relative phase gives a binomial sector count with mean $`nq`$. The sector-wise conjugation bound, weighted by actual branch success, forces $`\Omega(dt/\varepsilon)`$ copies at sufficiently small error.
 
 **Dependencies and story role.** M10 gives the slow decay rate. M18 through M21 supply the conjugation inequality, phase averaging, success weights, and operational witness. This reuses the same tools in a family where the sector distribution changes with time.
 

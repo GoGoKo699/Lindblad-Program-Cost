@@ -6,7 +6,7 @@ The proof has three parts. A rank-one damping family converts a known input into
 
 ## Statement in the sample-access model
 
-Use the [access model](model.md): the system has dimension $`d`$, the jump satisfies $`\|L\|_{\mathrm F}=1`$, and its program is
+Use the [access model](model.md): the system has dimension $`d`$, the jump satisfies $`\left\|L\right\|_{\mathrm F}=1`$, and its program is
 
 ```math
 \pi_L=|L\rangle\langle L|,
@@ -16,7 +16,7 @@ Use the [access model](model.md): the system has dimension $`d`$, the jump satis
 |\Gamma\rangle=\sum_{j=1}^{d}|j\rangle|j\rangle.
 ```
 
-Here $`\|\cdot\|_{\mathrm F}`$ is the Frobenius (Hilbert-Schmidt) norm. The target generator and channel are
+Here $`\left\|\cdot\right\|_{\mathrm F}`$ is the Frobenius (Hilbert-Schmidt) norm. The target generator and channel are
 
 ```math
 \mathcal D_L(\rho)=L\rho L^\dagger
@@ -36,7 +36,7 @@ The error is the normalized diamond distance. Define
 ```math
 \delta_d(n,t)
 =\inf_{\mathcal P\,\mathrm{CPTP}}
-\sup_{\|L\|_{\mathrm F}=1}
+\sup_{\left\|L\right\|_{\mathrm F}=1}
 \frac12\left\|\widetilde{\mathcal E}_{L,t}
 -\mathcal E_{L,t}\right\|_\diamond.
 ```
@@ -82,7 +82,7 @@ Choose the known sink $`|s\rangle`$ and reference $`|r\rangle`$ to be basis vect
 L_\psi=|s\rangle\langle\phi_\psi|.
 ```
 
-Every member has $`\|L_\psi\|_{\mathrm F}=1`$, $`L_\psi^\dagger L_\psi=P_{\phi_\psi}`$, and $`L_\psi^2=0`$. Its vectorized program is
+Every member has $`\left\|L_\psi\right\|_{\mathrm F}=1`$, $`L_\psi^\dagger L_\psi=P_{\phi_\psi}`$, and $`L_\psi^2=0`$. Its vectorized program is
 
 ```math
 |L_\psi\rangle
@@ -176,7 +176,7 @@ For any two density matrices $`\rho,\sigma`$ and any Hermitian $`X`$ with spectr
 
 ```math
 |\mathrm{Tr}[X(\rho-\sigma)]|
-\le\frac12\|\rho-\sigma\|_1.
+\le\frac12\left\|\rho-\sigma\right\|_1.
 ```
 
 To see this, subtract the smallest eigenvalue of $`X`$ times the identity. The result is an effect between zero and identity, and $`\mathrm{Tr}(\rho-\sigma)=0`$.
