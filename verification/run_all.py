@@ -9,6 +9,7 @@ import scipy
 
 from verify_core import run_checks as core_checks
 from verify_docs import run_checks as docs_checks
+from verify_rank_one_time import run_checks as rank_one_time_checks
 from verify_wml import run_checks as wml_checks
 
 
@@ -23,6 +24,7 @@ def main():
             "scipy": scipy.__version__,
         },
         "core": core_checks(),
+        "rank_one_time": rank_one_time_checks(),
         "wml": wml_checks(),
         "documents": docs_checks(),
         "status": "passed",

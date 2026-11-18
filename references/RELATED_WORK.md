@@ -57,6 +57,14 @@ The proof in this repository uses the same positive-operator comparison for a co
 
 This is the success-weighted formulation needed for a postselected branch, including state-dependent success probabilities. It follows directly from positivity of the Choi operator and $`\Pi_{\mathrm{sym}}^{(k+1)}\le\Pi_{\mathrm{sym}}^{(k)}\otimes I`$. It is not claimed as a separate new conjugation limit.
 
+## Covariant estimation and the rank-one time law
+
+[Hayashi, Hashimoto, and Horibe, *Reexamination of optimal quantum state estimation of pure states*](https://arxiv.org/abs/quant-ph/0410207v3), *Physical Review A* **72**, 032325 (2005), derive the optimal mean fidelity $`(n+1)/(n+d)`$ for estimating a pure state in dimension $`d`$ from $`n`$ copies. Section II uses normalized symmetric moments, and the introduction credits the earlier covariant solution. Bibliography key: `HayashiHashimotoHoribe2005`.
+
+The [rank-one processor](../science/rank_one_time_law.md) uses the covariant POVM on each factor of the vectorized program. The individual estimates are internal. Its error comes from the channel averaged over both estimates, with the first-order term canceled by covariance. The proof bounds the second derivative uniformly for all overlaps, including nearly parallel directions. This differs in its output requirement from the tomography comparison discussed by Park et al. in Section VI.
+
+Nearly parallel input and output directions make the bright population decay at rate $`q=1-|\langle\phi|s\rangle|^2`$. Choosing $`q=1/t`$ gives an order-one target signal and only $`n/t`$ informative factors on average. The success-weighted conjugation bound applies to each sector and yields an all-processor converse linear in $`t`$ for this rank-one class. Park et al.'s Theorem 10 concerns WML applied to a rank-one projector. The general all-processor quadratic-time lower bound of Go et al. uses rank-two diagonal hard jumps.
+
 ## Other programming and sample-complexity models
 
 ### Jing et al.: programming a fixed semigroup through time
@@ -88,4 +96,4 @@ The supplied program contains $`|\overline{\phi_\psi}\rangle`$. Evolving the fix
 \qquad d\ge4.
 ```
 
-This applies to every fixed processor with a deterministic budget of $`n`$ program copies, including collective and adaptive processing. It supplies the missing dimension factor in the stated short-time, sufficiently accurate regime. It does not assert matching quadratic time dependence at arbitrarily long times, a typical-case lower bound, or a result for stronger oracle-access models. Relative to the precise results above, the contribution is the reference-flag dissipative reduction and the resulting processor-independent dimension lower bound.
+This applies to every fixed processor with a deterministic budget of $`n`$ program copies, including collective and adaptive processing. It supplies the missing dimension factor in the stated short-time, sufficiently accurate regime. The [all-time rank-one result](../science/rank_one_time_law.md) uses a different family with a time-dependent removal rate and a matching averaged processor. Both are worst-case results in the supplied-copy model.

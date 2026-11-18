@@ -6,12 +6,13 @@ Start with README.md for the results and science/model.md for the exact access m
 
 ## Scientific routes
 
-- Full argument: science/model.md -> science/conjugation.md -> science/dimension_cost.md -> science/upper_bound.md -> science/interpretation.md.
+- Full argument: science/model.md -> science/conjugation.md -> science/dimension_cost.md -> science/upper_bound.md -> science/rank_one_time_law.md -> science/interpretation.md.
 - Exact minimax assumptions, ancillary resources, and program orientation: science/model.md.
 - Haar/Choi inequality for CP branches, including postselection: science/conjugation.md.
 - Physical reference flag, fixed-input damping reduction, finite-copy lower bound, and short-time corollary: science/dimension_cost.md.
 - Universal WML processor, invariant algebra, remainder estimates, and integer sample budget: science/upper_bound.md.
-- Explicit collective processor for known-sink rank-one jumps, including all-time scaling: science/rank_one_processor.md.
+- Arbitrary rank-one jumps, exact channel, slow-removal converse, averaged covariant processor, and rate-floor corollary: science/rank_one_time_law.md.
+- Explicit collective processor for a known orthogonal sink, including exact error: science/rank_one_processor.md.
 - Physical meaning, time regimes, and counted resources: science/interpretation.md.
 - Source attribution and model comparisons: references/RELATED_WORK.md and references/references.bib.
 - Executable finite checks, tolerances, and recorded outputs: verification/README.md.
@@ -30,9 +31,11 @@ The main lower bound permits all fixed CPTP processors, including collective and
 
 The universal matching law is Theta(d t^2 / epsilon) for d >= 4, 0 < t <= 1, and 0 < epsilon <= t^2 / 256. The finite-copy lower bound holds at all times, but does not imply a universal quadratic long-time law.
 
-The known-sink rank-one family has a separate all-time matching law Theta(d (1 - exp(-t/2))^2 / epsilon), for epsilon <= (1 - exp(-t/2))^2 / 16. Its constructive upper bound must not be transferred to arbitrary jumps.
+Arbitrary normalized rank-one jumps obey Theta(d min(t^2,t) / epsilon) for d >= 4, t > 0, and 0 < epsilon <= min(t^2,1)/1024. If the removal rate q = 1 - |<phi|s>|^2 is promised to be at least q0 with 0 < q0 <= 1/4, the time factor is min(t^2,t,1/q0). The error concerns the averaged channel over the internal estimates.
 
-The conjugation fidelity and WML upper scaling are inherited results. The dissipative reduction and its arbitrary-processor dimension converse are the central contribution. The bibliography preserves exact source versions.
+The known orthogonal-sink family has a separate finite-copy result with all-time law Theta(d (1 - exp(-t/2))^2 / epsilon), for epsilon <= (1 - exp(-t/2))^2 / 16.
+
+The conjugation fidelity, covariant pure-state estimator, and WML upper scaling are inherited results. The dissipative reductions and the uniform channel estimate give the matching copy laws. The bibliography preserves exact source versions.
 
 Copy sufficiency does not imply gate efficiency. The program-preparation cost, an inverse preparation oracle, a classical description of the jump, and expected-cost stopping rules are outside the stated resource guarantee.
 
