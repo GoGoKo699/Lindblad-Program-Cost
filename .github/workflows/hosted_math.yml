@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 env:
-  SOURCE_REVISION: 5ac7c600135ad0bbb8f9e85e2b2130de021ff1cb
+  SOURCE_REVISION: cf6b664708aaa9e93b276dd60c7aa9a1dc03d779
 
 jobs:
   capture:
@@ -40,6 +40,7 @@ jobs:
             --revision "$SOURCE_REVISION" --output "$RUNNER_TEMP/hosted-representative" \
             --page science/rank_one_time_law.md
       - name: Capture every tracked Markdown page at the scientific revision
+        if: always()
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
         run: |
