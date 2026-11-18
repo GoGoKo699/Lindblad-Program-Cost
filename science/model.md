@@ -9,7 +9,7 @@ The central question is how the required number of programs depends on dimension
 Let the system Hilbert space be $`\mathcal H=\mathbb C^d`$, with a known computational basis. An unknown operator $`L\in\mathsf L(\mathcal H)`$ obeys
 
 ```math
-\|L\|_{\mathrm F}^2=\mathrm{Tr}(L^\dagger L)=1.
+\left\|L\right\|_{\mathrm F}^2=\mathrm{Tr}(L^\dagger L)=1.
 ```
 
 There is one jump and no additional Hamiltonian. The generator and target channel are
@@ -55,7 +55,7 @@ For two channels, the error convention is half the diamond norm:
 ```math
 d_\diamond(\mathcal A,\mathcal B)
 =
-\frac12\|\mathcal A-\mathcal B\|_\diamond.
+\frac12\left\|\mathcal A-\mathcal B\right\|_\diamond.
 ```
 
 Equivalently, it is the maximum half trace distance between their outputs over joint system-reference density operators. A reference of dimension $`d`$ suffices. This convention gives an error in $`[0,1]`$.
@@ -66,7 +66,7 @@ Define
 \delta_d(n,t)
 =
 \inf_{\mathcal P_{d,n,t}}
-\sup_{\|L\|_{\mathrm F}=1}
+\sup_{\left\|L\right\|_{\mathrm F}=1}
 d_\diamond\!\left(
 \widetilde{\mathcal E}_{L,t}^{(n)},\mathcal E_{L,t}
 \right),
@@ -170,7 +170,7 @@ With the additional promise $`q\ge q_0`$ for a supplied $`0\lt q_0\le1/4`$, the 
 
 ### An all-time law for known orthogonal-sink rank-one jumps
 
-If the jump is promised to be $`L=|s\rangle\langle\phi|`$, with known sink $`s`$ and unknown unit vector $`\phi\perp s`$, let $`n^\star_{d,s}(t,\varepsilon)`$ be the corresponding minimax copy cost. The [collective processor](rank_one_processor.md) and the same converse give
+If the jump is promised to be $`L=|s\rangle\langle\phi|`$, with known sink $`s`$ and unknown unit vector $`\phi⟂ s`$, let $`n^\star_{d,s}(t,\varepsilon)`$ be the corresponding minimax copy cost. The [collective processor](rank_one_processor.md) and the same converse give
 
 ```math
 \frac{d\,\beta(t)^2}{32\varepsilon}

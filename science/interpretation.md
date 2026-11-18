@@ -64,7 +64,7 @@ The matching processor applies the channel for a pair of covariant estimates and
 
 The converse is a worst-case statement over unknown jumps. It does not say that every jump requires a dimension-dependent number of programs. A known jump requires no informational copies, and additional promises can reduce the task.
 
-Frobenius normalization also matters. It fixes the total squared matrix amplitude, while the operator norm controls the largest local decay rate. The rank-one hard family has operator norm one. The refined WML error estimate retains a factor $`\|L\|_\infty^2`$, so its error can be smaller on other jumps. The associated finite-step condition must still be enforced when turning that estimate into a sample budget.
+Frobenius normalization also matters. It fixes the total squared matrix amplitude, while the operator norm controls the largest local decay rate. The rank-one hard family has operator norm one. The refined WML error estimate retains a factor $`\left\|L\right\|_\infty^2`$, so its error can be smaller on other jumps. The associated finite-step condition must still be enforced when turning that estimate into a sample budget.
 
 For every positive time and $`d\ge4`$, the finite-copy lower bound is strictly positive. Thus exact universal simulation of even the hard known-sink family is impossible with a finite deterministic supply of these programs. Approximation is essential.
 
